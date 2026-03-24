@@ -33,17 +33,14 @@ This skill is platform-agnostic. Use the browsing, search, and file-reading tool
 
 ## Language Policy
 
-Default output language is Traditional Chinese (繁體中文).
+Default output language is English.
 
-Exceptions — keep in English:
+Always keep in English:
 - paper titles,
 - venue names (e.g., NeurIPS, ACL, CVPR),
 - method and model names (e.g., Transformer, LoRA),
-- technical terms without widely accepted Chinese translations,
+- technical terms,
 - proper nouns (person names, institution names).
-
-If the user writes in English, switch all output to English.
-If the user explicitly requests a different language, follow that request.
 
 ## Operating Principles
 

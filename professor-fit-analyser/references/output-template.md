@@ -2,7 +2,7 @@
 
 Use this as the default structure. Adapt depth to corpus size, but preserve the section order.
 
-**Language**: Output in Traditional Chinese (繁體中文) by default. Keep paper titles, venue names, method names, and technical terms in English. Switch to English if the user writes in English.
+**Language**: Output in English by default. Keep paper titles, venue names, method names, and technical terms in English.
 
 # Professor Snapshot
 - identity and research positioning
