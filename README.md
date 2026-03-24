@@ -124,7 +124,7 @@ Copy this repository into your AI agent's skills directory. The root `SKILL.md` 
 
 ## Language Notes
 
-- Analysis, explanation, discussion: Traditional Chinese
+- Analysis, explanation, discussion: English
 - LaTeX output and formal review writing: English
 - Mathematical symbols and theorem names: English
 

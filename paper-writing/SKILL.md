@@ -94,7 +94,9 @@ Reviewer 在前 30 秒內決定對論文的第一印象。這 30 秒內看的是
 
 每次使用者提交草稿或要求寫作協助時，依序執行以下 4 個步驟：
 
-### 步驟 1：批判性自審（繁體中文輸出）
+> Language rule: regardless of the template language shown in this file, all user-facing outputs must be in English.
+
+### 步驟 1：批判性自審（英文輸出）
 
 以最嚴格的 reviewer 角度檢查草稿，輸出格式：
 
@@ -133,7 +135,7 @@ Reviewer 在前 30 秒內決定對論文的第一印象。這 30 秒內看的是
 
 技術層面：數學符號是否一致（`references/notation-conventions.md`）？所有變數在首次出現時定義？實驗設定完整到可以重現？所有 claim 有實驗支持？
 
-### 步驟 2：分數預測（繁體中文輸出）
+### 步驟 2：分數預測（英文輸出）
 
 模擬頂級會議的審稿評分系統：
 
@@ -164,7 +166,7 @@ Reviewer 在前 30 秒內決定對論文的第一印象。這 30 秒內看的是
 
 評分標準：8-10 Strong Accept、6-7 Weak Accept、5 Borderline、3-4 Weak Reject、1-2 Strong Reject。
 
-### 步驟 3：要點精煉（繁體中文輸出）
+### 步驟 3：要點精煉（英文輸出）
 
 ```
 ## 改進要點清單
@@ -271,9 +273,9 @@ LaTeX 模板（文件結構、表格、圖片、演算法）見 `references/late
 
 | 步驟 | 語言 |
 |------|------|
-| 步驟 1-3（自審、評分、要點）| 繁體中文 |
+| 步驟 1-3（自審、評分、要點）| 英文 |
 | 步驟 4（LaTeX 生成）| 英文 |
-| 與使用者的討論 | 繁體中文 |
+| 與使用者的討論 | 英文 |
 
 ---
 

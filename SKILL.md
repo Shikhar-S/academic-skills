@@ -49,15 +49,14 @@ paper-review ←── paper-writing ←──── proof-writer
 
 ## Language Conventions
 
-- **Default language**: Traditional Chinese (analysis, explanation, discussion)
-- **English scenarios**: LaTeX generation, formal review output, mathematical symbols and theorem names
-- **Academic terminology**: Refer to [shared/chinese-academic-glossary.md](shared/chinese-academic-glossary.md) for consistency
+- **Default language**: English for all analysis, explanation, discussion, and final outputs.
+- **Specialized content**: LaTeX generation, formal review output, and mathematical symbols/theorem names should also remain in English.
+- **Terminology consistency**: Keep academic terms consistent and standard in English.
 
 ---
 
 ## Shared Resources
 
-- [shared/chinese-academic-glossary.md](shared/chinese-academic-glossary.md) — bilingual academic terminology mapping
 - [shared/conference-standards.md](shared/conference-standards.md) — top-conference formatting standards
 - [shared/researcher-philosophies.md](shared/researcher-philosophies.md) — researcher philosophies and writing styles
 

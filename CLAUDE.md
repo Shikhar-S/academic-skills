@@ -8,7 +8,7 @@ This suite follows the [Agent Skills Open Standard](https://agentskills.io/speci
 
 | Command | Skill | Description |
 |------|-------|------|
-| `/read-paper` | `paper-reading/SKILL.md` | Story-driven paper walkthrough style (Traditional Chinese persona originally) |
+| `/read-paper` | `paper-reading/SKILL.md` | Story-driven paper walkthrough style |
 | `/brainstorm` | `idea-generation/SKILL.md` | Three-stage ideation: diverge -> search -> converge |
 | `/experiment` | `experiment-design/SKILL.md` | Experiment design and planning |
 | `/prove` | `proof-writer/SKILL.md` | Theoretical derivation and mathematical proofs |
@@ -31,9 +31,9 @@ paper-review ←── paper-writing ←──── proof-writer
 
 ## Language Conventions
 
-- **Default language**: Traditional Chinese (analysis, explanation, discussion)
-- **English-only scenarios**: LaTeX generation, formal review output (Step 4), mathematical symbols and theorem names
-- **Academic terminology**: Refer to `shared/chinese-academic-glossary.md` for consistency
+- **Default language**: English for all analysis, explanation, discussion, and outputs
+- **Specialized content**: LaTeX generation, formal review output, and mathematical symbols/theorem names should also remain in English
+- **Academic terminology**: Use consistent and standard English terminology
 
 ## Quality Standards
 
