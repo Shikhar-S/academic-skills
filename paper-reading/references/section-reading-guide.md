@@ -1,219 +1,219 @@
-# 章節閱讀指南
+# Section Reading Guide
 
-本指南提供每個論文章節的閱讀方法和重點提取策略，供太奶在「步驟二：逐章導覽」時使用。
+This guide provides section-by-section reading methods and key-point extraction strategies for use in "Step 2: Section-by-Section Guided Tour."
 
 ---
 
-## Abstract（摘要）
+## Abstract
 
-### 閱讀目標
-用最短的時間抓住整篇論文的全貌。
+### Reading Goal
+Capture the full picture of the paper in minimal time.
 
-### 四要素提取法
+### Four-Element Extraction Method
 
-每篇摘要都要抓出以下四個要素：
+Extract these four elements from every abstract:
 
-| 要素 | 要找什麼 | 常見關鍵詞 |
+| Element | What to find | Common keywords |
 |------|---------|-----------|
-| **問題** | 這篇論文要解決什麼問題？ | challenge, problem, limitation, issue, gap |
-| **方法** | 他們怎麼解決的？ | propose, introduce, present, framework, approach |
-| **結果** | 做出來的效果如何？ | achieve, outperform, state-of-the-art, improvement |
-| **意義** | 為什麼這件事重要？ | enable, contribute, potential, impact, advance |
+| **Problem** | What problem is being solved? | challenge, problem, limitation, issue, gap |
+| **Method** | How is it solved? | propose, introduce, present, framework, approach |
+| **Result** | How well does it work? | achieve, outperform, state-of-the-art, improvement |
+| **Significance** | Why does it matter? | enable, contribute, potential, impact, advance |
 
-### 太奶的讀法
-- 先快速讀一遍，抓整體感覺
-- 再讀一遍，用不同顏色在心裡標記四要素
-- 用自己的話重新說一遍，確認理解正確
+### Granny's Reading Approach
+- Quick first pass for overall sense
+- Second pass to mentally mark the four elements
+- Restate in your own words to verify understanding
 
-### 常見陷阱
-- 有些摘要會把「意義」省略或寫得很模糊，太奶要自己判斷
-- 有些摘要會誇大結果，太奶要保持懷疑精神
-- 有些摘要寫得太長太雜，太奶要幫讀者整理乾淨
-
----
-
-## Introduction（引言）
-
-### 閱讀目標
-理解研究動機、現有方法的不足、以及這篇論文的定位。
-
-### 三段式分析法
-
-大多數引言可以拆成三段結構：
-
-1. **大背景**（前 1-2 段）
-   - 這個領域在做什麼？為什麼重要？
-   - 太奶的比喻角度：「這個村莊的現況」
-
-2. **研究缺口 Gap**（中間段落）
-   - 現有方法有什麼問題？缺了什麼？
-   - 常見訊號：however, but, despite, limitation, challenge, remains
-   - 太奶的比喻角度：「村莊遇到的危機」
-
-3. **本文貢獻**（最後 1-2 段）
-   - 我們做了什麼？我們的方法有什麼特別？
-   - 常見格式：列點 (i), (ii), (iii) 或 bullet points
-   - 太奶的比喻角度：「英雄帶著新武器登場」
-
-### 重點提取清單
-- [ ] 研究領域是什麼？
-- [ ] 現有方法的主要限制是什麼？（至少列 2 點）
-- [ ] 本文聲稱的貢獻有幾點？分別是什麼？
-- [ ] 有沒有提到跟哪些先前工作的比較？
-
-### 太奶的特別提醒
-- 引言裡引用的論文常常就是 related work 的重點，太奶會幫讀者記下來
-- 如果引言寫得太長（超過 2 頁），太奶會提醒讀者重點在第二和第三段
-- 如果引言有一張 overview figure，那張圖通常比文字更有用
+### Common Pitfalls
+- Some abstracts omit or blur significance; infer it yourself
+- Some abstracts over-claim; keep healthy skepticism
+- Some abstracts are too long and noisy; cleanly reorganize for readers
 
 ---
 
-## Method / Approach（方法）
+## Introduction
 
-### 閱讀目標
-理解論文提出的方法的架構和運作方式。
+### Reading Goal
+Understand motivation, current-method limitations, and the paper's positioning.
 
-### 模組化拆解法
+### Three-Part Analysis
 
-不管方法多複雜，太奶都用「拆模組」的方式來理解：
+Most introductions can be split into three parts:
 
-#### 第一步：找整體架構圖
-- 幾乎每篇論文都有一張系統架構圖（通常是 Figure 1 或 Figure 2）
-- 先看這張圖，建立全局觀
-- 太奶的比喻角度：「先看食譜的全圖，再一步步做」
+1. **Big-picture background** (first 1–2 paragraphs)
+   - What does this field do and why is it important?
+   - Analogy lens: "the village's current state"
 
-#### 第二步：辨識模組
-- 把整個方法拆成 3-5 個模組
-- 每個模組有：**輸入 → 處理 → 輸出**
-- 太奶會用表格整理：
+2. **Research gap** (middle paragraphs)
+   - What is missing or weak in existing methods?
+   - Signals: however, but, despite, limitation, challenge, remains
+   - Analogy lens: "the village's crisis"
 
-| 模組名稱 | 輸入 | 做什麼 | 輸出 |
+3. **Paper contributions** (last 1–2 paragraphs)
+   - What did the authors do, and what is distinctive?
+   - Common format: numbered list (i), (ii), (iii) or bullets
+   - Analogy lens: "hero enters with a new weapon"
+
+### Key Extraction Checklist
+- [ ] What research area is this?
+- [ ] What are at least two major limitations of existing methods?
+- [ ] How many claimed contributions, and what are they?
+- [ ] Which prior works are explicitly compared?
+
+### Special Reminders
+- Papers cited in the introduction are often core related work
+- If introduction is very long (>2 pages), focus on middle and ending parts
+- An overview figure in the introduction is often more informative than dense text
+
+---
+
+## Method / Approach
+
+### Reading Goal
+Understand architecture and operation of the proposed method.
+
+### Modular Decomposition Method
+
+No matter how complex the method is, use module decomposition.
+
+#### Step 1: Find overall architecture figure
+- Most papers include a system diagram (often Figure 1 or 2)
+- Start there to build global understanding
+- Analogy lens: "read the full recipe before cooking"
+
+#### Step 2: Identify modules
+- Break method into 3–5 modules
+- Each module: **input → processing → output**
+- Use a table:
+
+| Module | Input | What it does | Output |
 |---------|------|--------|------|
-| 模組 A | 原始資料 | 特徵提取 | 特徵向量 |
-| 模組 B | 特徵向量 | 注意力計算 | 加權特徵 |
-| 模組 C | 加權特徵 | 分類預測 | 預測結果 |
+| Module A | raw data | feature extraction | feature vectors |
+| Module B | feature vectors | attention computation | weighted features |
+| Module C | weighted features | classification | predictions |
 
-#### 第三步：找核心創新
-- 在所有模組中，哪個是「新的」？哪個是「借來的」？
-- 新的模組需要重點解釋
-- 借來的模組可以簡單帶過，附上原始論文引用
+#### Step 3: Find core innovation
+- Which modules are new vs. borrowed?
+- Focus explanation on new modules
+- Briefly summarize borrowed modules with citation pointers
 
-#### 第四步：理解訓練流程
-- Loss function 是什麼？
-- 訓練分幾個階段？（pre-training + fine-tuning？end-to-end？）
-- 有沒有特別的訓練技巧？（warmup、curriculum learning、data augmentation）
+#### Step 4: Understand training process
+- What is the loss function?
+- How many training stages? (pre-train + fine-tune? end-to-end?)
+- Any special strategy? (warmup, curriculum learning, data augmentation)
 
-### 常見陷阱
-- 方法章節常常寫得很密，太奶會幫讀者跳過不重要的細節
-- 有些符號定義散落在不同段落，太奶會幫忙整理成統一的符號表
-- 如果方法章節有小節標題，跟著標題讀最有效率
-
----
-
-## Experiments（實驗）
-
-### 閱讀目標
-驗證方法是否真的有效，以及有效到什麼程度。
-
-### 四維度檢查法
-
-#### 1. 實驗設定（Experimental Setup）
-要確認的事項：
-- **資料集** — 用了哪些資料集？大小？領域？
-- **評估指標** — 用什麼 metric？（accuracy、F1、BLEU、perplexity……）
-- **Baseline** — 跟誰比？這些 baseline 夠強嗎？夠新嗎？
-- **實作細節** — 硬體、超參數、訓練時間等
-
-太奶會特別注意：
-- baseline 有沒有漏掉重要的近期工作
-- 評估指標選擇是否合理
-- 實驗設定是否足以支持論文的宣稱
-
-#### 2. 主實驗結果（Main Results）
-- 找到主表格（通常是 Table 1 或 Table 2）
-- 看論文的方法在哪些指標上贏了、贏了多少
-- 太奶會幫讀者畫重點：「贏 0.1% 和贏 5% 的意義是完全不同的」
-
-#### 3. 消融實驗（Ablation Study）
-- 這是太奶最重視的部分
-- 消融實驗告訴你「每個模組到底有多重要」
-- 太奶會問：
-  - 拿掉核心模組後掉了多少？
-  - 有沒有模組拿掉反而變好的？（那就有問題了）
-  - 超參數的敏感度如何？
-
-#### 4. 分析與視覺化（Analysis & Visualization）
-- 有沒有 case study？
-- 有沒有 attention map 或 feature visualization？
-- 有沒有 error analysis？（太奶最喜歡看失敗案例）
-
-### 太奶的讀表格心法
-- 先看最後一行（通常是論文的方法）
-- 再看倒數第二行（通常是最強的 baseline）
-- 比較這兩行的差距
-- 然後看其他行，了解整體排名
-- 注意粗體、底線、星號的標記
+### Common Pitfalls
+- Method sections are often dense; skip low-value detail
+- Symbol definitions may be scattered; consolidate into one symbol table
+- If subsection headers exist, follow them for efficient reading
 
 ---
 
-## Conclusion（結論）
+## Experiments
 
-### 閱讀目標
-確認作者的自我評價，找出未來方向的線索。
+### Reading Goal
+Verify whether the method truly works and by how much.
 
-### 三重點提取
+### Four-Dimension Check
 
-#### 1. 總結回顧
-- 作者怎麼總結自己的工作？
-- 跟摘要的說法一致嗎？有沒有新的 claim？
-- 太奶會比對摘要和結論，看有沒有矛盾
+#### 1. Experimental setup
+Confirm:
+- **Datasets** — which datasets, size, and domain?
+- **Metrics** — accuracy, F1, BLEU, perplexity, etc.
+- **Baselines** — who are the comparators? Are they strong and recent?
+- **Implementation details** — hardware, hyperparameters, training time
 
-#### 2. Limitations（限制）
-- 作者自己承認了哪些限制？
-- 太奶會特別注意他們**沒說**的限制
-- 常見的隱藏限制：
-  - 只在特定資料集上有效
-  - 計算成本太高
-  - 需要大量標註資料
-  - 只在英文上測試過
-  - 可擴展性（scalability）未驗證
+Pay special attention to:
+- missing important recent baselines
+- unreasonable metric choices
+- setup insufficiency vs. claimed conclusions
 
-#### 3. Future Work（未來工作）
-- 作者建議的下一步是什麼？
-- 這些方向真的可行嗎？
-- 太奶會幫讀者判斷哪些 future work 是真的值得做、哪些只是客套話
+#### 2. Main results
+- Find the main result table (usually Table 1 or 2)
+- Identify where the proposed method wins and margin size
+- Distinguish tiny gains (0.1%) from meaningful gains (e.g., 5%)
 
-### 太奶的結論讀法
-- 結論通常是論文中最好讀的部分
-- 如果時間有限，太奶建議先讀摘要和結論，就能知道 80% 的內容
-- 結論裡的 limitation 是論文最誠實的部分，太奶會特別標記
+#### 3. Ablation study
+- Often the most revealing part
+- Shows contribution of each module
+- Ask:
+  - How much drop if core module is removed?
+  - Any component removal that improves performance (warning sign)?
+  - How sensitive are hyperparameters?
+
+#### 4. Analysis & visualization
+- Are there case studies?
+- Attention maps or feature visualizations?
+- Error analysis? (failure cases are especially informative)
+
+### Table-Reading Tactics
+- Start with final row (often proposed method)
+- Compare with second-to-last row (often strongest baseline)
+- Inspect margin
+- Then scan full ranking
+- Watch bold/underline/asterisk markers
 
 ---
 
-## Related Work（相關工作）
+## Conclusion
 
-### 雖然不在五章節主線，但太奶也會看
+### Reading Goal
+Validate authors' self-assessment and identify future directions.
 
-- 快速掃過，找出 2-3 個最相關的先前工作
-- 理解本文方法和這些先前工作的差異
-- 如果讀者想深入，太奶會推薦 1-2 篇「必讀」的先行論文
+### Three Key Extractions
+
+#### 1. Summary recap
+- How do authors summarize their work?
+- Is it consistent with abstract, or does it introduce new claims?
+- Compare abstract vs. conclusion for inconsistencies
+
+#### 2. Limitations
+- What limitations do authors admit?
+- Also inspect what they did **not** mention
+- Common hidden limits:
+  - Works only on specific datasets
+  - High compute cost
+  - Heavy labeled-data dependence
+  - Tested only in English
+  - Scalability not verified
+
+#### 3. Future work
+- What next steps do authors propose?
+- Are these directions practically plausible?
+- Distinguish meaningful future work from routine boilerplate
+
+### Conclusion Reading Tips
+- Conclusion is often one of the easiest sections to read
+- If short on time, abstract + conclusion can deliver ~80% of core content
+- Limitations in conclusion are often the paper's most honest part
 
 ---
 
-## 特殊論文結構處理
+## Related Work
 
-### Survey / Review 論文
-- 不走五章節流程，改為按主題分類介紹
-- 太奶會幫讀者整理出一張「技術演化路線圖」
+### Not in the five-core path, but still important
 
-### Workshop / Short Paper
-- 內容通常較精簡，太奶會把步驟二和步驟三合併
-- 重點放在核心 idea，不苛求完整實驗
+- Quickly scan and identify 2–3 most relevant prior works
+- Understand differences between this paper and those works
+- If reader wants depth, recommend 1–2 must-read predecessors
 
-### System Paper
-- 方法章節可能改為系統架構描述
-- 太奶會用「蓋房子」的比喻來解釋系統設計
+---
 
-### 理論論文
-- 可能沒有實驗章節，取而代之是定理證明
-- 太奶會花更多時間在公式解讀（步驟四）
+## Handling Special Paper Structures
+
+### Survey / Review papers
+- Do not force five-section flow; organize by topic categories
+- Build a "technology evolution roadmap" for readers
+
+### Workshop / short papers
+- Content is compact; merge Step 2 and Step 3 when needed
+- Focus on core idea rather than demanding exhaustive experiments
+
+### System papers
+- Method section may be architecture-focused
+- Explain system design with "building a house" analogy
+
+### Theoretical papers
+- May have no experiments and focus on theorem proofs
+- Spend more time in formula interpretation (Step 4)

@@ -1,6 +1,6 @@
 ---
 name: experiment-design
-description: "學術研究實驗設計技能——從研究假設到可重現實驗計畫的完整流程。當使用者需要規劃實驗、設計 ablation study、選擇 baseline、確定評估指標，或問「我應該跑哪些實驗」時，一定要使用此技能。觸發詞包括：實驗設計、experiment design、ablation、baseline、跑什麼實驗、evaluation metric、如何驗證方法。適用於機器學習、NLP、CV 等領域的實驗規劃。"
+description: "Academic research experiment design skill—a complete workflow from research hypothesis to reproducible experiment plan. Use this skill whenever the user needs to plan experiments, design ablation studies, choose baselines, define evaluation metrics, or asks what experiments should be run. Trigger terms include: experiment design, ablation, baseline, evaluation metric, and how to validate a method. Applicable to machine learning, NLP, CV, and related fields."
 license: MIT
 compatibility: Works with Claude Code, ChatGPT/Codex CLI, and Gemini CLI.
 metadata:
@@ -8,329 +8,329 @@ metadata:
   version: "1.0.0"
 ---
 
-# 實驗設計技能
+# Experiment Design Skill
 
-## 概述
+## Overview
 
-本技能提供一套結構化的實驗設計流程，適用於機器學習、自然語言處理、電腦視覺等領域的學術研究。目標是協助研究者從模糊的研究想法出發，產出一份嚴謹、可重現、且具說服力的實驗計畫。
+This skill provides a structured experiment design workflow for academic research in machine learning, natural language processing, computer vision, and related areas. The goal is to help researchers move from a vague research idea to a rigorous, reproducible, and persuasive experiment plan.
 
-## 核心設計理念
+## Core Design Principles
 
-好的實驗設計應具備以下特質：
+A good experiment design should have the following properties:
 
-- **可證偽性**：實驗結果必須能夠支持或否定研究假設
-- **公平性**：所有比較對象在相同條件下評估
-- **可重現性**：他人能夠依據描述完整重現實驗
-- **充分性**：實驗覆蓋足夠的面向以支撐論文結論
-
----
-
-## 實驗設計 Pipeline
-
-完整的實驗設計遵循以下六步流程：
-
-```
-假設 → 變數 → 指標 → Baseline → Ablation → 計算預算
-```
-
-每一步的產出都是下一步的輸入，形成嚴謹的推導鏈。
+- **Falsifiability**: Results must be able to support or reject the research hypothesis.
+- **Fairness**: All methods should be evaluated under the same conditions.
+- **Reproducibility**: Others should be able to fully reproduce the experiments from the description.
+- **Sufficiency**: Experiments should cover enough dimensions to support the paper's conclusions.
 
 ---
 
-## 步驟一：研究假設明確化
+## Experiment Design Pipeline
 
-### 目的
+A complete experiment design follows this six-step process:
 
-將模糊的研究動機轉化為可驗證的具體假設。
+```
+Hypothesis -> Variables -> Metrics -> Baseline -> Ablation -> Compute Budget
+```
 
-### 方法
+The output of each step is the input to the next step, forming a rigorous reasoning chain.
 
-1. **辨識研究問題**：你想回答什麼問題？
-2. **提出核心假設**：對問題的預期答案是什麼？
-3. **明確化假設**：假設必須具備可測量性與可證偽性
-4. **分解子假設**：將複雜假設拆解為可逐一驗證的子假設
+---
 
-### 假設的品質標準
+## Step 1: Clarify Research Hypotheses
 
-| 標準 | 說明 |
+### Purpose
+
+Transform a vague research motivation into concrete, testable hypotheses.
+
+### Method
+
+1. **Identify the research question**: What question are you trying to answer?
+2. **Propose the core hypothesis**: What is your expected answer?
+3. **Make it explicit**: The hypothesis must be measurable and falsifiable.
+4. **Decompose into sub-hypotheses**: Break a complex hypothesis into sub-hypotheses that can be tested one by one.
+
+### Hypothesis Quality Criteria
+
+| Criterion | Description |
 |------|------|
-| 具體性 | 明確指出預期的效果方向與幅度 |
-| 可測量性 | 可以用量化指標來驗證 |
-| 可證偽性 | 存在可能否定假設的實驗結果 |
-| 相關性 | 與研究問題直接相關 |
+| Specificity | Clearly states the expected effect direction and magnitude |
+| Measurability | Can be validated with quantitative metrics |
+| Falsifiability | There exists a possible experimental outcome that can refute it |
+| Relevance | Directly tied to the research question |
 
-### 範例
+### Example
 
-- 不佳：「我們的方法比較好」
-- 良好：「在 SQuAD 2.0 資料集上，加入跨注意力機制後，F1 分數相較於純自注意力基線提升至少 2 個百分點」
+- Weak: "Our method is better"
+- Good: "On the SQuAD 2.0 dataset, adding cross-attention improves F1 by at least 2 points over a self-attention-only baseline"
 
-詳見：[實驗規劃參考](references/experiment-planning.md)
-
----
-
-## 步驟二：變數定義
-
-### 自變數（Independent Variables）
-
-研究者主動操控的變數，即實驗中「改變的東西」。
-
-- 模型架構的變體
-- 訓練策略的差異
-- 資料處理方式的不同
-
-### 依變數（Dependent Variables）
-
-用來衡量實驗結果的變數，即「被測量的東西」。
-
-- 模型效能指標（準確率、F1、BLEU 等）
-- 效率指標（推論時間、記憶體用量）
-- 品質指標（人工評估分數）
-
-### 控制變數（Control Variables）
-
-實驗中保持不變的變數，確保比較的公平性。
-
-- 隨機種子
-- 訓練資料集與切分方式
-- 超參數（非研究對象的部分）
-- 硬體環境
-- 預訓練模型版本
-
-### 變數控制原則
-
-1. **單一變數原則**：每次實驗僅改變一個自變數
-2. **完整記錄原則**：所有變數的值都必須記錄
-3. **合理範圍原則**：自變數的取值範圍應有理論依據
-
-詳見：[實驗規劃參考](references/experiment-planning.md)
+See details: [Experiment Planning Reference](references/experiment-planning.md)
 
 ---
 
-## 步驟三：評估指標選擇
+## Step 2: Define Variables
 
-### 選擇原則
+### Independent Variables
 
-1. **領域慣例**：優先選擇該領域公認的標準指標
-2. **多面向覆蓋**：同時報告效能、效率、穩健性指標
-3. **統計顯著性**：報告多次實驗的平均值與標準差
-4. **合理性**：指標能真正反映研究假設所關注的面向
+Variables actively controlled by the researcher—the things changed in experiments.
 
-### 常見指標類別
+- Model architecture variants
+- Differences in training strategy
+- Differences in data processing
 
-| 類別 | 指標範例 |
+### Dependent Variables
+
+Variables used to measure outcomes—the things being measured.
+
+- Model performance metrics (accuracy, F1, BLEU, etc.)
+- Efficiency metrics (inference time, memory usage)
+- Quality metrics (human evaluation scores)
+
+### Control Variables
+
+Variables held constant to ensure fair comparison.
+
+- Random seeds
+- Training dataset and split protocol
+- Hyperparameters (parts not under study)
+- Hardware environment
+- Pretrained model version
+
+### Variable Control Principles
+
+1. **Single-variable principle**: Change only one independent variable per experiment.
+2. **Complete-record principle**: Record all variable values.
+3. **Reasonable-range principle**: Independent variable ranges should be theoretically justified.
+
+See details: [Experiment Planning Reference](references/experiment-planning.md)
+
+---
+
+## Step 3: Choose Evaluation Metrics
+
+### Selection Principles
+
+1. **Field convention**: Prioritize metrics recognized as standards in the field.
+2. **Multi-dimensional coverage**: Report performance, efficiency, and robustness together.
+3. **Statistical significance**: Report mean and standard deviation across multiple runs.
+4. **Validity**: Metrics should truly reflect the aspects targeted by the hypothesis.
+
+### Common Metric Categories
+
+| Category | Example Metrics |
 |------|----------|
-| 分類任務 | Accuracy、Precision、Recall、F1-score、AUC-ROC |
-| 生成任務 | BLEU、ROUGE、METEOR、BERTScore、人工評估 |
-| 資訊擷取 | MAP、MRR、NDCG、Recall@K |
-| 效率指標 | FLOPs、參數量、推論延遲、記憶體佔用 |
-| 穩健性 | 跨資料集表現、對抗樣本準確率 |
+| Classification tasks | Accuracy, Precision, Recall, F1-score, AUC-ROC |
+| Generation tasks | BLEU, ROUGE, METEOR, BERTScore, human evaluation |
+| Information retrieval | MAP, MRR, NDCG, Recall@K |
+| Efficiency metrics | FLOPs, parameter count, inference latency, memory footprint |
+| Robustness | Cross-dataset performance, adversarial accuracy |
 
-### 統計檢驗
+### Statistical Testing
 
-- 報告多次隨機種子實驗的平均值與標準差
-- 必要時進行統計顯著性檢驗（如 paired t-test、bootstrap test）
-- 標註統計顯著性水準（p < 0.05, p < 0.01）
-
----
-
-## 步驟四：Baseline 選擇與設定
-
-### 必選 Baseline 類型
-
-1. **經典方法**：該領域歷史上重要的方法
-2. **當前 SOTA**：最新的最佳表現方法
-3. **簡單 Baseline**：簡單但合理的基準方法（如隨機、多數類別、TF-IDF）
-
-### 公平比較原則
-
-- 使用相同的資料切分
-- 使用相同的評估協定
-- 盡可能使用原作者的程式碼與超參數
-- 若需重新實現，需驗證重現結果與原論文一致
-
-### 常見錯誤
-
-- 僅與弱基線比較
-- 未使用最新 SOTA 作為基線
-- 基線的超參數未經調校
-- 比較條件不一致（如不同的預訓練模型）
-
-詳見：[Baseline 選擇指南](references/baseline-selection.md)
+- Report mean and standard deviation across multiple random seeds.
+- Apply statistical significance testing when needed (e.g., paired t-test, bootstrap test).
+- Annotate significance level (p < 0.05, p < 0.01).
 
 ---
 
-## 步驟五：Ablation Study 設計
+## Step 4: Select and Configure Baselines
 
-Ablation Study 是驗證方法中各組件貢獻的關鍵實驗。本技能定義四種 Ablation 模式：
+### Required Baseline Types
 
-### 模式一：完整消融（Component Ablation）
+1. **Classic methods**: Historically important approaches in the field.
+2. **Current SOTA**: Most recent best-performing methods.
+3. **Simple baselines**: Simple but reasonable references (e.g., random, majority class, TF-IDF).
 
-逐一移除或替換方法中的各個組件，觀察效能變化。
+### Fair Comparison Principles
 
-- 每次僅移除一個組件
-- 記錄移除後的效能變化
-- 藉此判斷每個組件的貢獻度
+- Use the same data splits.
+- Use the same evaluation protocol.
+- Prefer original authors' code and hyperparameters whenever possible.
+- If reimplementation is necessary, verify reproducibility against the original paper.
 
-### 模式二：超參敏感度分析（Hyperparameter Sensitivity）
+### Common Mistakes
 
-探討關鍵超參數對效能的影響。
+- Comparing only with weak baselines
+- Not including the latest SOTA baselines
+- Not tuning baseline hyperparameters
+- Inconsistent comparison settings (e.g., different pretrained models)
 
-- 選擇 2-4 個最重要的超參數
-- 在合理範圍內變化超參數值
-- 繪製超參數-效能曲線圖
-
-### 模式三：跨資料集遷移（Cross-Dataset Transfer）
-
-驗證方法的泛化能力。
-
-- 在多個不同資料集上測試
-- 包含不同規模、不同領域的資料集
-- 分析方法在何種條件下效果最佳或最差
-
-### 模式四：定性分析（Qualitative Analysis）
-
-透過可視化與案例分析深入理解模型行為。
-
-- 注意力權重視覺化
-- 成功與失敗案例分析
-- 特徵空間視覺化（如 t-SNE）
-- 錯誤類型分類與統計
-
-詳見：[Ablation 設計指南](references/ablation-design.md)
+See details: [Baseline Selection Guide](references/baseline-selection.md)
 
 ---
 
-## 步驟六：計算資源預估
+## Step 5: Design Ablation Studies
 
-### 預估項目
+Ablation studies are key experiments for validating contributions of individual components. This skill defines four ablation modes:
 
-1. **單次實驗成本**
-   - GPU 時數
-   - 記憶體需求
-   - 儲存空間需求
+### Mode 1: Component Ablation
 
-2. **實驗總量計算**
+Remove or replace components one by one and observe performance changes.
+
+- Remove one component at a time.
+- Record the performance change after removal.
+- Estimate the contribution of each component.
+
+### Mode 2: Hyperparameter Sensitivity Analysis
+
+Investigate how key hyperparameters affect performance.
+
+- Select 2-4 most important hyperparameters.
+- Vary values within reasonable ranges.
+- Plot hyperparameter-performance curves.
+
+### Mode 3: Cross-Dataset Transfer
+
+Validate generalization capability.
+
+- Test on multiple datasets.
+- Include datasets of different scales and domains.
+- Analyze conditions where the method works best or worst.
+
+### Mode 4: Qualitative Analysis
+
+Use visualization and case analysis to understand model behavior deeply.
+
+- Attention-weight visualization
+- Success/failure case analysis
+- Feature-space visualization (e.g., t-SNE)
+- Error-type categorization and statistics
+
+See details: [Ablation Design Guide](references/ablation-design.md)
+
+---
+
+## Step 6: Estimate Compute Resources
+
+### What to Estimate
+
+1. **Cost per run**
+   - GPU hours
+   - Memory requirement
+   - Storage requirement
+
+2. **Total experiment volume**
 
    ```
-   總 GPU 時數 = 單次時數 × 模型變體數 × 資料集數 × 隨機種子數 × 超參組合數
+   Total GPU hours = per-run hours × number of model variants × number of datasets × number of random seeds × number of hyperparameter combinations
    ```
 
-3. **安全係數**
-   - 建議預留 1.5-2 倍的預估資源
-   - 考慮除錯、預實驗、追加實驗的需求
+3. **Safety factor**
+   - Reserve 1.5-2x of estimated resources.
+   - Account for debugging, pilot runs, and follow-up experiments.
 
-### 資源最佳化策略
+### Resource Optimization Strategies
 
-- 先以小規模資料集進行預實驗
-- 使用早停（early stopping）節省訓練時間
-- 善用混合精度訓練（mixed precision）
-- 合理安排實驗優先順序
-
----
-
-## 可重現性要求
-
-實驗計畫必須包含完整的可重現性資訊，確保他人能夠精確重現結果。
-
-### 必要揭露項目
-
-1. **硬體環境**
-   - GPU 型號與數量
-   - CPU 規格
-   - 記憶體大小
-
-2. **軟體環境**
-   - 程式語言版本
-   - 深度學習框架版本
-   - 關鍵套件版本
-
-3. **隨機性控制**
-   - 隨機種子設定
-   - 確定性演算法設定
-   - 多次實驗的種子列表
-
-4. **訓練協定**
-   - 完整的超參數列表
-   - 優化器設定
-   - 學習率排程
-   - 資料增強策略
-   - 早停準則
-
-5. **資料處理**
-   - 資料集版本與來源
-   - 前處理步驟
-   - 資料切分方式
-
-6. **評估協定**
-   - 評估指標的精確定義
-   - 評估頻率
-   - 模型選擇準則
-
-詳見：[可重現性清單](references/reproducibility-checklist.md)
+- Start with pilot experiments on smaller datasets.
+- Use early stopping to reduce training time.
+- Use mixed-precision training.
+- Prioritize experiments strategically.
 
 ---
 
-## 輸出：結構化實驗計畫文件
+## Reproducibility Requirements
 
-本技能的最終產出為一份結構化的實驗計畫文件，包含以下章節：
+The experiment plan must include complete reproducibility information so others can reproduce results precisely.
 
-1. 研究假設與子假設
-2. 變數定義表
-3. 評估指標與統計方法
-4. Baseline 列表與設定
-5. Ablation Study 設計矩陣
-6. 計算資源預估與時程規劃
-7. 可重現性資訊
+### Required Disclosure Items
 
-使用模板：[實驗計畫模板](templates/experiment-plan.md)
+1. **Hardware environment**
+   - GPU model and count
+   - CPU specification
+   - Memory size
 
----
+2. **Software environment**
+   - Programming language version
+   - Deep learning framework version
+   - Key package versions
 
-## 使用流程
+3. **Randomness control**
+   - Random seed configuration
+   - Deterministic algorithm settings
+   - Seed list for repeated runs
 
-### 輸入
+4. **Training protocol**
+   - Full hyperparameter list
+   - Optimizer settings
+   - Learning rate schedule
+   - Data augmentation strategy
+   - Early stopping criteria
 
-- 研究主題或論文草稿
-- 提出的方法描述
-- 可用的計算資源
+5. **Data processing**
+   - Dataset version and source
+   - Preprocessing steps
+   - Data splitting strategy
 
-### 處理
+6. **Evaluation protocol**
+   - Exact metric definitions
+   - Evaluation frequency
+   - Model selection criteria
 
-1. 引導使用者明確化研究假設
-2. 協助定義自變數、依變數、控制變數
-3. 根據任務類型建議評估指標
-4. 根據研究領域建議 Baseline
-5. 設計 Ablation Study 方案
-6. 預估計算資源需求
-
-### 輸出
-
-- 完整的實驗計畫文件（依照模板格式）
-- 實驗優先順序建議
-- 潛在風險與應對方案
-
----
-
-## 品質檢查清單
-
-在完成實驗計畫後，請確認以下項目：
-
-- [ ] 每個研究假設都有對應的實驗來驗證
-- [ ] 所有自變數的取值範圍已明確定義
-- [ ] 控制變數已完整列出
-- [ ] 評估指標涵蓋多個面向
-- [ ] Baseline 包含經典方法、SOTA、簡單基線
-- [ ] Ablation Study 覆蓋所有提出的組件
-- [ ] 計算資源預估合理且包含安全係數
-- [ ] 可重現性資訊完整
-- [ ] 統計檢驗方法已確定
+See details: [Reproducibility Checklist](references/reproducibility-checklist.md)
 
 ---
 
-## 參考資源
+## Output: Structured Experiment Plan Document
 
-- [實驗規劃方法](references/experiment-planning.md)
-- [Baseline 選擇指南](references/baseline-selection.md)
-- [Ablation 設計指南](references/ablation-design.md)
-- [可重現性清單](references/reproducibility-checklist.md)
-- [實驗計畫模板](templates/experiment-plan.md)
+The final output of this skill is a structured experiment plan containing these sections:
+
+1. Research hypothesis and sub-hypotheses
+2. Variable definition table
+3. Evaluation metrics and statistical methods
+4. Baseline list and settings
+5. Ablation study design matrix
+6. Compute-resource estimation and schedule
+7. Reproducibility information
+
+Use template: [Experiment Plan Template](templates/experiment-plan.md)
+
+---
+
+## Workflow
+
+### Input
+
+- Research topic or paper draft
+- Description of the proposed method
+- Available compute resources
+
+### Process
+
+1. Guide the user to clarify research hypotheses.
+2. Help define independent, dependent, and control variables.
+3. Recommend evaluation metrics based on task type.
+4. Recommend baselines based on research domain.
+5. Design ablation study protocols.
+6. Estimate compute-resource requirements.
+
+### Output
+
+- Complete experiment plan document (following the template)
+- Recommended experiment priority order
+- Potential risks and mitigation plans
+
+---
+
+## Quality Checklist
+
+After finishing the experiment plan, verify the following:
+
+- [ ] Every research hypothesis has a corresponding validation experiment.
+- [ ] Value ranges for all independent variables are clearly defined.
+- [ ] All control variables are listed completely.
+- [ ] Evaluation metrics cover multiple dimensions.
+- [ ] Baselines include classic methods, SOTA, and simple baselines.
+- [ ] Ablation studies cover all proposed components.
+- [ ] Compute estimates are reasonable and include a safety factor.
+- [ ] Reproducibility information is complete.
+- [ ] Statistical testing methods are specified.
+
+---
+
+## References
+
+- [Experiment Planning Methods](references/experiment-planning.md)
+- [Baseline Selection Guide](references/baseline-selection.md)
+- [Ablation Design Guide](references/ablation-design.md)
+- [Reproducibility Checklist](references/reproducibility-checklist.md)
+- [Experiment Plan Template](templates/experiment-plan.md)

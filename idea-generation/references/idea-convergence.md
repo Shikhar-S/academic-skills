@@ -1,353 +1,353 @@
-# 收斂流程與篩選標準
+# Convergence Process and Filtering Criteria
 
-本文件說明如何從多個候選 idea 中系統化地篩選、合併與精煉，最終收斂至一個最佳研究構想。
-
----
-
-## 一、篩選標準
-
-### 1.1 新穎性（Novelty）
-
-評估 idea 與現有工作的差異程度。
-
-| 等級 | 說明 |
-|------|------|
-| 5 — 開創性 | 提出全新的問題或方法，文獻中找不到類似工作 |
-| 4 — 高度新穎 | 有顯著的差異化，即使有相關工作也明確不同 |
-| 3 — 中度新穎 | 有新的元素，但整體架構或方法有先例 |
-| 2 — 低度新穎 | 主要是對現有方法的小改進或直接應用 |
-| 1 — 無新穎性 | 已被做過或極為類似的工作已存在 |
-
-**判定依據**：
-- 文獻搜索階段的結果
-- 是否提出新的問題定義？
-- 是否引入新的方法或視角？
-- 是否有新的理論洞見？
-
-### 1.2 可行性（Feasibility）
-
-評估在現有條件下完成研究的可能性。
-
-| 等級 | 說明 |
-|------|------|
-| 5 — 高度可行 | 資源充足，技術成熟，可在預定時間內完成 |
-| 4 — 大致可行 | 有些挑戰但可克服，風險可控 |
-| 3 — 有條件可行 | 需要特定資源或解決特定技術難題 |
-| 2 — 勉強可行 | 重大技術或資源障礙，成功機率不高 |
-| 1 — 不可行 | 現有條件下無法完成 |
-
-**判定依據**：
-- 是否有足夠的計算資源（GPU、記憶體、儲存）？
-- 是否有可用的資料集？
-- 是否有可復現的 baseline？
-- 預計需要多長時間？是否在截止日期內可完成？
-- 是否需要特殊的領域知識或合作者？
-
-### 1.3 影響力（Impact）
-
-評估研究成果對領域的潛在貢獻。
-
-| 等級 | 說明 |
-|------|------|
-| 5 — 變革性 | 可能改變領域的研究方向或範式 |
-| 4 — 高影響 | 對領域的重要問題有實質貢獻 |
-| 3 — 中度影響 | 對特定子問題有有意義的推進 |
-| 2 — 低影響 | 增量式的改進，影響範圍有限 |
-| 1 — 極低影響 | 解決的問題太小或太偏門 |
-
-**判定依據**：
-- 有多少研究者/使用者會關心這個問題？
-- 這個成果是否能被其他研究引用或使用？
-- 是否能推動下游應用？
-- 發表在什麼層級的會議/期刊？
-
-### 1.4 時效性（Timeliness）
-
-評估 idea 是否處於合適的時間窗口。
-
-| 等級 | 說明 |
-|------|------|
-| 5 — 完美時機 | 相關技術剛成熟，社群正在關注，競爭尚未飽和 |
-| 4 — 良好時機 | 方向正在上升期，有足夠的發展空間 |
-| 3 — 中性 | 時機不算特別好或壞 |
-| 2 — 略晚 | 方向開始飽和或失去關注度 |
-| 1 — 過時 | 方向已過時或競爭極為激烈 |
-
-**判定依據**：
-- 這個方向最近是否有重要的新突破或新資源？
-- 頂會中相關論文的數量趨勢如何？
-- 主要研究團隊是否仍在投入？
-- 是否有太多競爭者正在做類似的事？
-
-### 1.5 個人興趣（Personal Interest）
-
-評估個人對這個 idea 的熱情與動機。
-
-| 等級 | 說明 |
-|------|------|
-| 5 — 非常興奮 | 迫不及待想開始，願意投入大量時間 |
-| 4 — 有興趣 | 覺得有趣，願意深入探索 |
-| 3 — 中性 | 不特別興奮也不排斥 |
-| 2 — 勉強 | 不太有興趣，但知道有價值 |
-| 1 — 不感興趣 | 即使有價值也不想做 |
-
-**為什麼個人興趣重要**：
-- 研究是長期投入，沒有熱情很難堅持
-- 對問題有直覺通常來自深層的興趣
-- 興趣驅動的研究往往有更深入的洞見
-- 寫論文和做報告時，熱情會感染讀者和聽眾
+This document explains how to systematically filter, merge, and refine multiple candidate ideas, and finally converge on one best research concept.
 
 ---
 
-## 二、收斂流程
+## I. Filtering Criteria
 
-### 2.1 第一輪：淘汰（Eliminate）
+### 1.1 Novelty
 
-**目的**：快速移除明顯不適合的候選 idea。
+Assess how different the idea is from existing work.
 
-**淘汰條件**（滿足任一即淘汰）：
+| Level | Description |
+|------|------|
+| 5 — Groundbreaking | Proposes a new problem or method with no close prior work |
+| 4 — Highly novel | Significant differentiation, clearly distinct from related work |
+| 3 — Moderately novel | New elements exist, but overall structure has precedent |
+| 2 — Low novelty | Mostly incremental improvement or direct application |
+| 1 — No novelty | Already done or highly similar work exists |
 
-1. **新穎性不足**
-   - 文獻搜索發現幾乎相同的工作已存在
-   - 且無法找到有意義的差異化切入點
+**Assessment basis**:
+- Results from literature search stage
+- Does it propose a new problem definition?
+- Does it introduce a new method or perspective?
+- Does it provide new theoretical insight?
 
-2. **根本不可行**
-   - 缺乏必要的資料且無法取得
-   - 計算需求遠超可用資源
-   - 需要的技術目前尚不存在
+### 1.2 Feasibility
 
-3. **問題不成立**
-   - 經過思考發現問題的前提假設有誤
-   - 問題實際上已被解決或不重要
+Assess the likelihood of completion under current conditions.
 
-**操作方式**：
-- 對每個候選 idea 快速過一遍淘汰條件
-- 被淘汰的 idea 標記原因後移至「淘汰區」
-- 不確定是否該淘汰的 idea 暫時保留
-- 預期淘汰 30-50% 的候選
+| Level | Description |
+|------|------|
+| 5 — Highly feasible | Resources are sufficient; techniques are mature; can finish on schedule |
+| 4 — Mostly feasible | Some challenges but manageable risk |
+| 3 — Conditionally feasible | Requires specific resources or technical breakthroughs |
+| 2 — Barely feasible | Major technical/resource barriers, low success chance |
+| 1 — Infeasible | Cannot be completed with current conditions |
 
-### 2.2 第二輪：合併（Merge）
+**Assessment basis**:
+- Enough compute resources (GPU/memory/storage)?
+- Available datasets?
+- Reproducible baselines available?
+- Time estimate fits deadline?
+- Requires special domain expertise or collaborators?
 
-**目的**：將相關或互補的 idea 合併為更強的候選。
+### 1.3 Impact
 
-**合併判定**：
+Assess potential contribution to the field.
 
-1. **同源合併**
-   - 兩個 idea 源自同一個問題，只是解法不同
-   - 合併為：同一個問題 + 最佳解法的組合
+| Level | Description |
+|------|------|
+| 5 — Transformative | Could change field direction or paradigm |
+| 4 — High impact | Substantial contribution to an important problem |
+| 3 — Moderate impact | Meaningful progress on a specific sub-problem |
+| 2 — Low impact | Incremental progress with limited scope |
+| 1 — Very low impact | Problem is too small or too niche |
 
-2. **互補合併**
-   - 兩個 idea 各自解決問題的不同面向
-   - 合併為：同時解決多個面向的整合方案
+**Assessment basis**:
+- How many researchers/users care about it?
+- Can other work cite or use this result?
+- Can it enable downstream applications?
+- What venue tier is plausible?
 
-3. **層次合併**
-   - 一個 idea 是另一個的子集或特例
-   - 合併為：保留更通用的版本，特例作為第一個實驗
+### 1.4 Timeliness
 
-**操作方式**：
-- 將存活的 idea 兩兩比較
-- 標記可能合併的配對
-- 評估合併後是否真的更好（有時 1+1 < 2）
-- 合併後的 idea 給予新的標題和描述
+Assess whether the idea falls in the right time window.
 
-### 2.3 第三輪：精煉（Refine）
+| Level | Description |
+|------|------|
+| 5 — Perfect timing | Enabling technology just matured; community attention is high; competition not saturated |
+| 4 — Good timing | Direction is rising with growth space |
+| 3 — Neutral | Timing is neither particularly favorable nor unfavorable |
+| 2 — Slightly late | Direction is saturating or losing attention |
+| 1 — Outdated | Direction is outdated or competition is very intense |
 
-**目的**：將模糊的 idea 轉化為具體的研究計畫。
+**Assessment basis**:
+- Any recent breakthrough/resources in this direction?
+- Trend of related top-venue papers?
+- Are major teams still investing?
+- Too many competitors on similar topics?
 
-**精煉步驟**：
+### 1.5 Personal Interest
 
-1. **問題具體化**
-   - 將廣泛的問題縮小到可在一篇論文中處理的範圍
-   - 明確 input/output 的定義
-   - 明確評估指標
+Assess your motivation and enthusiasm.
 
-2. **方法具體化**
-   - 構想主要的技術方案
-   - 辨識關鍵的技術挑戰
-   - 構想至少兩種可能的解法
+| Level | Description |
+|------|------|
+| 5 — Very excited | Eager to start and willing to invest significant time |
+| 4 — Interested | Interested and willing to explore deeply |
+| 3 — Neutral | Neither excited nor resistant |
+| 2 — Reluctant | Not very interested but sees value |
+| 1 — Not interested | Would not do it even if valuable |
 
-3. **貢獻具體化**
-   - 明確列出預期的研究貢獻（2-3 點）
-   - 區分主要貢獻與次要貢獻
-   - 確認貢獻足以支撐一篇論文
+**Why it matters**:
+- Research is a long-term commitment; passion sustains persistence
+- Strong intuition often comes from deep interest
+- Interest-driven work often yields deeper insight
+- Authentic enthusiasm improves writing and presentation quality
 
-4. **實驗具體化**
-   - 確定使用的資料集
-   - 確定比較的 baseline 方法
-   - 確定評估指標
-   - 構想初步的實驗方案
+---
 
-**精煉後的格式**：
+## II. Convergence Process
+
+### 2.1 Round 1: Eliminate
+
+**Purpose**: Quickly remove clearly unsuitable candidates.
+
+**Elimination conditions** (discard if any condition is met):
+
+1. **Insufficient novelty**
+   - Literature search finds nearly identical prior work
+   - No meaningful differentiation point can be found
+
+2. **Fundamentally infeasible**
+   - Required data is unavailable and unobtainable
+   - Compute demand far exceeds available resources
+   - Required technology does not yet exist
+
+3. **Problem invalidity**
+   - Core assumptions are incorrect
+   - Problem is already solved or not important
+
+**How to run**:
+- Sweep all candidates against elimination conditions
+- Mark reason for each eliminated idea and move to "eliminated pool"
+- Keep uncertain ones temporarily
+- Expect to eliminate ~30–50%
+
+### 2.2 Round 2: Merge
+
+**Purpose**: Merge related or complementary ideas into stronger candidates.
+
+**Merge criteria**:
+
+1. **Common-origin merge**
+   - Two ideas target the same problem with different solutions
+   - Merge into one problem + best combined solution
+
+2. **Complementary merge**
+   - Two ideas solve different facets of the same issue
+   - Merge into one integrated plan covering both facets
+
+3. **Hierarchy merge**
+   - One idea is a subset/special case of another
+   - Keep the general form; use special case as first experiment
+
+**How to run**:
+- Compare surviving ideas pairwise
+- Mark mergeable pairs
+- Check whether merged outcome is truly better (sometimes 1+1 < 2)
+- Give merged ideas new title and description
+
+### 2.3 Round 3: Refine
+
+**Purpose**: Turn vague ideas into concrete research plans.
+
+**Refinement steps**:
+
+1. **Concretize problem**
+   - Narrow broad problem to paper-scale scope
+   - Define inputs/outputs clearly
+   - Define evaluation metrics clearly
+
+2. **Concretize method**
+   - Sketch the main technical approach
+   - Identify key technical challenges
+   - Draft at least two possible solution paths
+
+3. **Concretize contributions**
+   - List expected contributions clearly (2–3 items)
+   - Separate primary vs. secondary contributions
+   - Confirm contribution is enough for one paper
+
+4. **Concretize experiments**
+   - Select datasets
+   - Select baseline methods
+   - Select evaluation metrics
+   - Draft initial experiment plan
+
+**Refined format**:
 
 ```
-## Idea: [標題]
+## Idea: [Title]
 
-### 問題
-[一句話描述要解決的問題]
+### Problem
+[One-sentence problem statement]
 
-### 動機
-[為什麼這個問題重要？為什麼現在要做？]
+### Motivation
+[Why this problem matters; why now]
 
-### 方法概要
-[2-3 句話描述你打算怎麼做]
+### Method Overview
+[2–3 sentences describing approach]
 
-### 預期貢獻
-1. [貢獻一]
-2. [貢獻二]
-3. [貢獻三]（可選）
+### Expected Contributions
+1. [Contribution 1]
+2. [Contribution 2]
+3. [Contribution 3] (optional)
 
-### 實驗計畫
-- 資料集：[列出]
-- Baseline：[列出]
-- 指標：[列出]
+### Experiment Plan
+- Datasets: [list]
+- Baselines: [list]
+- Metrics: [list]
 
-### 風險
-- [主要風險及應對]
+### Risks
+- [Main risks and mitigation]
 ```
 
-### 2.4 第四輪：評分與排序
+### 2.4 Round 4: Score and Rank
 
-**目的**：使用量化方法對精煉後的候選進行排序。
+**Purpose**: Rank refined candidates quantitatively.
 
-詳細的評分矩陣請參見 [evaluation-matrix.md](evaluation-matrix.md)。
+See [evaluation-matrix.md](evaluation-matrix.md) for detailed matrix.
 
-**操作方式**：
-1. 為每個候選 idea 在五個維度上打分（1-5）
-2. 計算加權總分
-3. 按總分排序
-4. 重點比較前 2-3 名
+**How to run**:
+1. Score each candidate on five dimensions (1–5)
+2. Compute weighted total
+3. Rank by total
+4. Focus on top 2–3 for final comparison
 
-### 2.5 第五輪：最終決策
+### 2.5 Round 5: Final Decision
 
-**目的**：從前幾名中選定一個 idea。
+**Purpose**: Select one final idea from top candidates.
 
-**決策考量**：
+**Decision factors**:
 
-1. **量化結果**：加權總分最高的是哪個？
-2. **直覺判斷**：你最想做的是哪個？
-3. **風險評估**：哪個的風險最可控？
-4. **策略考量**：
-   - 對你的職業發展最有利的是哪個？
-   - 最適合你目前研究團隊的是哪個？
-   - 最適合你的時間限制的是哪個？
+1. **Quantitative result**: which has highest weighted total?
+2. **Intuition**: which one do you most want to do?
+3. **Risk profile**: which has most controllable risk?
+4. **Strategic fit**:
+   - Which best supports your career goals?
+   - Which best matches your current team?
+   - Which best fits your timeline constraints?
 
-**當理性與直覺衝突時**：
-- 花時間釐清衝突的原因
-- 可能你的直覺捕捉到了某些量化分析遺漏的因素
-- 與信任的人討論
-- 如果無法解決衝突，傾向於選擇你更有熱情的那個
-
----
-
-## 三、常見陷阱
-
-### 3.1 確認偏誤（Confirmation Bias）
-
-**表現**：
-- 只搜索支持自己偏好 idea 的文獻
-- 忽視或貶低對自己 idea 不利的證據
-- 對喜歡的 idea 寬容評分，對不喜歡的嚴格評分
-
-**防範方法**：
-- 刻意搜索反面證據
-- 請他人獨立評估你的候選 idea
-- 對每個 idea 列出「失敗的理由」清單
-- 使用盲評：將 idea 匿名化後評分
-
-### 3.2 沉沒成本（Sunk Cost Fallacy）
-
-**表現**：
-- 因為已經花了很多時間研究某個 idea 而不願放棄它
-- 明知一個 idea 有嚴重問題，但因為已有初步結果而繼續
-- 「都已經做了這麼多了，不能白費」的想法
-
-**防範方法**：
-- 提醒自己：過去投入的時間已經無法收回
-- 問自己：如果現在從零開始，我還會選擇這個 idea 嗎？
-- 設定明確的 checkpoint：在特定時間點評估是否應該轉向
-- 將過去的工作視為「學習成本」而非「浪費」
-
-### 3.3 新奇偏誤（Novelty Bias）
-
-**表現**：
-- 過度追求新穎而忽視可行性
-- 選擇最「酷」的 idea 而非最「好」的 idea
-- 忽視簡單但有效的方法，追求複雜但未經驗證的方法
-
-**防範方法**：
-- 在評分時給予可行性和影響力足夠的權重
-- 問自己：新穎是否帶來了實質的好處？
-- 考慮「最小可行研究」：新穎的核心是否可以用簡單的方式驗證？
-
-### 3.4 從眾效應（Bandwagon Effect）
-
-**表現**：
-- 因為某個方向很熱門就選擇做
-- 看到很多人做就覺得這個方向一定好
-- 害怕做冷門的方向
-
-**防範方法**：
-- 區分「有價值」和「很熱門」——二者不完全相同
-- 熱門方向意味著更多競爭，需要更強的差異化
-- 冷門方向可能有高影響的論文機會，因為競爭少
-- 問自己：如果這個方向沒有人做，我還會覺得它有價值嗎？
-
-### 3.5 完美主義（Perfectionism）
-
-**表現**：
-- 等待「完美」的 idea 出現而遲遲不開始
-- 總覺得 idea 還不夠好、需要再想想
-- 對每個 idea 都能找到缺點而無法做出選擇
-
-**防範方法**：
-- 認知到不存在完美的 idea——所有 idea 在開始時都有缺陷
-- 設定明確的截止日期，到期就必須做出選擇
-- 接受「足夠好」即可開始——idea 會在研究過程中持續演化
-- 記住：一個已完成的「好」研究，遠勝一個永遠在構想中的「完美」研究
-
-### 3.6 錨定效應（Anchoring Effect）
-
-**表現**：
-- 第一個想到的 idea 佔據過大的權重
-- 後續的 idea 都與第一個進行比較，而非獨立評估
-- 難以跳脫最初的思維框架
-
-**防範方法**：
-- 刻意將第一個 idea 放到最後評估
-- 使用多種發想框架，確保有不同類型的候選
-- 請不同的人分別提出他們的排序
-- 打散評估順序，避免順序效應
+**If logic and intuition conflict**:
+- Spend time identifying why
+- Intuition may capture factors missed by quantitative scoring
+- Discuss with trusted peers/mentors
+- If unresolved, prefer the idea you are more motivated to execute
 
 ---
 
-## 四、收斂流程檢查清單
+## III. Common Pitfalls
 
-### 淘汰階段
-- [ ] 過一遍所有候選 idea 的淘汰條件
-- [ ] 被淘汰的 idea 標記了原因
-- [ ] 不確定的 idea 暫時保留
+### 3.1 Confirmation Bias
 
-### 合併階段
-- [ ] 兩兩比較所有存活的 idea
-- [ ] 標記可合併的配對
-- [ ] 評估合併後的效果
-- [ ] 合併後的 idea 更新描述
+**Symptoms**:
+- Searching only literature that supports your preferred idea
+- Ignoring/downplaying counter-evidence
+- Scoring favored ideas leniently and disliked ideas harshly
 
-### 精煉階段
-- [ ] 每個候選都有具體的問題定義
-- [ ] 每個候選都有初步的方法構想
-- [ ] 每個候選都列出預期貢獻
-- [ ] 每個候選都有初步的實驗計畫
+**Prevention**:
+- Deliberately search for counter-evidence
+- Ask others to independently assess candidates
+- For each idea, list "reasons this may fail"
+- Use blind scoring when possible
 
-### 評分階段
-- [ ] 所有候選都完成五維度評分
-- [ ] 計算加權總分
-- [ ] 按總分排序
+### 3.2 Sunk Cost Fallacy
 
-### 決策階段
-- [ ] 比較前 2-3 名候選
-- [ ] 考量直覺判斷
-- [ ] 考量策略因素
-- [ ] 檢查認知偏誤
-- [ ] 做出最終選擇
-- [ ] 撰寫 1-page 提案
+**Symptoms**:
+- Refusing to drop an idea due to prior time investment
+- Continuing despite known severe flaws because early results exist
+- Thinking "I have done too much to stop now"
+
+**Prevention**:
+- Remind yourself past time is unrecoverable
+- Ask: if starting from zero today, would I still choose this?
+- Set explicit checkpoints for possible pivot decisions
+- Treat prior work as learning cost, not waste
+
+### 3.3 Novelty Bias
+
+**Symptoms**:
+- Over-prioritizing novelty while ignoring feasibility
+- Choosing the coolest idea rather than the best idea
+- Ignoring simple effective solutions for unproven complexity
+
+**Prevention**:
+- Give feasibility and impact sufficient weight
+- Ask whether novelty creates substantive benefit
+- Use a minimal viable research test for the novel core
+
+### 3.4 Bandwagon Effect
+
+**Symptoms**:
+- Choosing direction only because it is hot
+- Assuming popularity implies value
+- Avoiding less popular directions out of fear
+
+**Prevention**:
+- Distinguish valuable from popular
+- Hot areas require stronger differentiation
+- Less crowded areas may offer high-impact opportunities
+- Ask: if nobody worked on this, would it still be valuable?
+
+### 3.5 Perfectionism
+
+**Symptoms**:
+- Waiting for a perfect idea before starting
+- Constantly delaying because idea is "not good enough yet"
+- Seeing flaws in all ideas and failing to decide
+
+**Prevention**:
+- Accept that no idea starts perfect
+- Set hard deadlines for decision-making
+- Start once idea is good enough; it will evolve during execution
+- A finished good study beats an unfinished perfect concept
+
+### 3.6 Anchoring Effect
+
+**Symptoms**:
+- First idea dominates evaluation
+- Later ideas are judged relative to first one instead of independently
+- Difficulty escaping initial framing
+
+**Prevention**:
+- Intentionally evaluate first idea last
+- Use multiple ideation frameworks to diversify candidate types
+- Ask different people to produce independent rankings
+- Shuffle evaluation order to reduce sequence effects
+
+---
+
+## IV. Convergence Checklist
+
+### Elimination Stage
+- [ ] Run elimination criteria on all candidates
+- [ ] Record reason for each eliminated idea
+- [ ] Keep uncertain ideas temporarily
+
+### Merge Stage
+- [ ] Compare all surviving ideas pairwise
+- [ ] Mark mergeable pairs
+- [ ] Evaluate merged outcomes
+- [ ] Update descriptions for merged ideas
+
+### Refinement Stage
+- [ ] Each candidate has a concrete problem definition
+- [ ] Each candidate has an initial method concept
+- [ ] Each candidate lists expected contributions
+- [ ] Each candidate has an initial experiment plan
+
+### Scoring Stage
+- [ ] All candidates scored on five dimensions
+- [ ] Weighted totals computed
+- [ ] Candidates ranked by total score
+
+### Decision Stage
+- [ ] Compare top 2–3 candidates
+- [ ] Consider intuition
+- [ ] Consider strategic factors
+- [ ] Check cognitive biases
+- [ ] Make final choice
+- [ ] Write 1-page proposal

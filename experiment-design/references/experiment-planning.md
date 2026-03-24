@@ -1,237 +1,237 @@
-# 實驗規劃方法
+# Experiment Planning Methods
 
-## 概述
+## Overview
 
-本文件提供從研究假設到實驗流程的詳細規劃方法，涵蓋假設撰寫、變數定義與控制的完整指引。
+This document provides detailed planning methods from research hypotheses to experimental workflows, including complete guidance on hypothesis writing, variable definition, and variable control.
 
 ---
 
-## 一、如何寫好研究假設
+## 1. How to Write Strong Research Hypotheses
 
-### 1.1 研究假設的角色
+### 1.1 The Role of Research Hypotheses
 
-研究假設是整個實驗設計的錨點。一個好的假設能夠：
+Research hypotheses are the anchor of the entire experiment design. A strong hypothesis can:
 
-- 明確實驗的目標與方向
-- 決定需要哪些實驗來驗證
-- 引導評估指標的選擇
-- 框定論文的貢獻範圍
+- Clearly define experiment goals and direction
+- Determine what experiments are needed for validation
+- Guide evaluation metric selection
+- Bound the scope of paper contributions
 
-### 1.2 假設的層次結構
+### 1.2 Hierarchical Structure of Hypotheses
 
 ```
-總假設（Main Hypothesis）
-├── 子假設 H1：效能假設
-│   ├── H1a：在資料集 A 上的表現
-│   └── H1b：在資料集 B 上的表現
-├── 子假設 H2：效率假設
-└── 子假設 H3：泛化假設
+Main Hypothesis
+├── Sub-hypothesis H1: Performance hypothesis
+│   ├── H1a: Performance on dataset A
+│   └── H1b: Performance on dataset B
+├── Sub-hypothesis H2: Efficiency hypothesis
+└── Sub-hypothesis H3: Generalization hypothesis
 ```
 
-建議將一個複雜的研究假設拆解為 2-5 個子假設，每個子假設對應一組實驗。
+A complex research hypothesis should be decomposed into 2-5 sub-hypotheses, each mapped to one group of experiments.
 
-### 1.3 假設撰寫的步驟
+### 1.3 Steps for Writing Hypotheses
 
-**第一步：釐清研究問題**
+**Step 1: Clarify the research problem**
 
-- 現有方法存在什麼問題？
-- 你提出了什麼解決方案？
-- 為什麼你的方案可能有效？
+- What problem exists in current methods?
+- What solution do you propose?
+- Why might your solution work?
 
-**第二步：撰寫初版假設**
+**Step 2: Draft an initial hypothesis**
 
-使用以下模板：
+Use this template:
 
-> 我們假設 [提出的方法/機制]，因為 [理論依據/直覺]，所以在 [任務/資料集] 上，[評估指標] 相較於 [比較對象] 將 [提升/降低] [預期幅度]。
+> We hypothesize that [proposed method/mechanism], because [theoretical rationale/intuition], will [increase/decrease] [expected magnitude] in [evaluation metric] on [task/dataset], compared with [baseline/comparator].
 
-**第三步：檢查假設品質**
+**Step 3: Check hypothesis quality**
 
-- 可證偽性檢查：什麼樣的實驗結果會否定這個假設？
-- 具體性檢查：假設是否包含可量化的預期？
-- 範圍檢查：假設的適用範圍是否清楚？
+- Falsifiability check: What result would refute this hypothesis?
+- Specificity check: Does it include quantifiable expectations?
+- Scope check: Is the applicability scope clearly defined?
 
-**第四步：精煉假設**
+**Step 4: Refine the hypothesis**
 
-根據檢查結果修改假設，使其更加精確。
+Revise based on the checks to improve precision.
 
-### 1.4 常見假設類型
+### 1.4 Common Hypothesis Types
 
-| 假設類型 | 範例 |
+| Hypothesis Type | Example |
 |----------|------|
-| 效能假設 | 「方法 X 在任務 T 上的 F1 優於 SOTA 方法 Y」 |
-| 效率假設 | 「方法 X 在達到相近效能時，推論速度快於方法 Y 兩倍」 |
-| 組件假設 | 「模組 A 是方法 X 效能提升的關鍵因素」 |
-| 泛化假設 | 「方法 X 在未見過的領域 D 上仍能保持效能優勢」 |
-| 規模假設 | 「方法 X 的效能增益隨資料規模增加而擴大」 |
+| Performance hypothesis | "Method X achieves higher F1 than SOTA method Y on task T" |
+| Efficiency hypothesis | "Method X is 2x faster in inference than method Y at comparable performance" |
+| Component hypothesis | "Module A is the key factor behind method X's gain" |
+| Generalization hypothesis | "Method X retains performance advantage on unseen domain D" |
+| Scaling hypothesis | "The gain of method X increases as data scale grows" |
 
-### 1.5 假設撰寫的常見錯誤
+### 1.5 Common Mistakes in Hypothesis Writing
 
-1. **過於模糊**：「我們的方法表現更好」——缺乏具體指標與比較對象
-2. **不可證偽**：「我們的方法在某些情況下可能有幫助」——永遠不會被否定
-3. **過於野心**：「我們的方法在所有任務上都是最佳的」——範圍過廣
-4. **缺乏理論支撐**：沒有解釋為什麼預期假設成立
-5. **與實驗脫節**：假設無法被計畫中的實驗驗證
+1. **Too vague**: "Our method is better" — lacks concrete metrics and comparators
+2. **Not falsifiable**: "Our method may help in some cases" — cannot be disproven
+3. **Overly ambitious**: "Our method is best on all tasks" — scope is too broad
+4. **No theoretical support**: no reason provided for why the hypothesis should hold
+5. **Disconnected from experiments**: hypothesis cannot be validated by planned experiments
 
 ---
 
-## 二、從假設到實驗流程
+## 2. From Hypotheses to Experimental Workflow
 
-### 2.1 假設-實驗對應矩陣
+### 2.1 Hypothesis-Experiment Mapping Matrix
 
-建立假設與實驗的對應關係表：
+Build a mapping table between hypotheses and experiments:
 
-| 假設 | 對應實驗 | 評估指標 | 預期結果 |
+| Hypothesis | Corresponding Experiment | Evaluation Metric | Expected Outcome |
 |------|----------|----------|----------|
-| H1：效能假設 | 主實驗表 | F1, Acc | 提升 2+ 點 |
-| H2：組件假設 | Ablation Study | F1 差異 | 移除後下降 |
-| H3：泛化假設 | 跨資料集實驗 | F1 | 維持優勢 |
+| H1: Performance hypothesis | Main results table | F1, Acc | +2 points or more |
+| H2: Component hypothesis | Ablation study | F1 difference | Performance drops when removed |
+| H3: Generalization hypothesis | Cross-dataset experiment | F1 | Advantage is maintained |
 
-### 2.2 實驗流程設計
+### 2.2 Experimental Workflow Design
 
-**階段一：預實驗（Pilot Experiments）**
+**Phase 1: Pilot Experiments**
 
-- 目的：驗證程式碼正確性、確認實驗可行性
-- 規模：使用小資料集或資料子集
-- 時間：總實驗時間的 10-15%
+- Purpose: Validate code correctness and basic feasibility
+- Scale: Small dataset or subset
+- Time budget: 10-15% of total experiment time
 
-**階段二：主實驗（Main Experiments）**
+**Phase 2: Main Experiments**
 
-- 目的：驗證核心假設
-- 包含：與所有 Baseline 的比較
-- 要求：多次隨機種子、完整資料集
+- Purpose: Validate core hypotheses
+- Includes: Comparison against all baselines
+- Requirements: Multiple random seeds, full dataset
 
-**階段三：分析實驗（Analysis Experiments）**
+**Phase 3: Analysis Experiments**
 
-- Ablation Study
-- 超參數敏感度分析
-- 定性分析與可視化
+- Ablation study
+- Hyperparameter sensitivity analysis
+- Qualitative analysis and visualization
 
-**階段四：補充實驗（Supplementary Experiments）**
+**Phase 4: Supplementary Experiments**
 
-- 跨資料集遷移
-- 效率分析
-- 審稿人可能要求的追加實驗
+- Cross-dataset transfer
+- Efficiency analysis
+- Additional experiments likely requested by reviewers
 
-### 2.3 實驗優先順序
+### 2.3 Experiment Priority Order
 
-建議按以下優先順序安排實驗：
+Recommended execution order:
 
-1. 預實驗（確認可行性）
-2. 核心 Baseline 比較（驗證主假設）
-3. 完整消融實驗（驗證組件假設）
-4. 超參數敏感度分析
-5. 跨資料集遷移實驗
-6. 定性分析與可視化
-7. 效率分析
-
----
-
-## 三、變數控制的原則
-
-### 3.1 單一變數原則
-
-**核心精神**：每次實驗中，僅改變一個自變數，其餘所有條件保持不變。
-
-這是實驗設計最基本也是最重要的原則。違反此原則會導致無法判斷效能變化的真正原因。
-
-**正確範例**：
-
-```
-實驗 A（基線）：模型 = Transformer, 學習率 = 1e-4, 批次大小 = 32
-實驗 B（改變模型）：模型 = 我們的方法, 學習率 = 1e-4, 批次大小 = 32
-```
-
-**錯誤範例**：
-
-```
-實驗 A：模型 = Transformer, 學習率 = 1e-4, 批次大小 = 32
-實驗 B：模型 = 我們的方法, 學習率 = 3e-4, 批次大小 = 64
-→ 無法判斷效能差異來自模型還是超參數
-```
-
-### 3.2 完整記錄原則
-
-所有變數（包括看似不重要的）都必須記錄，包括：
-
-- 環境變數（硬體、軟體版本）
-- 隨機性相關（種子值、資料打亂順序）
-- 隱含變數（資料載入順序、GPU 計算的非確定性）
-
-### 3.3 合理範圍原則
-
-自變數的取值範圍應該：
-
-- 基於先前研究或理論推導
-- 覆蓋實際應用中可能遇到的範圍
-- 包含足夠的取值點以觀察趨勢
-
-### 3.4 控制變數清單
-
-以下是機器學習實驗中常見的控制變數：
-
-**資料相關**
-
-- 訓練 / 驗證 / 測試集切分
-- 資料前處理流程
-- 資料增強策略
-- 詞彙表大小與建構方式
-
-**模型相關**
-
-- 預訓練模型版本與權重
-- 隱藏層維度
-- 層數
-- 注意力頭數
-
-**訓練相關**
-
-- 優化器類型與參數
-- 學習率排程
-- 批次大小
-- 訓練輪數或步數
-- 早停策略
-- 梯度裁剪
-
-**評估相關**
-
-- 評估頻率
-- 模型選擇準則（如最佳驗證集表現）
-- 解碼策略（如 beam search 的 beam size）
-
-### 3.5 當無法完全控制變數時
-
-某些情況下，完全控制所有變數並不可行：
-
-- **對策一**：明確記錄無法控制的變數，並在論文中說明
-- **對策二**：透過多次實驗取平均來減少隨機性的影響
-- **對策三**：進行敏感度分析，確認無法控制的變數對結果的影響程度
+1. Pilot experiments (confirm feasibility)
+2. Core baseline comparisons (validate main hypothesis)
+3. Full ablation experiments (validate component hypotheses)
+4. Hyperparameter sensitivity analysis
+5. Cross-dataset transfer experiments
+6. Qualitative analysis and visualization
+7. Efficiency analysis
 
 ---
 
-## 四、實驗設計檢查要點
+## 3. Principles of Variable Control
 
-### 設計階段
+### 3.1 Single-Variable Principle
 
-- [ ] 所有假設都已明確撰寫
-- [ ] 假設-實驗對應矩陣已建立
-- [ ] 自變數、依變數、控制變數已定義
-- [ ] 實驗流程與優先順序已確定
+**Core idea**: In each experiment, change only one independent variable while keeping all other conditions fixed.
 
-### 執行前
+This is the most fundamental principle in experiment design. Violating it makes it impossible to identify the true cause of performance changes.
 
-- [ ] 程式碼已通過小規模預實驗驗證
-- [ ] 隨機種子列表已確定
-- [ ] 計算資源已確認足夠
-- [ ] 結果記錄格式已準備好
+**Correct example**:
 
-### 執行中
+```
+Experiment A (baseline): model = Transformer, learning rate = 1e-4, batch size = 32
+Experiment B (model changed): model = Our Method, learning rate = 1e-4, batch size = 32
+```
 
-- [ ] 每次實驗的完整設定已記錄
-- [ ] 中間結果定期備份
-- [ ] 異常結果已標記並調查
+**Incorrect example**:
 
-### 執行後
+```
+Experiment A: model = Transformer, learning rate = 1e-4, batch size = 32
+Experiment B: model = Our Method, learning rate = 3e-4, batch size = 64
+-> Cannot determine whether differences come from the model or hyperparameters
+```
 
-- [ ] 所有假設都有對應的實驗結果
-- [ ] 統計檢驗已完成
-- [ ] 結果的解讀與假設一致或有合理解釋
+### 3.2 Complete-Record Principle
+
+All variables (including seemingly minor ones) must be recorded, including:
+
+- Environment variables (hardware, software versions)
+- Randomness-related factors (seed values, data shuffle order)
+- Implicit variables (data loader order, GPU non-determinism)
+
+### 3.3 Reasonable-Range Principle
+
+The value ranges of independent variables should:
+
+- Be based on prior work or theoretical analysis
+- Cover ranges likely in real applications
+- Include enough values to observe trends
+
+### 3.4 Control Variable Checklist
+
+Common control variables in machine learning experiments:
+
+**Data-related**
+
+- Train/validation/test split protocol
+- Data preprocessing pipeline
+- Data augmentation strategy
+- Vocabulary size and construction method
+
+**Model-related**
+
+- Pretrained model version and weights
+- Hidden dimension
+- Number of layers
+- Number of attention heads
+
+**Training-related**
+
+- Optimizer type and parameters
+- Learning rate schedule
+- Batch size
+- Number of epochs or steps
+- Early stopping strategy
+- Gradient clipping
+
+**Evaluation-related**
+
+- Evaluation frequency
+- Model selection criterion (e.g., best validation performance)
+- Decoding strategy (e.g., beam size for beam search)
+
+### 3.5 When Full Control Is Not Feasible
+
+In some cases, controlling all variables is impractical:
+
+- **Countermeasure 1**: Explicitly document uncontrollable variables and discuss them in the paper
+- **Countermeasure 2**: Average over repeated runs to reduce randomness impact
+- **Countermeasure 3**: Run sensitivity analysis to estimate impact of uncontrollable variables
+
+---
+
+## 4. Experiment Design Checkpoints
+
+### Design Stage
+
+- [ ] All hypotheses are clearly written
+- [ ] Hypothesis-experiment mapping matrix is created
+- [ ] Independent, dependent, and control variables are defined
+- [ ] Workflow and priority order are finalized
+
+### Before Execution
+
+- [ ] Code is validated by small-scale pilot experiments
+- [ ] Random seed list is finalized
+- [ ] Compute resources are confirmed sufficient
+- [ ] Result logging format is prepared
+
+### During Execution
+
+- [ ] Full settings for each run are recorded
+- [ ] Intermediate results are backed up regularly
+- [ ] Anomalous results are flagged and investigated
+
+### After Execution
+
+- [ ] Every hypothesis has corresponding experiment results
+- [ ] Statistical tests are completed
+- [ ] Interpretation is consistent with hypotheses or has sound explanations

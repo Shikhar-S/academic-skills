@@ -1,220 +1,220 @@
-# 實驗計畫
+# Experiment Plan
 
-> 專案名稱：[填入專案名稱]
-> 撰寫日期：[填入日期]
-> 作者：[填入作者]
-> 版本：[v1.0]
+> Project Name: [Fill in project name]
+> Date: [Fill in date]
+> Author: [Fill in author]
+> Version: [v1.0]
 
 ---
 
-## 一、研究假設
+## I. Research Hypotheses
 
-### 1.1 總假設
+### 1.1 Main Hypothesis
 
-[描述你的核心研究假設]
+[Describe your core research hypothesis]
 
-### 1.2 子假設
+### 1.2 Sub-Hypotheses
 
-| 編號 | 假設描述 | 驗證方式 | 預期結果 |
+| ID | Hypothesis Description | Validation Method | Expected Result |
 |------|----------|----------|----------|
-| H1 | [子假設 1] | [對應實驗] | [預期結果] |
-| H2 | [子假設 2] | [對應實驗] | [預期結果] |
-| H3 | [子假設 3] | [對應實驗] | [預期結果] |
+| H1 | [Sub-hypothesis 1] | [Corresponding experiment] | [Expected result] |
+| H2 | [Sub-hypothesis 2] | [Corresponding experiment] | [Expected result] |
+| H3 | [Sub-hypothesis 3] | [Corresponding experiment] | [Expected result] |
 
 ---
 
-## 二、變數定義
+## II. Variable Definitions
 
-### 2.1 自變數（Independent Variables）
+### 2.1 Independent Variables
 
-| 變數名稱 | 說明 | 取值範圍 |
+| Variable Name | Description | Value Range |
 |----------|------|----------|
-| [變數 1] | [說明] | [範圍] |
-| [變數 2] | [說明] | [範圍] |
+| [Variable 1] | [Description] | [Range] |
+| [Variable 2] | [Description] | [Range] |
 
-### 2.2 依變數（Dependent Variables）
+### 2.2 Dependent Variables
 
-| 變數名稱 | 說明 | 量測方式 |
+| Variable Name | Description | Measurement Method |
 |----------|------|----------|
-| [指標 1] | [說明] | [計算方式] |
-| [指標 2] | [說明] | [計算方式] |
+| [Metric 1] | [Description] | [Computation method] |
+| [Metric 2] | [Description] | [Computation method] |
 
-### 2.3 控制變數（Control Variables）
+### 2.3 Control Variables
 
-| 變數名稱 | 固定值 | 備註 |
+| Variable Name | Fixed Value | Notes |
 |----------|--------|------|
-| 隨機種子 | [值] | [備註] |
-| 預訓練模型 | [版本] | [備註] |
-| 學習率 | [值] | [備註] |
-| 批次大小 | [值] | [備註] |
-| [其他] | [值] | [備註] |
+| Random seed | [Value] | [Notes] |
+| Pretrained model | [Version] | [Notes] |
+| Learning rate | [Value] | [Notes] |
+| Batch size | [Value] | [Notes] |
+| [Other] | [Value] | [Notes] |
 
 ---
 
-## 三、評估指標
+## III. Evaluation Metrics
 
-### 3.1 主要指標
+### 3.1 Primary Metrics
 
-| 指標名稱 | 定義 | 選擇理由 |
+| Metric Name | Definition | Rationale |
 |----------|------|----------|
-| [指標 1] | [定義] | [理由] |
-| [指標 2] | [定義] | [理由] |
+| [Metric 1] | [Definition] | [Rationale] |
+| [Metric 2] | [Definition] | [Rationale] |
 
-### 3.2 輔助指標
+### 3.2 Secondary Metrics
 
-| 指標名稱 | 定義 | 選擇理由 |
+| Metric Name | Definition | Rationale |
 |----------|------|----------|
-| [指標 1] | [定義] | [理由] |
-| [指標 2] | [定義] | [理由] |
+| [Metric 1] | [Definition] | [Rationale] |
+| [Metric 2] | [Definition] | [Rationale] |
 
-### 3.3 統計方法
+### 3.3 Statistical Methods
 
-- 隨機種子數量：[N] 次
-- 報告格式：平均值 +/- 標準差
-- 顯著性檢驗：[方法名稱]（p < [閾值]）
+- Number of random seeds: [N] runs
+- Reporting format: mean +/- standard deviation
+- Significance test: [method name] (p < [threshold])
 
 ---
 
-## 四、Baseline 設定
+## IV. Baseline Setup
 
-### 4.1 Baseline 列表
+### 4.1 Baseline List
 
-| 名稱 | 類型 | 來源 | 備註 |
+| Name | Type | Source | Notes |
 |------|------|------|------|
-| [方法 1] | 簡單基線 | [來源] | [備註] |
-| [方法 2] | 經典方法 | [來源] | [備註] |
-| [方法 3] | 當前 SOTA | [來源] | [備註] |
+| [Method 1] | Simple baseline | [Source] | [Notes] |
+| [Method 2] | Classic method | [Source] | [Notes] |
+| [Method 3] | Current SOTA | [Source] | [Notes] |
 
-### 4.2 公平比較設定
+### 4.2 Fair Comparison Settings
 
-- 資料切分：[說明]
-- 評估腳本：[說明]
-- Baseline 調參方式：[說明]
-- 預訓練模型統一使用：[版本]
+- Data split: [Description]
+- Evaluation script: [Description]
+- Baseline tuning protocol: [Description]
+- Unified pretrained model version: [Version]
 
 ---
 
-## 五、Ablation Study 設計
+## V. Ablation Study Design
 
-### 5.1 完整消融
+### 5.1 Component Ablation
 
-| 變體名稱 | 組件 A | 組件 B | 組件 C | 預期效果 |
+| Variant | Component A | Component B | Component C | Expected Effect |
 |----------|--------|--------|--------|----------|
-| 完整模型 | V | V | V | 最佳 |
-| w/o A | X | V | V | [預期] |
-| w/o B | V | X | V | [預期] |
-| w/o C | V | V | X | [預期] |
+| Full model | V | V | V | Best |
+| w/o A | X | V | V | [Expected] |
+| w/o B | V | X | V | [Expected] |
+| w/o C | V | V | X | [Expected] |
 
-### 5.2 超參敏感度分析
+### 5.2 Hyperparameter Sensitivity Analysis
 
-| 超參數 | 取值範圍 | 取值點 | 分析目的 |
+| Hyperparameter | Value Range | Sampled Values | Analysis Goal |
 |--------|----------|--------|----------|
-| [超參 1] | [範圍] | [列出取值] | [目的] |
-| [超參 2] | [範圍] | [列出取值] | [目的] |
+| [Hyperparam 1] | [Range] | [List values] | [Goal] |
+| [Hyperparam 2] | [Range] | [List values] | [Goal] |
 
-### 5.3 跨資料集遷移
+### 5.3 Cross-Dataset Transfer
 
-| 資料集 | 規模 | 領域 | 評估目的 |
+| Dataset | Scale | Domain | Evaluation Goal |
 |--------|------|------|----------|
-| [資料集 1]（主） | [大小] | [領域] | 主要評估 |
-| [資料集 2] | [大小] | [領域] | [目的] |
-| [資料集 3] | [大小] | [領域] | [目的] |
+| [Dataset 1] (primary) | [Size] | [Domain] | Primary evaluation |
+| [Dataset 2] | [Size] | [Domain] | [Goal] |
+| [Dataset 3] | [Size] | [Domain] | [Goal] |
 
-### 5.4 定性分析計畫
+### 5.4 Qualitative Analysis Plan
 
-- [ ] 注意力權重視覺化：[說明分析對象]
-- [ ] 成功 / 失敗案例分析：[每類選取數量]
-- [ ] 特徵空間視覺化：[使用的降維方法]
-- [ ] 錯誤類型分析：[錯誤分類體系]
+- [ ] Attention-weight visualization: [Describe analysis target]
+- [ ] Success/failure case analysis: [Number of cases per category]
+- [ ] Feature-space visualization: [Dimensionality reduction method]
+- [ ] Error-type analysis: [Error taxonomy]
 
 ---
 
-## 六、計算資源預估
+## VI. Compute Resource Estimation
 
-### 6.1 單次實驗成本
+### 6.1 Per-Run Cost
 
-| 項目 | 估計值 |
+| Item | Estimated Value |
 |------|--------|
-| GPU 型號 | [型號] |
-| 單次訓練時間 | [小時] |
-| GPU 記憶體需求 | [GB] |
-| 儲存空間需求 | [GB] |
+| GPU model | [Model] |
+| Training time per run | [Hours] |
+| GPU memory requirement | [GB] |
+| Storage requirement | [GB] |
 
-### 6.2 實驗總量
+### 6.2 Total Experiment Volume
 
-| 實驗類別 | 模型變體數 | 資料集數 | 種子數 | 小計（GPU 時數） |
+| Experiment Category | # Model Variants | # Datasets | # Seeds | Subtotal (GPU hours) |
 |----------|-----------|----------|--------|-----------------|
-| 主實驗 | [N] | [N] | [N] | [時數] |
-| Ablation | [N] | [N] | [N] | [時數] |
-| 超參分析 | [N] | [N] | [N] | [時數] |
-| 遷移實驗 | [N] | [N] | [N] | [時數] |
-| **合計** | | | | **[總時數]** |
+| Main experiments | [N] | [N] | [N] | [Hours] |
+| Ablation | [N] | [N] | [N] | [Hours] |
+| Hyperparameter analysis | [N] | [N] | [N] | [Hours] |
+| Transfer experiments | [N] | [N] | [N] | [Hours] |
+| **Total** | | | | **[Total hours]** |
 
-### 6.3 資源規劃
+### 6.3 Resource Planning
 
-- 預估總 GPU 時數：[時數]
-- 安全係數：x [1.5 - 2.0]
-- 最終預算：[時數]
-- 預計完成時間：[天數]
-
----
-
-## 七、可重現性資訊
-
-### 7.1 硬體環境
-
-```
-- GPU：[型號] × [數量]
-- CPU：[型號]
-- 記憶體：[大小]
-- CUDA：[版本]
-```
-
-### 7.2 軟體環境
-
-```
-- OS：[版本]
-- Python：[版本]
-- PyTorch：[版本]
-- Transformers：[版本]
-- [其他關鍵套件]：[版本]
-```
-
-### 7.3 隨機種子
-
-- 種子列表：[列出所有使用的種子值]
-- 確定性模式：[是否啟用]
-
-### 7.4 程式碼
-
-- 程式碼倉庫：[連結]
-- 重現腳本：[路徑]
-- Docker image：[連結，若有]
+- Estimated total GPU hours: [Hours]
+- Safety factor: x [1.5 - 2.0]
+- Final budget: [Hours]
+- Estimated completion time: [Days]
 
 ---
 
-## 八、實驗時程
+## VII. Reproducibility Information
 
-| 階段 | 內容 | 預計時間 | 狀態 |
+### 7.1 Hardware Environment
+
+```
+- GPU: [Model] × [Count]
+- CPU: [Model]
+- Memory: [Size]
+- CUDA: [Version]
+```
+
+### 7.2 Software Environment
+
+```
+- OS: [Version]
+- Python: [Version]
+- PyTorch: [Version]
+- Transformers: [Version]
+- [Other key package]: [Version]
+```
+
+### 7.3 Random Seeds
+
+- Seed list: [List all seed values used]
+- Deterministic mode: [Enabled or not]
+
+### 7.4 Code
+
+- Code repository: [Link]
+- Reproduction script: [Path]
+- Docker image: [Link, if any]
+
+---
+
+## VIII. Experiment Timeline
+
+| Phase | Content | Estimated Time | Status |
 |------|------|----------|------|
-| 階段一 | 預實驗與程式碼驗證 | [時間] | [ ] |
-| 階段二 | 主實驗（Baseline 比較） | [時間] | [ ] |
-| 階段三 | Ablation Study | [時間] | [ ] |
-| 階段四 | 分析實驗與可視化 | [時間] | [ ] |
-| 階段五 | 補充實驗 | [時間] | [ ] |
+| Phase 1 | Pilot experiments and code validation | [Time] | [ ] |
+| Phase 2 | Main experiments (baseline comparison) | [Time] | [ ] |
+| Phase 3 | Ablation study | [Time] | [ ] |
+| Phase 4 | Analysis experiments and visualization | [Time] | [ ] |
+| Phase 5 | Supplementary experiments | [Time] | [ ] |
 
 ---
 
-## 九、風險與應對
+## IX. Risks and Mitigation
 
-| 風險 | 可能性 | 影響 | 應對方案 |
+| Risk | Likelihood | Impact | Mitigation Plan |
 |------|--------|------|----------|
-| [風險 1] | [高/中/低] | [描述] | [方案] |
-| [風險 2] | [高/中/低] | [描述] | [方案] |
-| [風險 3] | [高/中/低] | [描述] | [方案] |
+| [Risk 1] | [High/Medium/Low] | [Description] | [Plan] |
+| [Risk 2] | [High/Medium/Low] | [Description] | [Plan] |
+| [Risk 3] | [High/Medium/Low] | [Description] | [Plan] |
 
 ---
 
-## 十、備註
+## X. Notes
 
-[其他需要記錄的資訊]
+[Other information to record]
