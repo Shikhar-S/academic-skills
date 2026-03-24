@@ -1,6 +1,6 @@
 ---
 name: idea-generation
-description: "學術研究的 Idea 產生技能——從發散到收斂，系統化地產出高品質研究構想。當使用者想腦力激盪研究方向、找新 research idea、或問「我接下來可以做什麼研究」時，一定要使用此技能。觸發詞包括：brainstorm、想 idea、研究方向、下一步做什麼、有什麼可以研究的、找 gap、research proposal。適用於任何階段的學術研究構想生成。"
+description: "A skill for generating academic research ideas—from divergence to convergence—to systematically produce high-quality research concepts. Use this skill whenever users want to brainstorm research directions, find new research ideas, or ask 'what should I study next?'. Trigger phrases include: brainstorm, idea generation, research direction, next step, what can I research, find gaps, research proposal. Suitable for idea generation at any stage of academic research."
 license: MIT
 compatibility: Works with Claude Code, ChatGPT/Codex CLI, and Gemini CLI.
 metadata:
@@ -8,381 +8,381 @@ metadata:
   version: "1.0.0"
 ---
 
-# 02 — Idea Generation：學術研究構想產生
+# 02 — Idea Generation: Producing Academic Research Concepts
 
-## 概述
+## Overview
 
-本技能提供一套系統化的研究構想產生流程，幫助研究者從零開始產出具備新穎性、可行性與影響力的研究 idea。流程分為三個階段：**發散**、**文獻搜索驗證**、**收斂**，最終產出一份精煉的 1-page 研究提案。
+This skill provides a systematic workflow for generating research ideas, helping researchers produce concepts with novelty, feasibility, and impact from scratch. The process has three stages: **Divergence**, **Literature Search Validation**, and **Convergence**, ending with a refined one-page research proposal.
 
-本技能適用於：
-- 碩博士生尋找論文題目
-- 研究者開拓新研究方向
-- 跨領域合作時激盪構想
-- 研究團隊定期進行腦力激盪
-
----
-
-## 三階段流程
-
-### 總覽
-
-```
-階段一：發散          階段二：文獻搜索驗證        階段三：收斂
-─────────────        ─────────────────        ──────────
-產生 10-20 個         搜索相關文獻               篩選至 1 個
-候選 idea            確認新穎性                 最佳 idea
-                    建立文獻表
-
-[10種發想框架]  →  [搜索策略 + 工具]  →  [評分矩陣 + 篩選標準]
-```
+This skill is suitable for:
+- Master's and PhD students searching for thesis topics
+- Researchers opening new research directions
+- Cross-disciplinary teams brainstorming together
+- Research groups running regular ideation sessions
 
 ---
 
-## 階段一：發散 — 產生 10-20 個候選 Idea
+## Three-Stage Workflow
 
-### 目標
+### Overview
 
-在不預設限制的情況下，盡可能產生大量候選構想。此階段的關鍵原則是**「量先於質」**——先求廣度，再求深度。
+```
+Stage 1: Divergence      Stage 2: Literature Validation      Stage 3: Convergence
+─────────────────      ───────────────────────────      ─────────────────
+Generate 10–20 ideas    Search related papers              Narrow down to 1
+candidate ideas         verify novelty                     best idea
+                        build literature table
 
-### 準備工作
+[10 ideation frameworks] → [search strategy + tools] → [scoring matrix + filtering criteria]
+```
 
-1. **界定探索範圍**：確定你的研究大方向（例如：自然語言處理、電腦視覺、強化學習）
-2. **蒐集素材**：回顧近期讀過的論文、參加過的演講、實驗中的觀察
-3. **設定時間限制**：每個框架花 15-30 分鐘，避免過早陷入細節
+---
 
-### 10 種發想框架
+## Stage 1: Divergence — Generate 10–20 Candidate Ideas
 
-以下提供十種不同角度的發想框架，建議至少使用其中 3-5 種來產生候選 idea。每種框架的詳細說明請參見 [references/brainstorming-frameworks.md](references/brainstorming-frameworks.md)。
+### Goal
 
-#### 框架 1：Problem-First（從問題出發）
+Generate as many candidate ideas as possible without imposing early constraints. The key principle is **"quantity before quality"**—maximize breadth first, then go deeper.
 
-從實際問題或痛點出發，尋找尚未被妥善解決的研究問題。
+### Preparation
 
-- 觀察現有系統的瓶頸
-- 收集使用者抱怨與需求
-- 檢視 benchmark 上的失敗案例
+1. **Define the exploration scope**: Set your broad research area (e.g., NLP, computer vision, reinforcement learning)
+2. **Collect raw material**: Review papers you recently read, talks you attended, and observations from experiments
+3. **Set time limits**: Spend 15–30 minutes per framework to avoid getting stuck in details too early
 
-#### 框架 2：Solution-First（從技術出發找應用）
+### 10 Ideation Frameworks
 
-從一個新技術或方法出發，探索它可以應用的場景。
+Below are 10 frameworks from different angles. It is recommended to use at least 3–5 of them to generate candidate ideas. See [references/brainstorming-frameworks.md](references/brainstorming-frameworks.md) for details.
 
-- 一個新提出的演算法還能解決什麼問題？
-- 某個領域的突破能否遷移到其他領域？
+#### Framework 1: Problem-First
 
-#### 框架 3：抽象階梯（Abstraction Ladder）
+Start from real-world pain points and identify research problems that are still inadequately solved.
 
-在不同抽象層次間移動，從具體問題上升到抽象原則，再下降到新的具體應用。
+- Observe bottlenecks in existing systems
+- Collect user complaints and needs
+- Examine failure cases on benchmarks
 
-- 向上抽象：這個問題的本質是什麼？
-- 向下具體：這個原則可以實例化為什麼？
+#### Framework 2: Solution-First (Find Applications from a Technique)
 
-#### 框架 4：矛盾獵尋（Contradiction Hunting）
+Start from a new technique or method and explore where it can be applied.
 
-找出現有方法中的矛盾、假設衝突或未被質疑的預設。
+- What other problems can this new algorithm solve?
+- Can a breakthrough in one field transfer to another?
 
-- 哪些「常識」其實缺乏證據？
-- 兩篇論文的結論是否相互矛盾？
+#### Framework 3: Abstraction Ladder
 
-#### 框架 5：跨領域嫁接（Cross-Domain Transfer）
+Move across abstraction levels: rise from concrete issues to abstract principles, then descend to new concrete applications.
 
-將其他領域的成功方法或概念引入自己的研究領域。
+- Upward abstraction: What is the essence of this problem?
+- Downward concretization: What can this principle be instantiated as?
 
-- 生物學的機制能否啟發演算法設計？
-- 社會科學的理論能否解釋技術現象？
+#### Framework 4: Contradiction Hunting
 
-#### 框架 6：What Changed（關注最近的技術變化）
+Identify contradictions, assumption conflicts, or unquestioned defaults in existing methods.
 
-關注最近的技術突破或環境變化，思考這些變化開啟了哪些新的可能性。
+- Which "common truths" actually lack evidence?
+- Do two papers reach conflicting conclusions?
 
-- 新的硬體能力（更大的模型、更快的推理）
-- 新的資料來源（多模態資料、合成資料）
-- 新的社會需求（隱私、公平性、可解釋性）
+#### Framework 5: Cross-Domain Transfer
 
-#### 框架 7：失敗分析（Failure Analysis）
+Import successful methods or concepts from other domains into your own.
 
-從失敗的嘗試、被拒的論文、或表現不佳的方法中尋找機會。
+- Can biological mechanisms inspire algorithm design?
+- Can social science theories explain technical phenomena?
 
-- 為什麼這個方法失敗了？能否修正？
-- 失敗的原因是否指向一個更根本的問題？
+#### Framework 6: What Changed (Focus on Recent Shifts)
 
-#### 框架 8：簡單性測試（Simplicity Test）
+Track recent technical or environmental changes and ask what new possibilities they unlock.
 
-用更簡單的方法挑戰複雜的現有方法，測試複雜性是否真的必要。
+- New hardware capabilities (larger models, faster inference)
+- New data sources (multimodal data, synthetic data)
+- New social demands (privacy, fairness, interpretability)
 
-- 簡單的 baseline 是否被公平比較過？
-- 複雜方法的哪些組件是真正必要的？
+#### Framework 7: Failure Analysis
 
-#### 框架 9：利害關係人旋轉（Stakeholder Rotation）
+Look for opportunities in failed attempts, rejected papers, or underperforming methods.
 
-從不同使用者、利害關係人的角度重新思考問題。
+- Why did this method fail? Can it be fixed?
+- Does the failure point to a deeper underlying problem?
 
-- 終端使用者最在意什麼？
-- 開發者最大的痛點是什麼？
-- 決策者需要什麼資訊？
+#### Framework 8: Simplicity Test
 
-#### 框架 10：組合/分解（Combine / Decompose）
+Challenge complex methods with simpler alternatives and test whether complexity is truly necessary.
 
-將現有的方法或概念進行組合或拆解，產生新的研究方向。
+- Were simple baselines compared fairly?
+- Which components of complex methods are genuinely necessary?
 
-- 組合：A 方法 + B 方法能產生什麼效果？
-- 分解：複雜系統的哪個子模組值得獨立研究？
+#### Framework 9: Stakeholder Rotation
 
-### 發散階段的輸出
+Reframe the problem from the perspectives of different users and stakeholders.
 
-完成發散階段後，你應該有一份包含 10-20 個候選 idea 的列表，每個 idea 包含：
+- What do end users care about most?
+- What is the biggest pain point for developers?
+- What information do decision makers need?
 
-| 欄位 | 說明 |
+#### Framework 10: Combine / Decompose
+
+Create new directions by combining or decomposing existing methods and concepts.
+
+- Combine: What happens if Method A + Method B are integrated?
+- Decompose: Which subsystem of a complex system deserves standalone study?
+
+### Output of Stage 1
+
+After divergence, you should have a list of 10–20 candidate ideas. Each idea should include:
+
+| Field | Description |
 |------|------|
-| 編號 | 流水編號 |
-| 標題 | 一句話描述 |
-| 使用的框架 | 使用了哪個發想框架 |
-| 簡述 | 2-3 句話的初步構想 |
-| 直覺評分 | 1-5 的初步直覺分數 |
+| ID | Running index |
+| Title | One-sentence description |
+| Framework used | Which ideation framework was used |
+| Summary | Initial concept in 2–3 sentences |
+| Intuition score | Initial gut score from 1–5 |
 
 ---
 
-## 階段二：文獻搜索驗證 — 確認新穎性
+## Stage 2: Literature Search Validation — Verify Novelty
 
-### 目標
+### Goal
 
-透過系統化的文獻搜索，驗證候選 idea 的新穎性，並建立相關文獻表。此階段的關鍵是**確認你的 idea 尚未被做過**，同時找到可以借鑑的相關工作。
+Validate the novelty of candidate ideas through systematic literature search and build a related-work table. The key is to **confirm the idea has not already been done**, while finding relevant prior work you can build on.
 
-### 搜索策略
+### Search Strategy
 
-詳細的搜索策略請參見 [references/paper-search-strategy.md](references/paper-search-strategy.md)，以下是簡要流程：
+See [references/paper-search-strategy.md](references/paper-search-strategy.md) for details. Quick flow:
 
-#### 步驟 1：關鍵字設計
+#### Step 1: Keyword Design
 
-- 為每個候選 idea 設計 3-5 組搜索關鍵字
-- 使用同義詞、上位詞、下位詞擴展搜索範圍
-- 結合英文與中文關鍵字
+- Create 3–5 keyword sets for each candidate idea
+- Expand with synonyms, hypernyms, and hyponyms
+- Combine English and Chinese keywords
 
-#### 步驟 2：多平台搜索
+#### Step 2: Multi-Platform Search
 
-- **Semantic Scholar**：語義搜索，適合探索性搜索
-- **Google Scholar**：覆蓋面廣，適合確認性搜索
-- **arXiv**：最新預印本，適合追蹤前沿
-- **DBLP**：電腦科學領域的完整索引
-- **ACL Anthology**：NLP 領域專用
+- **Semantic Scholar**: semantic search, good for exploratory search
+- **Google Scholar**: broad coverage, good for confirmation search
+- **arXiv**: latest preprints, good for frontier tracking
+- **DBLP**: comprehensive index for computer science
+- **ACL Anthology**: specialized for NLP
 
-#### 步驟 3：滾雪球法
+#### Step 3: Snowballing
 
-- 前向追蹤：找到關鍵論文後，看誰引用了它
-- 後向追蹤：看關鍵論文引用了誰
-- 作者追蹤：查看關鍵作者的其他工作
+- Forward tracking: after finding key papers, see who cited them
+- Backward tracking: check who key papers cited
+- Author tracking: review other work by key authors
 
-#### 步驟 4：新穎性判定
+#### Step 4: Novelty Assessment
 
-對每個候選 idea 進行新穎性判定：
+For each candidate idea, assign a novelty outcome:
 
-| 判定結果 | 說明 | 行動 |
+| Outcome | Description | Action |
 |----------|------|------|
-| 全新 | 找不到直接相關的工作 | 保留，但需確認可行性 |
-| 部分重疊 | 有相關但不完全相同的工作 | 找出差異點，精煉 idea |
-| 已被做過 | 找到幾乎相同的工作 | 淘汰或大幅修改 |
+| Fully new | No directly relevant prior work found | Keep, then verify feasibility |
+| Partially overlapping | Related but not identical work exists | Identify differences and refine idea |
+| Already done | Nearly identical work found | Discard or substantially revise |
 
-### 文獻搜索驗證的輸出
+### Output of Stage 2
 
-完成此階段後，你應該有：
+After completion, you should have:
 
-1. **篩選後的候選列表**：淘汰已被做過的 idea，通常剩 5-10 個
-2. **文獻表**：每個存活的 idea 對應 5-10 篇相關文獻
-3. **新穎性標註**：標註每個 idea 的新穎性判定結果與差異點
+1. **Filtered candidate list**: remove already-done ideas; typically 5–10 remain
+2. **Literature table**: for each surviving idea, 5–10 related papers
+3. **Novelty annotations**: novelty outcome plus key differences per idea
 
 ---
 
-## 階段三：收斂 — 篩選至 1 個最佳 Idea
+## Stage 3: Convergence — Select One Best Idea
 
-### 目標
+### Goal
 
-從存活的候選 idea 中，透過系統化的評估與篩選，選出 1 個最佳 idea 進行深入發展。
+From the surviving candidates, use systematic evaluation and filtering to select one best idea for deep development.
 
-### 收斂流程
+### Convergence Process
 
-詳細的收斂流程請參見 [references/idea-convergence.md](references/idea-convergence.md)，以下是簡要流程：
+See [references/idea-convergence.md](references/idea-convergence.md) for details. Quick flow:
 
-#### 步驟 1：淘汰（Eliminate）
+#### Step 1: Eliminate
 
-快速淘汰明顯不可行的 idea：
-- 技術上不可能在合理時間內完成
-- 缺乏必要的資料或計算資源
-- 新穎性不足
+Quickly remove clearly infeasible ideas:
+- Technically impossible to complete in a reasonable time
+- Lacking required data or compute resources
+- Insufficient novelty
 
-#### 步驟 2：合併（Merge）
+#### Step 2: Merge
 
-檢查是否有可以合併的候選 idea：
-- 兩個 idea 是否在解決同一個問題的不同面向？
-- 合併後是否能產生更有力的研究貢獻？
+Check whether candidate ideas can be merged:
+- Do two ideas address different facets of the same problem?
+- Can merging produce a stronger contribution?
 
-#### 步驟 3：精煉（Refine）
+#### Step 3: Refine
 
-對剩餘的候選 idea 進行精煉：
-- 縮小研究範圍，使問題更具體
-- 明確研究貢獻（Technical Contribution）
-- 構想初步的實驗設計
+Refine remaining candidates:
+- Narrow scope to make the problem more concrete
+- Clarify technical contributions
+- Sketch an initial experiment design
 
-#### 步驟 4：評分矩陣
+#### Step 4: Scoring Matrix
 
-使用評分矩陣進行量化評估。詳細的評分矩陣模板請參見 [references/evaluation-matrix.md](references/evaluation-matrix.md)。
+Use a quantitative scoring matrix. See [references/evaluation-matrix.md](references/evaluation-matrix.md) for the template.
 
-評分維度：
+Scoring dimensions:
 
-| 維度 | 權重 | 說明 |
+| Dimension | Weight | Description |
 |------|------|------|
-| 新穎性 | 25% | 與現有工作的差異程度 |
-| 可行性 | 25% | 在現有資源下完成的可能性 |
-| 影響力 | 20% | 對領域的潛在貢獻 |
-| 時效性 | 15% | 是否符合當前研究趨勢 |
-| 個人興趣 | 15% | 個人的熱情與動機 |
+| Novelty | 25% | Degree of difference from prior work |
+| Feasibility | 25% | Likelihood of completion under current resources |
+| Impact | 20% | Potential contribution to the field |
+| Timeliness | 15% | Alignment with current research trends |
+| Personal interest | 15% | Your motivation and enthusiasm |
 
-#### 步驟 5：最終決策
+#### Step 5: Final Decision
 
-- 選擇加權總分最高的 idea
-- 但也要考慮：直覺是否認同？是否有足夠的熱情去執行？
-- 如果理性與直覺衝突，花時間釐清原因
+- Select the idea with the highest weighted total score
+- Also consider: does your intuition agree? Do you have enough motivation to execute it?
+- If logic and intuition conflict, spend time identifying why
 
-### 常見陷阱
+### Common Pitfalls
 
-在收斂階段，需要警惕以下認知偏誤：
+In convergence, watch out for these cognitive biases:
 
-1. **確認偏誤**：只搜索支持自己偏好的證據
-2. **沉沒成本**：因為已經投入時間而不願放棄劣質 idea
-3. **新奇偏誤**：過度追求新穎而忽視可行性
-4. **從眾效應**：因為某個方向很熱門就跟風
-5. **完美主義**：等待「完美」的 idea 而遲遲不開始
+1. **Confirmation bias**: searching only for evidence supporting your preferred idea
+2. **Sunk cost fallacy**: refusing to drop weak ideas due to prior investment
+3. **Novelty bias**: over-prioritizing novelty while ignoring feasibility
+4. **Bandwagon effect**: following a trend only because it is popular
+5. **Perfectionism**: waiting forever for a "perfect" idea before starting
 
 ---
 
-## 最終輸出
+## Final Outputs
 
-完成三個階段後，你應該產出以下四份文件：
+After all three stages, you should produce four documents:
 
-### 1. 候選列表
+### 1. Candidate List
 
-所有候選 idea 的完整列表，包含狀態標記（存活/淘汰/合併）。
+A complete list of all candidate ideas with status labels (survive/eliminated/merged).
 
-### 2. 文獻表
+### 2. Literature Table
 
-每個存活 idea 的相關文獻清單，格式：
+Related-work list for each surviving idea, in this format:
 
 ```
-## Idea: [標題]
+## Idea: [Title]
 
-1. [作者] (年份). [論文標題]. [會議/期刊].
-   - 相關性：[高/中/低]
-   - 與本 idea 的關係：[簡述]
+1. [Author] (Year). [Paper Title]. [Conference/Journal].
+   - Relevance: [High/Medium/Low]
+   - Relation to this idea: [Brief note]
 
 2. ...
 ```
 
-### 3. 評分矩陣
+### 3. Scoring Matrix
 
-所有存活 idea 的量化評分，包含各維度分數與加權總分。
+Quantitative scores for all surviving ideas, including per-dimension scores and weighted totals.
 
-### 4. 1-Page 提案
+### 4. 1-Page Proposal
 
-最終選定 idea 的一頁提案，包含以下段落：
+A one-page proposal for the final selected idea, including:
 
 ```
-# [研究標題]
+# [Research Title]
 
-## 問題陳述（Problem Statement）
-- 要解決什麼問題？為什麼重要？
+## Problem Statement
+- What problem are you solving? Why is it important?
 
-## 現有方法與不足（Related Work & Gap）
-- 現有方法怎麼做？有什麼不足？
+## Related Work & Gap
+- What do existing methods do? What are the gaps?
 
-## 提議方法（Proposed Approach）
-- 你打算怎麼做？核心想法是什麼？
+## Proposed Approach
+- What will you do? What is the core idea?
 
-## 預期貢獻（Expected Contributions）
-- 預期的研究貢獻是什麼？
+## Expected Contributions
+- What contributions do you expect?
 
-## 初步實驗計畫（Preliminary Experiment Plan）
-- 打算用什麼資料集？什麼指標？什麼 baseline？
+## Preliminary Experiment Plan
+- Which datasets, metrics, and baselines will you use?
 
-## 風險與備案（Risks & Mitigation）
-- 主要風險是什麼？備案是什麼？
+## Risks & Mitigation
+- What are the main risks? What are contingency plans?
 
-## 時間表（Timeline）
-- 預計的里程碑與時間安排
+## Timeline
+- Planned milestones and schedule
 ```
 
 ---
 
-## 流程檢查清單
+## Process Checklist
 
-### 發散階段
+### Divergence Stage
 
-- [ ] 設定探索範圍與時間限制
-- [ ] 至少使用 3 種發想框架
-- [ ] 產生至少 10 個候選 idea
-- [ ] 每個 idea 有標題、簡述、直覺評分
-- [ ] 沒有在此階段過早篩選
+- [ ] Set exploration scope and time limits
+- [ ] Use at least 3 ideation frameworks
+- [ ] Generate at least 10 candidate ideas
+- [ ] For each idea: title, summary, intuition score
+- [ ] Avoid premature filtering in this stage
 
-### 文獻搜索驗證階段
+### Literature Validation Stage
 
-- [ ] 為每個 idea 設計搜索關鍵字
-- [ ] 使用至少 2 個搜索平台
-- [ ] 執行滾雪球法追蹤關鍵文獻
-- [ ] 標註每個 idea 的新穎性判定
-- [ ] 建立文獻表
+- [ ] Design search keywords for each idea
+- [ ] Use at least 2 search platforms
+- [ ] Apply snowballing to track key papers
+- [ ] Annotate novelty outcome for each idea
+- [ ] Build literature table
 
-### 收斂階段
+### Convergence Stage
 
-- [ ] 淘汰明顯不可行的 idea
-- [ ] 檢查可合併的 idea
-- [ ] 精煉剩餘候選
-- [ ] 完成評分矩陣
-- [ ] 選定最終 idea
-- [ ] 撰寫 1-page 提案
-- [ ] 檢查是否有認知偏誤
+- [ ] Eliminate clearly infeasible ideas
+- [ ] Check mergeable ideas
+- [ ] Refine remaining candidates
+- [ ] Complete scoring matrix
+- [ ] Select final idea
+- [ ] Write 1-page proposal
+- [ ] Check for cognitive biases
 
 ---
 
-## 時間建議
+## Time Recommendations
 
-| 階段 | 建議時間 | 說明 |
+| Stage | Suggested Time | Notes |
 |------|----------|------|
-| 發散 | 2-4 小時 | 可分散在 2-3 天內 |
-| 文獻搜索驗證 | 4-8 小時 | 每個 idea 約 30-60 分鐘 |
-| 收斂 | 2-3 小時 | 建議一次完成 |
-| 撰寫提案 | 1-2 小時 | 在收斂後立即進行 |
-| **合計** | **9-17 小時** | **約 1-2 週** |
+| Divergence | 2–4 hours | Can be split across 2–3 days |
+| Literature validation | 4–8 hours | About 30–60 minutes per idea |
+| Convergence | 2–3 hours | Preferably done in one session |
+| Proposal writing | 1–2 hours | Do immediately after convergence |
+| **Total** | **9–17 hours** | **About 1–2 weeks** |
 
 ---
 
-## 參考資源
+## Reference Resources
 
-- [發想框架詳細說明](references/brainstorming-frameworks.md)
-- [文獻搜索策略](references/paper-search-strategy.md)
-- [收斂流程與篩選標準](references/idea-convergence.md)
-- [評分矩陣模板](references/evaluation-matrix.md)
+- [Detailed Ideation Frameworks](references/brainstorming-frameworks.md)
+- [Literature Search Strategy](references/paper-search-strategy.md)
+- [Convergence Process and Filtering Criteria](references/idea-convergence.md)
+- [Scoring Matrix Template](references/evaluation-matrix.md)
 
 ---
 
-## 進階建議
+## Advanced Suggestions
 
-### 建立 Idea Bank
+### Build an Idea Bank
 
-- 平時閱讀論文時，隨手記錄觸發的想法
-- 定期回顧 idea bank，將舊想法與新知識結合
-- 使用標籤系統分類（按領域、方法、問題類型）
+- Record triggered ideas while reading papers
+- Periodically review your idea bank and combine old ideas with new knowledge
+- Use tags to classify ideas (domain, method, problem type)
 
-### 與他人互動
+### Interact with Others
 
-- 向不同領域的人解釋你的 idea，收集反饋
-- 參加讀書會或研討會，在討論中激盪新想法
-- 找一個「idea buddy」定期交流
+- Explain your ideas to people from other fields and gather feedback
+- Join reading groups and seminars to spark new perspectives
+- Find an "idea buddy" for regular exchange
 
-### 迭代式發想
+### Iterative Ideation
 
-- 不要期望一次就找到完美的 idea
-- 允許自己回到發散階段，用新的資訊重新發想
-- 好的 idea 往往是多次迭代的結果
+- Do not expect a perfect idea in one pass
+- Allow yourself to return to divergence using new information
+- Strong ideas are often products of multiple iterations
 
-### 記錄與反思
+### Record and Reflect
 
-- 記錄每次發想過程，包括最終沒被選上的 idea
-- 反思哪些框架對你最有效
-- 建立個人的發想流程與偏好檔案
+- Record each ideation session, including ideas not selected
+- Reflect on which frameworks work best for you
+- Build a personal ideation workflow and preference profile

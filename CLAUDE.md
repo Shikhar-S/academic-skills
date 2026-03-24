@@ -1,20 +1,20 @@
-# Academic Research Skills — 調度器
+# Academic Research Skills — Orchestrator
 
-本倉庫提供完整的學術研究 Skill 套件，涵蓋從論文閱讀到撰寫、審稿的完整研究流程。
+This repository provides a complete academic research skill suite, covering the full workflow from paper reading to writing and peer review.
 
-本套件符合 [Agent Skills 開放標準](https://agentskills.io/specification)，同時支援 Claude Code、ChatGPT/Codex CLI、Gemini CLI。
+This suite follows the [Agent Skills Open Standard](https://agentskills.io/specification) and supports Claude Code, ChatGPT/Codex CLI, and Gemini CLI.
 
-## Skill 路由
+## Skill Routing
 
-| 指令 | Skill | 說明 |
+| Command | Skill | Description |
 |------|-------|------|
-| `/read-paper` | `paper-reading/SKILL.md` | 太奶角色論文導讀（繁中） |
-| `/brainstorm` | `idea-generation/SKILL.md` | 發散→搜索→收斂三階段構思 |
-| `/experiment` | `experiment-design/SKILL.md` | 實驗設計與規劃 |
-| `/prove` | `proof-writer/SKILL.md` | 理論推導與數學證明 |
-| `/write-paper` | `paper-writing/SKILL.md` | 論文撰寫（頂會標準） |
-| `/review` | `paper-review/SKILL.md` | 4步驟學術審稿 |
-| `/prof-fit` | `professor-fit-analyser/SKILL.md` | 教授適配度分析 |
+| `/read-paper` | `paper-reading/SKILL.md` | Story-driven paper walkthrough style (Traditional Chinese persona originally) |
+| `/brainstorm` | `idea-generation/SKILL.md` | Three-stage ideation: diverge -> search -> converge |
+| `/experiment` | `experiment-design/SKILL.md` | Experiment design and planning |
+| `/prove` | `proof-writer/SKILL.md` | Theoretical derivation and mathematical proofs |
+| `/write-paper` | `paper-writing/SKILL.md` | Paper writing (top-conference standard) |
+| `/review` | `paper-review/SKILL.md` | 4-step academic review process |
+| `/prof-fit` | `professor-fit-analyser/SKILL.md` | Advisor fit analysis |
 
 ## Skill Pipeline
 
@@ -29,28 +29,28 @@ paper-review ←── paper-writing ←──── proof-writer
       └─────────────────┘  (revision cycle)
 ```
 
-## 語言慣例
+## Language Conventions
 
-- **預設語言**: 繁體中文（分析、解釋、討論）
-- **英文場景**: LaTeX 生成、正式審稿輸出（Step 4）、數學符號與定理名稱
-- **學術詞彙**: 參考 `shared/chinese-academic-glossary.md` 確保一致性
+- **Default language**: Traditional Chinese (analysis, explanation, discussion)
+- **English-only scenarios**: LaTeX generation, formal review output (Step 4), mathematical symbols and theorem names
+- **Academic terminology**: Refer to `shared/chinese-academic-glossary.md` for consistency
 
-## 品質標準
+## Quality Standards
 
-- 每個 `SKILL.md` 必須包含符合 [agentskills.io 標準](https://agentskills.io/specification) 的 YAML frontmatter（name, description 為必填；license, compatibility, metadata 為選填）
-- 每個 `SKILL.md` 建議 200–500 行
-- Reference 檔案提供詳細指引，SKILL.md 透過相對路徑引用
-- 所有模板使用 Markdown 或 LaTeX 格式
+- Every `SKILL.md` must include YAML frontmatter compliant with the [agentskills.io standard](https://agentskills.io/specification) (required: name, description; optional: license, compatibility, metadata)
+- Recommended length for each `SKILL.md`: 200-500 lines
+- Reference files provide detailed guidance, and `SKILL.md` should reference them via relative paths
+- All templates should use Markdown or LaTeX format
 
-## Cross-Reference 規則
+## Cross-Reference Rules
 
-- Skill 之間可透過相對路徑互相引用：`../paper-writing/SKILL.md`
-- 共享資源放在 `shared/` 目錄
-- 每個 Skill 的 `references/` 僅存放該 Skill 專屬的參考資料
+- Skills may reference each other via relative paths, for example: `../paper-writing/SKILL.md`
+- Shared resources are stored in the `shared/` directory
+- Each skill's `references/` directory should only contain skill-specific materials
 
-## 使用方式
+## Usage
 
-1. 將本倉庫 clone 到工作目錄
-2. 在 Claude Code 中開啟該目錄
-3. 使用上方指令表中的 `/` 指令啟動對應 Skill
-4. 依照 Skill Pipeline 完成完整研究流程
+1. Clone this repository into your working directory
+2. Open that directory in Claude Code
+3. Use the `/` commands in the table above to activate the corresponding skill
+4. Follow the Skill Pipeline to complete the end-to-end research workflow

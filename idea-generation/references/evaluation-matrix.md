@@ -1,108 +1,108 @@
-# Idea 評分矩陣
+# Idea Scoring Matrix
 
-本文件提供 idea 評估的量化工具，幫助你在收斂階段做出有根據的決策。
-
----
-
-## 一、評分維度定義
-
-### 維度 1：新穎性（Novelty）— 權重 25%
-
-衡量 idea 與現有工作的差異程度。
-
-| 分數 | 定義 | 判定標準 |
-|------|------|----------|
-| 5 | 開創性 | 提出全新的問題或方法，文獻中無類似工作 |
-| 4 | 高度新穎 | 有顯著差異化，即使有相關工作也明確不同 |
-| 3 | 中度新穎 | 有新元素，但整體框架有先例可循 |
-| 2 | 低度新穎 | 主要是現有方法的小改進或直接應用 |
-| 1 | 無新穎性 | 已被做過或極為類似的工作已存在 |
-
-**自問清單**：
-- 文獻搜索是否找到高度相似的工作？
-- 我能用一句話說出與現有最相關工作的區別嗎？
-- 審稿人是否會認為這個貢獻足夠新穎？
-
-### 維度 2：可行性（Feasibility）— 權重 25%
-
-衡量在現有條件下完成研究的可能性。
-
-| 分數 | 定義 | 判定標準 |
-|------|------|----------|
-| 5 | 高度可行 | 資源充足，技術成熟，預計順利完成 |
-| 4 | 大致可行 | 有些挑戰但可克服，風險可控 |
-| 3 | 有條件可行 | 需要特定資源或突破特定技術瓶頸 |
-| 2 | 勉強可行 | 重大障礙，成功機率不高 |
-| 1 | 不可行 | 現有條件下無法完成 |
-
-**自問清單**：
-- 我有足夠的計算資源嗎？
-- 資料集是否已存在或可以合理取得？
-- 我是否具備（或能學會）所需的技術？
-- 能否在截止日期前完成？
-- 是否需要外部合作者？能否找到？
-
-### 維度 3：影響力（Impact）— 權重 20%
-
-衡量研究成果對領域與社會的潛在貢獻。
-
-| 分數 | 定義 | 判定標準 |
-|------|------|----------|
-| 5 | 變革性 | 可能改變領域方向或範式 |
-| 4 | 高影響 | 對重要問題有實質貢獻，預期高引用 |
-| 3 | 中度影響 | 對特定子問題有有意義的推進 |
-| 2 | 低影響 | 增量改進，影響範圍有限 |
-| 1 | 極低影響 | 問題太小或太偏門，幾乎無人關注 |
-
-**自問清單**：
-- 有多少研究者會關心這個問題？
-- 結果是否能被其他研究引用或使用？
-- 是否有明確的下游應用？
-- 適合投稿到什麼層級的會議/期刊？
-
-### 維度 4：時效性（Timeliness）— 權重 15%
-
-衡量 idea 是否處於合適的時間窗口。
-
-| 分數 | 定義 | 判定標準 |
-|------|------|----------|
-| 5 | 完美時機 | 相關技術剛成熟，社群正關注，競爭尚未飽和 |
-| 4 | 良好時機 | 方向在上升期，有充足發展空間 |
-| 3 | 中性 | 不算特別好或壞的時機 |
-| 2 | 略晚 | 方向開始飽和或關注度下降 |
-| 1 | 過時 | 方向已過時或競爭極為激烈 |
-
-**自問清單**：
-- 最近是否有相關的重要突破使這個研究成為可能？
-- 頂會中相關論文的數量趨勢是上升還是下降？
-- 主要研究團隊是否仍在這個方向投入？
-- 我能在競爭者之前完成嗎？
-
-### 維度 5：個人興趣（Personal Interest）— 權重 15%
-
-衡量個人對 idea 的熱情與動機。
-
-| 分數 | 定義 | 判定標準 |
-|------|------|----------|
-| 5 | 非常興奮 | 迫不及待想開始，願意投入所有時間 |
-| 4 | 有興趣 | 覺得有趣，樂於深入探索 |
-| 3 | 中性 | 不特別興奮也不排斥 |
-| 2 | 勉強 | 不太有興趣，但認為有價值 |
-| 1 | 不感興趣 | 即使有價值也不想做 |
-
-**自問清單**：
-- 想到這個 idea 時是否感到興奮？
-- 願意在深夜或週末花時間思考它嗎？
-- 如果最終沒做這個，會感到遺憾嗎？
-- 做這個研究能幫助我成長嗎？
+This document provides a quantitative tool for evaluating ideas, helping you make evidence-based decisions during convergence.
 
 ---
 
-## 二、評分矩陣模板
+## I. Scoring Dimension Definitions
 
-### 空白模板
+### Dimension 1: Novelty — Weight 25%
 
-| 候選 Idea | 新穎性 (x0.25) | 可行性 (x0.25) | 影響力 (x0.20) | 時效性 (x0.15) | 個人興趣 (x0.15) | 加權總分 |
+Measures how different the idea is from existing work.
+
+| Score | Definition | Criteria |
+|------|------|----------|
+| 5 | Groundbreaking | Proposes a new problem or method with no close prior work |
+| 4 | Highly novel | Clear differentiation even when related work exists |
+| 3 | Moderately novel | Contains new elements but follows known overall patterns |
+| 2 | Low novelty | Mostly incremental improvement or direct application |
+| 1 | No novelty | Already done or very similar work exists |
+
+**Self-check**:
+- Did the literature search find highly similar work?
+- Can I state the key difference from the closest work in one sentence?
+- Would reviewers view this as sufficiently novel?
+
+### Dimension 2: Feasibility — Weight 25%
+
+Measures likelihood of successful completion under current conditions.
+
+| Score | Definition | Criteria |
+|------|------|----------|
+| 5 | Highly feasible | Adequate resources, mature techniques, likely smooth execution |
+| 4 | Mostly feasible | Some challenges but manageable risk |
+| 3 | Conditionally feasible | Requires specific resources or technical breakthroughs |
+| 2 | Barely feasible | Major obstacles and low success probability |
+| 1 | Infeasible | Cannot be completed under current conditions |
+
+**Self-check**:
+- Do I have enough compute resources?
+- Is the dataset available or reasonably obtainable?
+- Do I have (or can learn) required skills?
+- Can this finish before the deadline?
+- Are external collaborators needed, and can I get them?
+
+### Dimension 3: Impact — Weight 20%
+
+Measures potential contribution to the field and society.
+
+| Score | Definition | Criteria |
+|------|------|----------|
+| 5 | Transformative | Could shift research direction or paradigm |
+| 4 | High impact | Substantial contribution to an important problem |
+| 3 | Moderate impact | Meaningful progress on a specific sub-problem |
+| 2 | Low impact | Incremental improvement with limited scope |
+| 1 | Very low impact | Problem is too narrow or niche |
+
+**Self-check**:
+- How many researchers care about this problem?
+- Can others cite or build on these results?
+- Is there a clear downstream application?
+- What venue tier is this suitable for?
+
+### Dimension 4: Timeliness — Weight 15%
+
+Measures whether the idea fits the right time window.
+
+| Score | Definition | Criteria |
+|------|------|----------|
+| 5 | Perfect timing | Enabling tech just matured; attention is high; competition not saturated |
+| 4 | Good timing | Direction is rising with room to grow |
+| 3 | Neutral | Timing is neither especially good nor bad |
+| 2 | Slightly late | Direction is saturating or losing attention |
+| 1 | Outdated | Direction is outdated or competition is extremely intense |
+
+**Self-check**:
+- Did recent breakthroughs make this feasible now?
+- Are top-venue papers on this topic trending up or down?
+- Are major groups still investing here?
+- Can I finish before competitors?
+
+### Dimension 5: Personal Interest — Weight 15%
+
+Measures your motivation and enthusiasm for the idea.
+
+| Score | Definition | Criteria |
+|------|------|----------|
+| 5 | Very excited | Eager to start immediately and invest major time |
+| 4 | Interested | Genuinely interested in deep exploration |
+| 3 | Neutral | Neither excited nor resistant |
+| 2 | Reluctant | Limited interest but recognizes value |
+| 1 | Not interested | Would not do it even if valuable |
+
+**Self-check**:
+- Do I feel excited when thinking about this idea?
+- Would I spend late nights or weekends on it?
+- Would I regret not doing it?
+- Will this help me grow?
+
+---
+
+## II. Scoring Matrix Templates
+
+### Blank Template
+
+| Candidate Idea | Novelty (x0.25) | Feasibility (x0.25) | Impact (x0.20) | Timeliness (x0.15) | Personal Interest (x0.15) | Weighted Total |
 |-----------|----------------|----------------|----------------|----------------|-------------------|----------|
 | Idea A    |     /5         |     /5         |     /5         |     /5         |      /5           |          |
 | Idea B    |     /5         |     /5         |     /5         |     /5         |      /5           |          |
@@ -110,196 +110,196 @@
 | Idea D    |     /5         |     /5         |     /5         |     /5         |      /5           |          |
 | Idea E    |     /5         |     /5         |     /5         |     /5         |      /5           |          |
 
-### 加權總分計算
+### Weighted Total Formula
 
 ```
-加權總分 = 新穎性 × 0.25 + 可行性 × 0.25 + 影響力 × 0.20 + 時效性 × 0.15 + 個人興趣 × 0.15
+Weighted total = Novelty × 0.25 + Feasibility × 0.25 + Impact × 0.20 + Timeliness × 0.15 + Personal Interest × 0.15
 ```
 
-**範例計算**：
+**Example calculation**:
 
-| 維度 | 分數 | 權重 | 加權分數 |
+| Dimension | Score | Weight | Weighted Score |
 |------|------|------|----------|
-| 新穎性 | 4 | 0.25 | 1.00 |
-| 可行性 | 3 | 0.25 | 0.75 |
-| 影響力 | 4 | 0.20 | 0.80 |
-| 時效性 | 5 | 0.15 | 0.75 |
-| 個人興趣 | 4 | 0.15 | 0.60 |
-| **合計** | | | **3.90** |
+| Novelty | 4 | 0.25 | 1.00 |
+| Feasibility | 3 | 0.25 | 0.75 |
+| Impact | 4 | 0.20 | 0.80 |
+| Timeliness | 5 | 0.15 | 0.75 |
+| Personal Interest | 4 | 0.15 | 0.60 |
+| **Total** | | | **3.90** |
 
-### 填寫範例
+### Filled Example
 
-| 候選 Idea | 新穎性 (x0.25) | 可行性 (x0.25) | 影響力 (x0.20) | 時效性 (x0.15) | 個人興趣 (x0.15) | 加權總分 |
+| Candidate Idea | Novelty (x0.25) | Feasibility (x0.25) | Impact (x0.20) | Timeliness (x0.15) | Personal Interest (x0.15) | Weighted Total |
 |-----------|----------------|----------------|----------------|----------------|-------------------|----------|
-| 長文本摘要改進 | 3 | 4 | 3 | 3 | 3 | 3.20 |
-| 跨語言知識遷移 | 4 | 3 | 4 | 4 | 5 | 3.90 |
-| 低資源語言 NER | 4 | 4 | 3 | 3 | 2 | 3.35 |
-| 程式碼生成安全性 | 5 | 3 | 5 | 5 | 4 | 4.40 |
-| 多模態情感分析 | 3 | 5 | 3 | 2 | 4 | 3.45 |
+| Long-context summarization improvement | 3 | 4 | 3 | 3 | 3 | 3.20 |
+| Cross-lingual knowledge transfer | 4 | 3 | 4 | 4 | 5 | 3.90 |
+| Low-resource language NER | 4 | 4 | 3 | 3 | 2 | 3.35 |
+| Code generation security | 5 | 3 | 5 | 5 | 4 | 4.40 |
+| Multimodal sentiment analysis | 3 | 5 | 3 | 2 | 4 | 3.45 |
 
-此範例中，「程式碼生成安全性」以 4.40 分排名第一。
-
----
-
-## 三、權重調整指南
-
-上述權重是建議值，你可以根據個人情況調整。以下是不同情境的建議權重。
-
-### 情境一：博士生尋找學位論文題目
-
-重視長期可行性和個人興趣，因為博士研究需要多年投入。
-
-| 維度 | 建議權重 |
-|------|----------|
-| 新穎性 | 20% |
-| 可行性 | 20% |
-| 影響力 | 25% |
-| 時效性 | 10% |
-| 個人興趣 | 25% |
-
-### 情境二：趕會議截止日期
-
-重視可行性和時效性，因為需要在短時間內完成。
-
-| 維度 | 建議權重 |
-|------|----------|
-| 新穎性 | 25% |
-| 可行性 | 35% |
-| 影響力 | 15% |
-| 時效性 | 15% |
-| 個人興趣 | 10% |
-
-### 情境三：探索全新研究方向
-
-重視新穎性和影響力，願意承擔較高風險。
-
-| 維度 | 建議權重 |
-|------|----------|
-| 新穎性 | 35% |
-| 可行性 | 15% |
-| 影響力 | 30% |
-| 時效性 | 10% |
-| 個人興趣 | 10% |
-
-### 情境四：碩士生尋找畢業題目
-
-重視可行性，確保能在有限時間內完成。
-
-| 維度 | 建議權重 |
-|------|----------|
-| 新穎性 | 15% |
-| 可行性 | 35% |
-| 影響力 | 15% |
-| 時效性 | 15% |
-| 個人興趣 | 20% |
+In this example, "Code generation security" ranks first with 4.40.
 
 ---
 
-## 四、決策指南
+## III. Weight Adjustment Guide
 
-### 4.1 明確勝出
+The weights above are suggested defaults. You can adjust based on your context.
 
-當一個 idea 的加權總分明顯高於其他候選（差距 > 0.5 分）時，直接選擇該 idea。
+### Scenario 1: PhD student selecting dissertation topic
 
-### 4.2 分數接近
+Emphasize long-term feasibility and personal interest due to multi-year commitment.
 
-當前兩名的差距 < 0.5 分時，進行以下深入比較：
+| Dimension | Suggested Weight |
+|------|----------|
+| Novelty | 20% |
+| Feasibility | 20% |
+| Impact | 25% |
+| Timeliness | 10% |
+| Personal Interest | 25% |
 
-1. **敏感度分析**
-   - 改變權重是否會改變排名？
-   - 如果某個維度的分數有誤差，結論是否改變？
-   - 嘗試不同的權重設定看結果是否穩定
+### Scenario 2: Racing a conference deadline
 
-2. **情境模擬**
-   - 最好的情況下，各自能發什麼層級的論文？
-   - 最壞的情況下，各自還能有什麼產出？
-   - 如果失敗了，學到的東西哪個更有價值？
+Emphasize feasibility and timeliness for short-cycle delivery.
 
-3. **直覺投票**
-   - 閉上眼睛，如果只能選一個，你會選哪個？
-   - 想像已經選了 A，你是否感到遺憾沒選 B？
+| Dimension | Suggested Weight |
+|------|----------|
+| Novelty | 25% |
+| Feasibility | 35% |
+| Impact | 15% |
+| Timeliness | 15% |
+| Personal Interest | 10% |
 
-### 4.3 全面落後
+### Scenario 3: Exploring a brand-new direction
 
-如果所有候選的加權總分都低於 2.5 分，建議：
+Emphasize novelty and impact, accepting higher risk.
 
-- 回到發散階段，產生新的候選
-- 檢查是否對評分過於嚴格
-- 考慮是否探索範圍太窄
-- 與指導教授或同事討論
+| Dimension | Suggested Weight |
+|------|----------|
+| Novelty | 35% |
+| Feasibility | 15% |
+| Impact | 30% |
+| Timeliness | 10% |
+| Personal Interest | 10% |
 
-### 4.4 決策後的驗證
+### Scenario 4: Master's student selecting graduation topic
 
-做出選擇後，進行以下驗證：
+Emphasize feasibility to ensure completion within limited time.
 
-1. **電梯測試**：能否在 30 秒內向非專業人士清楚解釋你的 idea？
-2. **論文測試**：能否想像這篇論文的標題和摘要？
-3. **動機測試**：明天起床後是否迫不及待想開始？
-4. **風險測試**：最大的風險是否可以在前兩週內驗證？
+| Dimension | Suggested Weight |
+|------|----------|
+| Novelty | 15% |
+| Feasibility | 35% |
+| Impact | 15% |
+| Timeliness | 15% |
+| Personal Interest | 20% |
 
 ---
 
-## 五、評分常見問題
+## IV. Decision Guide
 
-### Q1：如何避免主觀偏見？
+### 4.1 Clear Winner
 
-- 先不看名稱，只看描述內容評分
-- 請 2-3 位同事獨立評分後取平均
-- 分不同日期多次評分，取中位數
-- 先為所有 idea 評完同一維度，再評下一個維度
+If one idea clearly exceeds others (gap > 0.5), select it directly.
 
-### Q2：如果對某個維度沒有把握怎麼辦？
+### 4.2 Close Scores
 
-- 給予中間值（3 分），並在備註中標記「不確定」
-- 花更多時間蒐集該維度的資訊
-- 對於不確定的維度，降低其權重
+If top-two gap < 0.5, perform deeper comparison:
 
-### Q3：可以自定義評分維度嗎？
+1. **Sensitivity analysis**
+   - Does ranking change if weights change?
+   - Is the conclusion stable under scoring uncertainty?
+   - Try multiple weight settings
 
-可以。根據你的具體需求，可以增加或修改維度。常見的額外維度：
+2. **Scenario simulation**
+   - Best case: what publication level can each reach?
+   - Worst case: what output remains?
+   - If failure occurs, which teaches more?
 
-| 額外維度 | 說明 |
+3. **Intuition vote**
+   - If you must choose one now, which one?
+   - If you choose A, do you regret not choosing B?
+
+### 4.3 No Strong Candidates
+
+If all candidates score below 2.5:
+
+- Return to divergence and generate new candidates
+- Check whether scoring is overly strict
+- Consider whether exploration scope is too narrow
+- Discuss with advisor or peers
+
+### 4.4 Post-Decision Validation
+
+After selecting, run these checks:
+
+1. **Elevator test**: Can you explain the idea to a non-expert in 30 seconds?
+2. **Paper test**: Can you envision a clear title and abstract?
+3. **Motivation test**: Are you eager to start tomorrow morning?
+4. **Risk test**: Can the biggest risk be tested in the first two weeks?
+
+---
+
+## V. Common Scoring Questions
+
+### Q1: How do I reduce subjective bias?
+
+- Score descriptions before names when possible
+- Ask 2–3 peers to score independently and average
+- Score on multiple days and use median
+- Score one dimension across all ideas before moving to next dimension
+
+### Q2: What if I am unsure about one dimension?
+
+- Assign a middle score (3) and mark as uncertain
+- Gather more evidence for that dimension
+- Lower the weight of highly uncertain dimensions
+
+### Q3: Can I customize dimensions?
+
+Yes. Add or revise dimensions based on your needs. Common extras:
+
+| Extra Dimension | Description |
 |----------|------|
-| 資料可得性 | 所需資料是否容易取得 |
-| 團隊契合度 | 是否符合研究團隊的專長 |
-| 發展潛力 | 是否能延伸為多篇論文 |
-| 產業價值 | 是否有商業應用潛力 |
-| 倫理風險 | 是否有倫理或社會風險 |
+| Data availability | How easy required data is to obtain |
+| Team fit | Alignment with team expertise |
+| Extension potential | Whether it can branch into multiple papers |
+| Industry value | Commercial applicability |
+| Ethical risk | Potential ethical/social risk |
 
-### Q4：評分矩陣與直覺衝突時怎麼辦？
+### Q4: What if matrix results conflict with intuition?
 
-- 直覺往往包含了量化分析未能捕捉的資訊
-- 仔細分析衝突來源：是哪個維度的感受與分數不一致？
-- 可能需要調整權重或增加新的維度
-- 最終以「知情的直覺」為準——經過量化分析後的直覺比未經分析的直覺更可靠
+- Intuition often captures factors quantitative scoring misses
+- Analyze which dimension causes the mismatch
+- You may need weight adjustment or new dimensions
+- Use **informed intuition**: intuition after structured analysis is usually more reliable
 
 ---
 
-## 六、進階用法
+## VI. Advanced Usage
 
-### 6.1 多人評分
+### 6.1 Multi-Person Scoring
 
-當研究團隊共同決策時：
+For team decisions:
 
-1. 每人獨立填寫評分矩陣
-2. 匯總所有人的分數
-3. 對差異大的維度進行討論
-4. 達成共識後更新分數
-5. 計算最終加權總分
+1. Each member fills matrix independently
+2. Aggregate all scores
+3. Discuss dimensions with large disagreement
+4. Update scores after consensus
+5. Compute final weighted totals
 
-### 6.2 迭代評分
+### 6.2 Iterative Scoring
 
-隨著研究進展，定期更新評分：
+As research progresses, update scores regularly:
 
-1. 每月重新評估一次
-2. 更新因新資訊而改變的分數
-3. 如果排名發生變化，重新審視你的選擇
-4. 記錄分數變化的原因
+1. Re-evaluate monthly
+2. Update scores based on new information
+3. Revisit choice if ranking changes
+4. Record why scores changed
 
-### 6.3 組合使用
+### 6.3 Combined Decision Tools
 
-將評分矩陣與其他決策工具結合：
+Use the matrix with other tools:
 
-- **SWOT 分析**：對前幾名候選進行 SWOT 分析
-- **決策樹**：建立決策樹來處理「如果...就...」的情境
-- **風險矩陣**：對前幾名候選評估風險與回報
+- **SWOT analysis** for top candidates
+- **Decision trees** for if-then scenarios
+- **Risk matrix** for risk-return comparison

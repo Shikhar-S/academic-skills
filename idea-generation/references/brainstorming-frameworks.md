@@ -1,484 +1,484 @@
-# 10 種發想框架詳細說明
+# Detailed Guide to 10 Ideation Frameworks
 
-本文件提供 idea generation 流程中使用的十種發想框架之詳細說明。每個框架包含定義、操作步驟、範例與適用場景。
-
----
-
-## 框架 1：Problem-First（從問題出發）
-
-### 定義
-
-從實際存在的問題、痛點或未被滿足的需求出發，逆向尋找可能的研究方向。這是最直覺的發想方式，確保研究具有實際意義。
-
-### 操作步驟
-
-1. **列舉問題來源**
-   - 回顧自己在研究或實務中遇到的困難
-   - 瀏覽相關領域的論壇、問答網站（如 Stack Overflow、Reddit）
-   - 閱讀近期論文的 limitations 段落
-   - 訪談領域的實務工作者
-
-2. **問題分類與排序**
-   - 將問題依據嚴重程度、影響範圍、頻率進行分類
-   - 優先關注高頻且高影響的問題
-
-3. **問題拆解**
-   - 將大問題拆解為可研究的子問題
-   - 找出問題的根本原因（root cause），而非表面症狀
-
-4. **可研究性檢驗**
-   - 這個問題能否被形式化為一個研究問題？
-   - 是否有可量化的評估指標？
-   - 是否有可獲取的資料？
-
-### 範例
-
-- **問題**：大型語言模型在長文本上的表現顯著下降
-- **拆解**：注意力機制的計算複雜度、位置編碼的外推性、上下文資訊的遺失
-- **研究方向**：設計新的位置編碼方案，使模型能外推至訓練長度以外的文本
-
-### 適用場景
-
-- 希望研究具有明確實用價值時
-- 對某個領域有深入實務經驗時
-- 尋找能快速獲得社群認可的研究題目時
-- 撰寫以問題驅動為主的學位論文時
+This document provides detailed explanations of the ten ideation frameworks used in the idea-generation workflow. Each framework includes a definition, operating steps, example, and suitable scenarios.
 
 ---
 
-## 框架 2：Solution-First（從技術出發找應用）
+## Framework 1: Problem-First
 
-### 定義
+### Definition
 
-從一個新的技術、演算法或工具出發，思考它可以被應用到哪些場景或問題上。這種方式適合當你已經掌握一個有潛力的技術，但尚未找到最佳應用場景。
+Start from real, existing pain points or unmet needs, then work backward to possible research directions. This is the most intuitive ideation style and helps ensure practical value.
 
-### 操作步驟
+### Operating Steps
 
-1. **技術特性分析**
-   - 這個技術的核心優勢是什麼？
-   - 它在什麼條件下表現最好？
-   - 它的限制是什麼？
+1. **List problem sources**
+   - Review difficulties you encountered in research or practice
+   - Browse domain forums and Q&A sites (e.g., Stack Overflow, Reddit)
+   - Read limitations sections of recent papers
+   - Interview practitioners in the domain
 
-2. **應用場景搜索**
-   - 哪些領域有類似的需求結構？
-   - 哪些現有方法因為缺乏這個技術特性而受限？
-   - 是否有新興的應用場景尚未被充分探索？
+2. **Classify and prioritize problems**
+   - Group by severity, impact scope, and frequency
+   - Prioritize high-frequency, high-impact problems
 
-3. **適配性評估**
-   - 技術的輸入輸出格式是否匹配目標問題？
-   - 是否需要大幅修改才能適用？
-   - 計算資源需求是否合理？
+3. **Decompose problems**
+   - Break big problems into researchable sub-problems
+   - Identify root causes instead of surface symptoms
 
-4. **差異化定位**
-   - 相比現有方法，這個技術能帶來什麼獨特的優勢？
-   - 這個優勢是否足夠顯著？
+4. **Check researchability**
+   - Can this be formalized as a research question?
+   - Are there measurable evaluation metrics?
+   - Is data obtainable?
 
-### 範例
+### Example
 
-- **技術**：Diffusion Model 的去噪機制
-- **特性**：能從雜訊中逐步恢復結構化資訊
-- **應用探索**：除了圖像生成，能否用於分子結構生成？蛋白質折疊？城市規劃？
-- **研究方向**：將 Diffusion Model 應用於程式碼修復，將有 bug 的程式碼視為「雜訊版本」
+- **Problem**: Large language models degrade significantly on long-context input
+- **Decomposition**: Attention complexity, positional extrapolation, context information loss
+- **Research direction**: Design a new positional encoding scheme that extrapolates beyond training length
 
-### 適用場景
+### Suitable Scenarios
 
-- 剛學會一個新技術，想深入探索其潛力時
-- 技術導向的研究團隊尋找應用方向時
-- 希望做跨領域應用的研究時
-- 某個技術在原始領域已趨飽和，需要尋找新戰場時
+- You want clear practical value
+- You have deep practical experience in a domain
+- You want topics likely to gain fast community traction
+- You are writing a problem-driven thesis
 
 ---
 
-## 框架 3：抽象階梯（Abstraction Ladder）
+## Framework 2: Solution-First (Find Applications from Technique)
 
-### 定義
+### Definition
 
-在不同的抽象層次之間移動思考。向上抽象可以看到問題的本質與共通性，向下具體化可以找到新的實例與應用。這個框架幫助你跳脫當前的思考層次，發現隱藏的連結。
+Start from a new technique, algorithm, or tool, then ask where it can be applied. Useful when you already have a promising method but no best-fit use case yet.
 
-### 操作步驟
+### Operating Steps
 
-1. **確定起點**
-   - 選擇一個你熟悉的具體問題或方法
+1. **Analyze technique characteristics**
+   - What are its core strengths?
+   - Under what conditions does it work best?
+   - What are its limits?
 
-2. **向上攀升（抽象化）**
-   - 問：「這個問題的本質是什麼？」
-   - 問：「這屬於哪一類更廣泛的問題？」
-   - 問：「背後的基本原理是什麼？」
-   - 持續向上直到到達足夠抽象的層次
+2. **Search application scenarios**
+   - Which domains share similar demand structures?
+   - Which existing methods are constrained by missing this capability?
+   - Are there emerging scenarios still underexplored?
 
-3. **橫向移動**
-   - 在同一抽象層次上，思考是否有其他實例
-   - 這個原理還適用於哪些情境？
+3. **Evaluate fit**
+   - Does input/output format match the target problem?
+   - Does it require heavy adaptation?
+   - Are compute requirements reasonable?
 
-4. **向下降落（具體化）**
-   - 從新的抽象概念出發，向下具體化
-   - 這個原理可以如何實現？
-   - 在什麼資料集或任務上可以驗證？
+4. **Define differentiation**
+   - What unique advantages does this technique offer vs. existing methods?
+   - Are those advantages substantial enough?
 
-### 範例
+### Example
+
+- **Technique**: Diffusion-model denoising mechanism
+- **Property**: Can progressively recover structured information from noise
+- **Application exploration**: Beyond image generation—molecules, protein folding, urban planning?
+- **Research direction**: Apply diffusion models to code repair by treating buggy code as a noisy version
+
+### Suitable Scenarios
+
+- You just learned a new method and want to push its potential
+- A method-oriented team is searching for applications
+- You want cross-domain applied research
+- The technique is saturated in its original domain
+
+---
+
+## Framework 3: Abstraction Ladder
+
+### Definition
+
+Move between abstraction levels. Going up reveals essence and shared structure; going down reveals new concrete instances. This helps you escape your current thinking level and discover hidden links.
+
+### Operating Steps
+
+1. **Set a starting point**
+   - Choose a concrete problem or method you know well
+
+2. **Climb up (abstract)**
+   - Ask: What is the essence of this problem?
+   - Ask: What broader class does it belong to?
+   - Ask: What underlying principle drives it?
+   - Continue upward until abstraction is sufficient
+
+3. **Move sideways**
+   - At the same abstraction level, identify other instances
+   - Where else does this principle apply?
+
+4. **Climb down (concretize)**
+   - Start from the new abstract concept and materialize it
+   - How can this principle be implemented?
+   - Which datasets/tasks can validate it?
+
+### Example
 
 ```
-具體問題：機器翻譯中的罕見詞處理
-    ↑ 抽象
-稀有事件的處理（長尾分布問題）
-    ↑ 抽象
-如何從有限樣本中學習？（小樣本學習）
-    → 橫向移動
-醫療影像中的罕見疾病辨識
-    ↓ 具體化
-研究方向：利用語言模型的知識增強罕見疾病影像的辨識
+Concrete problem: Rare-word handling in machine translation
+    ↑ abstraction
+Rare-event handling (long-tail distribution)
+    ↑ abstraction
+Learning from limited samples (few-shot learning)
+    → lateral move
+Rare disease recognition in medical imaging
+    ↓ concretization
+Research direction: Use language-model knowledge to improve rare-disease image recognition
 ```
 
-### 適用場景
+### Suitable Scenarios
 
-- 感覺在同一個層次打轉、找不到突破口時
-- 想要發現兩個看似無關領域之間的連結時
-- 希望將一個具體的成功經驗推廣到更多場景時
-- 需要為研究找到更深層的理論動機時
-
----
-
-## 框架 4：矛盾獵尋（Contradiction Hunting）
-
-### 定義
-
-主動尋找現有研究中的矛盾、衝突假設、未被質疑的預設或不一致的實驗結果。矛盾往往是新知識的入口，指向我們理解不足的地方。
-
-### 操作步驟
-
-1. **假設盤點**
-   - 列出你的研究領域中被廣泛接受的假設
-   - 問自己：這些假設的證據有多強？
-   - 是否有反例被忽略了？
-
-2. **結果比對**
-   - 比較不同論文在類似實驗上的結果
-   - 是否有不一致的發現？
-   - 不一致是否源於實驗設定的差異？
-
-3. **理論 vs 實踐**
-   - 理論預測與實際表現是否一致？
-   - 哪些理論上應該有效的方法在實踐中失敗了？
-   - 哪些理論上不應該有效的方法反而成功了？
-
-4. **深挖矛盾**
-   - 矛盾的根本原因是什麼？
-   - 解決矛盾是否能帶來新的理解？
-   - 能否設計實驗來釐清矛盾？
-
-### 範例
-
-- **矛盾**：Transformer 理論上的表達能力無限，但在簡單的計數任務上卻表現不佳
-- **深挖**：位置編碼方式限制了模型的長度泛化能力
-- **研究方向**：設計能正確處理計數與算術推理的架構改進
-
-### 適用場景
-
-- 對一個領域有深入了解，能察覺微妙的不一致時
-- 閱讀大量論文後發現結論互相矛盾時
-- 重現他人實驗時發現與原文不符時
-- 希望做批判性、挑戰現有認知的研究時
+- You feel stuck at one level of thought
+- You want links between seemingly unrelated fields
+- You want to generalize a successful specific experience
+- You need deeper theoretical motivation
 
 ---
 
-## 框架 5：跨領域嫁接（Cross-Domain Transfer）
+## Framework 4: Contradiction Hunting
 
-### 定義
+### Definition
 
-將一個領域的成功方法、概念或理論框架引入另一個領域。跨領域嫁接是創新的重要來源，因為不同領域往往面對結構上相似的問題，但使用不同的解決方案。
+Actively seek contradictions, assumption conflicts, unquestioned defaults, or inconsistent results in existing research. Contradictions often indicate where understanding is incomplete.
 
-### 操作步驟
+### Operating Steps
 
-1. **建立知識庫**
-   - 廣泛閱讀不同領域的綜述文章
-   - 參加跨領域的學術活動
-   - 與不同領域的研究者交流
+1. **Inventory assumptions**
+   - List widely accepted assumptions in your field
+   - Ask: How strong is the evidence behind each?
+   - Are counterexamples ignored?
 
-2. **結構性類比**
-   - 你的領域中的問題，在其他領域是否有對應？
-   - 其他領域的經典方法，能否解決你領域的問題？
-   - 兩個領域的資料結構是否有相似性？
+2. **Compare results**
+   - Compare similar experiments across papers
+   - Are findings inconsistent?
+   - Are inconsistencies due to setup differences?
 
-3. **遷移可行性評估**
-   - 方法的前提假設在新領域是否成立？
-   - 需要哪些調整來適配新領域？
-   - 跨領域遷移是否帶來額外的優勢？
+3. **Theory vs. practice**
+   - Do theoretical predictions match empirical behavior?
+   - Which theoretically sound methods fail in practice?
+   - Which theoretically weak methods surprisingly succeed?
 
-4. **驗證計畫**
-   - 如何在新領域中評估遷移效果？
-   - 是否有合適的 baseline 來比較？
+4. **Investigate deeply**
+   - What causes the contradiction?
+   - Would resolving it produce new understanding?
+   - Can experiments isolate the cause?
 
-### 範例
+### Example
 
-- **來源領域**：流體力學中的 Navier-Stokes 方程的數值解法
-- **目標領域**：大規模圖網路上的資訊傳播模擬
-- **類比**：資訊流動 ≈ 流體流動
-- **研究方向**：借用流體力學的多尺度模擬方法來加速圖網路上的訊息傳遞
+- **Contradiction**: Transformers are highly expressive in theory but weak on simple counting tasks
+- **Investigation**: Positional encoding limits length generalization
+- **Research direction**: Architectural improvements for robust counting and arithmetic reasoning
 
-### 適用場景
+### Suitable Scenarios
 
-- 具有多領域背景的研究者
-- 當前領域的方法已趨成熟，需要外部靈感時
-- 發現兩個領域有相似問題結構時
-- 希望做開創性的跨領域研究時
-
----
-
-## 框架 6：What Changed（關注最近的技術變化）
-
-### 定義
-
-關注最近發生的技術突破、資源變化或社會環境變化，思考這些變化開啟了哪些原本不可能的研究方向。好的研究 idea 往往出現在變化的交界處。
-
-### 操作步驟
-
-1. **盤點近期變化**
-   - 最近 6-12 個月有哪些重要的技術突破？
-   - 哪些新的資料集或工具被釋出？
-   - 硬體能力有什麼變化？
-   - 社會需求或政策有什麼新趨勢？
-
-2. **影響分析**
-   - 這個變化使什麼原本不可能的事情變得可能？
-   - 這個變化推翻了哪些舊的限制條件？
-   - 這個變化創造了哪些新的需求？
-
-3. **時機評估**
-   - 這個方向是否處於合適的時間點？
-   - 是太早（基礎設施不成熟）還是太晚（已經飽和）？
-   - 競爭者的動態如何？
-
-4. **快速原型驗證**
-   - 能否用最少的資源做一個概念驗證？
-   - 初步結果是否支持你的假設？
-
-### 範例
-
-- **變化**：開源大型語言模型的參數規模與能力顯著提升
-- **新可能**：原本需要閉源 API 才能做的研究，現在可以在本地進行深入分析
-- **研究方向**：對開源模型進行機制性分析（mechanistic interpretability），理解其內部知識表示
-
-### 適用場景
-
-- 追蹤技術前沿的研究者
-- 希望做有時效性、能快速發表的研究時
-- 新技術剛出現，尚未被充分探索時
-- 對「為什麼是現在？」這個問題有清晰答案時
+- You deeply understand a field and can detect subtle inconsistencies
+- You see conflicting conclusions after extensive reading
+- Your reproduction results disagree with published results
+- You want critical, assumption-challenging work
 
 ---
 
-## 框架 7：失敗分析（Failure Analysis）
+## Framework 5: Cross-Domain Transfer
 
-### 定義
+### Definition
 
-從失敗的嘗試中學習，將失敗視為發現新研究方向的線索。失敗往往揭示了我們理解的盲區，而這些盲區正是值得研究的地方。
+Bring successful methods, concepts, or theories from one field into another. Cross-domain transfer is a key innovation source because structurally similar problems are often solved differently across fields.
 
-### 操作步驟
+### Operating Steps
 
-1. **收集失敗案例**
-   - 自己過去失敗的實驗或被拒的論文
-   - 領域中已知的失敗嘗試
-   - Benchmark 上表現特別差的案例（error analysis）
-   - 工業界部署後遇到的問題
+1. **Build a knowledge base**
+   - Read surveys across multiple fields
+   - Attend interdisciplinary academic events
+   - Talk with researchers from other areas
 
-2. **失敗歸因**
-   - 失敗的根本原因是什麼？
-   - 是方法問題、資料問題、還是問題本身太難？
-   - 失敗是可修復的，還是需要全新的方法？
+2. **Find structural analogies**
+   - Does your problem have an analog elsewhere?
+   - Can methods from another field solve your problem?
+   - Are data structures across fields similar?
 
-3. **機會辨識**
-   - 這個失敗是否指向一個未被充分研究的子問題？
-   - 修復這個失敗是否能帶來顯著的改進？
-   - 是否有新的技術可以克服以前的限制？
+3. **Assess transfer feasibility**
+   - Do method assumptions hold in the target field?
+   - What adaptations are needed?
+   - Does transfer provide extra advantages?
 
-4. **解決方案構想**
-   - 根據失敗原因，構想可能的解決方案
-   - 是否有其他領域遇到類似的失敗並找到了解決方案？
+4. **Design validation**
+   - How will you evaluate transfer effectiveness?
+   - Are suitable baselines available?
 
-### 範例
+### Example
 
-- **失敗案例**：Few-shot learning 在分布外（OOD）資料上表現崩潰
-- **失敗歸因**：模型過度依賴 spurious features，在少樣本設定下更為嚴重
-- **研究方向**：設計對 spurious features 具有魯棒性的 few-shot learning 方法
+- **Source field**: Numerical methods for Navier-Stokes equations in fluid dynamics
+- **Target field**: Information propagation simulation on large graph networks
+- **Analogy**: Information flow ≈ fluid flow
+- **Research direction**: Use multi-scale fluid simulation methods to accelerate graph message propagation
 
-### 適用場景
+### Suitable Scenarios
 
-- 從自己的失敗經驗中提煉研究方向時
-- 做某個任務的 error analysis 後發現系統性問題時
-- 閱讀論文的 limitations 段落時受到啟發
-- 希望做有深度的、解決根本問題的研究時
-
----
-
-## 框架 8：簡單性測試（Simplicity Test）
-
-### 定義
-
-用更簡單的方法挑戰目前複雜的主流方法，測試那些複雜性是否真的必要。如果一個簡單的方法能達到類似的效果，那麼複雜方法的價值就需要被重新評估。
-
-### 操作步驟
-
-1. **選擇目標**
-   - 選擇一個近期提出的、被認為有效但相當複雜的方法
-   - 或選擇一個 SOTA 系統，分析其各組件
-
-2. **簡化實驗**
-   - 移除某些組件，觀察效果變化（ablation 的延伸）
-   - 用更簡單的替代方案取代某些組件
-   - 設計最簡化的 baseline
-
-3. **公平比較**
-   - 確保比較條件公平（相同的資料、超參數搜索預算等）
-   - 測量不僅是效能，也包括效率（速度、記憶體、能耗）
-
-4. **結果分析**
-   - 如果簡單方法表現接近：什麼是真正重要的組件？
-   - 如果簡單方法表現差距大：複雜性的來源與價值是什麼？
-   - 兩種情況都能產生有價值的研究貢獻
-
-### 範例
-
-- **目標**：某個使用多個預訓練模型、複雜融合機制的多模態系統
-- **簡化**：只使用單一模型 + 簡單的線性映射
-- **發現**：在多數情境下，簡單方法達到 90% 的效能，但只需 10% 的計算量
-- **研究方向**：分析何時複雜的融合機制是真正必要的
-
-### 適用場景
-
-- 對某個領域的「軍備競賽」持懷疑態度時
-- 計算資源有限，需要高效率的方法時
-- 希望做有批判性、能引發討論的研究時
-- 撰寫分析型論文（analysis paper）時
+- Researchers with multi-domain background
+- Your current field feels mature and needs outside inspiration
+- You detect structurally similar problems between domains
+- You aim for pioneering interdisciplinary research
 
 ---
 
-## 框架 9：利害關係人旋轉（Stakeholder Rotation）
+## Framework 6: What Changed (Recent Changes)
 
-### 定義
+### Definition
 
-從不同利害關係人（使用者、開發者、決策者、受影響者等）的角度重新審視一個問題或技術。不同角色有不同的需求、限制和價值觀，這些差異可以揭示被忽略的研究方向。
+Track recent breakthroughs, resource shifts, or social-environment changes, and ask what now becomes possible that was previously impossible. Great ideas often appear at change boundaries.
 
-### 操作步驟
+### Operating Steps
 
-1. **辨識利害關係人**
-   - 誰會使用這個技術？
-   - 誰會部署和維護這個技術？
-   - 誰會被這個技術的結果影響？
-   - 誰會為這個技術付費？
-   - 誰會監管這個技術？
+1. **Map recent changes**
+   - What important breakthroughs happened in the last 6–12 months?
+   - What new datasets or tools were released?
+   - How did hardware capabilities change?
+   - What policy or social-demand trends emerged?
 
-2. **角色扮演**
-   - 逐一站在每個利害關係人的角度思考
-   - 他們最在意什麼？最擔心什麼？
-   - 他們的日常工作流程是什麼？
-   - 這個技術如何融入他們的工作？
+2. **Analyze impact**
+   - What newly possible things does this change enable?
+   - What old constraints does it remove?
+   - What new demands does it create?
 
-3. **需求差異分析**
-   - 不同利害關係人的需求是否有衝突？
-   - 哪些需求目前被忽視了？
-   - 滿足這些需求需要什麼樣的研究？
+3. **Assess timing**
+   - Is the direction at the right moment?
+   - Too early (infrastructure immature) or too late (saturated)?
+   - What are competitors doing?
 
-4. **研究方向轉化**
-   - 將需求轉化為可研究的問題
-   - 優先處理影響面廣且具可行性的問題
+4. **Quick prototype validation**
+   - Can you run a proof of concept with minimal resources?
+   - Do preliminary results support your hypothesis?
 
-### 範例
+### Example
 
-- **技術**：自動程式碼生成工具
-- **開發者角度**：希望生成的程式碼正確且高效
-- **團隊主管角度**：希望生成的程式碼符合團隊的風格規範
-- **安全工程師角度**：擔心生成的程式碼是否有安全漏洞
-- **新手程式設計師角度**：希望工具能同時教學，而非只給答案
-- **研究方向**：自動程式碼生成中的安全性保證機制
+- **Change**: Open-source LLMs have significantly improved in scale and capability
+- **New possibility**: Research once requiring closed APIs can now be analyzed locally
+- **Research direction**: Mechanistic interpretability for open-source models
 
-### 適用場景
+### Suitable Scenarios
 
-- 研究具有社會影響的技術時
-- 做人機互動（HCI）相關研究時
-- 希望研究更有實際應用價值時
-- 撰寫涉及倫理考量的論文時
+- Researchers tracking the frontier
+- You want time-sensitive work with fast publication potential
+- New technology has just emerged and remains underexplored
+- You can clearly answer "why now?"
 
 ---
 
-## 框架 10：組合/分解（Combine / Decompose）
+## Framework 7: Failure Analysis
 
-### 定義
+### Definition
 
-透過將現有方法組合或拆解來產生新的研究方向。組合可以創造具備多重優勢的新方法；分解可以深入理解複雜系統的各個組件，並獨立改進。
+Treat failures as clues to new directions. Failures often reveal blind spots in our understanding, and those blind spots are worth researching.
 
-### 操作步驟
+### Operating Steps
 
-#### 組合路徑
+1. **Collect failure cases**
+   - Your failed experiments or rejected papers
+   - Known failures in the field
+   - Poor benchmark cases (error analysis)
+   - Deployment issues from industry
 
-1. **列出候選方法**
-   - 選擇 2-3 個在不同方面有優勢的方法
-   - 確認它們解決的問題有重疊或互補的部分
+2. **Attribute failures**
+   - What is the root cause?
+   - Method issue, data issue, or inherently hard problem?
+   - Is failure fixable or does it require a new approach?
 
-2. **互補性分析**
-   - 方法 A 的優勢是否能彌補方法 B 的劣勢？
-   - 組合後是否能 1+1 > 2？
-   - 組合的技術可行性如何？
+3. **Identify opportunities**
+   - Does this failure point to an underexplored sub-problem?
+   - Would fixing it yield major gains?
+   - Do new technologies now overcome old limits?
 
-3. **組合方式設計**
-   - 串聯（pipeline）：A 的輸出作為 B 的輸入
-   - 並聯（ensemble）：同時使用 A 和 B，融合結果
-   - 混合（hybrid）：在 A 的架構中嵌入 B 的機制
+4. **Draft solutions**
+   - Propose solutions based on failure causes
+   - Did other fields face similar failures and solve them?
 
-#### 分解路徑
+### Example
 
-1. **選擇目標系統**
-   - 選擇一個複雜的、端到端的系統或方法
+- **Failure case**: Few-shot learning collapses on out-of-distribution data
+- **Attribution**: Over-reliance on spurious features, amplified in few-shot settings
+- **Research direction**: Robust few-shot learning against spurious features
 
-2. **組件辨識**
-   - 這個系統由哪些核心組件構成？
-   - 每個組件的功能是什麼？
-   - 組件之間的互動關係是什麼？
+### Suitable Scenarios
 
-3. **組件深入研究**
-   - 某個組件是否可以被獨立改進？
-   - 某個組件是否可以用更好的替代方案？
-   - 組件之間的互動是否被充分理解？
-
-### 範例
-
-#### 組合範例
-- **方法 A**：Retrieval-Augmented Generation（擅長利用外部知識）
-- **方法 B**：Chain-of-Thought prompting（擅長複雜推理）
-- **組合**：檢索相關知識後，使用鏈式推理來整合與應用
-- **研究方向**：設計能根據問題複雜度動態決定是否檢索、何時推理的統一框架
-
-#### 分解範例
-- **目標系統**：大型語言模型的 in-context learning 能力
-- **組件辨識**：任務識別、模式匹配、知識提取、格式對齊
-- **研究方向**：深入研究 in-context learning 中「任務識別」組件的運作機制
-
-### 適用場景
-
-- 希望做整合性的研究，統一多個方法時
-- 希望深入理解複雜系統的運作機制時
-- 兩個獨立的研究方向有交叉的潛力時
-- 做系統設計（system paper）時
+- You want to mine your own failures for direction
+- Error analysis reveals systematic issues
+- Limitations sections inspire you
+- You want deep work on root causes
 
 ---
 
-## 框架選擇指南
+## Framework 8: Simplicity Test
 
-| 你的狀態 | 建議使用的框架 |
+### Definition
+
+Challenge complex mainstream methods with simpler alternatives to test whether complexity is truly necessary. If simple methods perform similarly, the value of complexity should be re-evaluated.
+
+### Operating Steps
+
+1. **Choose target**
+   - Pick a recent method considered effective but complex
+   - Or pick an SOTA system and analyze components
+
+2. **Run simplification experiments**
+   - Remove components and observe changes (extended ablation)
+   - Replace components with simpler alternatives
+   - Design a minimal baseline
+
+3. **Ensure fair comparison**
+   - Keep data and hyperparameter budget comparable
+   - Evaluate not only performance but also efficiency (speed, memory, energy)
+
+4. **Analyze outcomes**
+   - If simple is close: what components truly matter?
+   - If simple is far behind: where does complexity create value?
+   - Both outcomes can produce meaningful contributions
+
+### Example
+
+- **Target**: A multimodal system with multiple pretrained models and complex fusion
+- **Simplification**: Single model + simple linear mapping
+- **Finding**: Simple method reaches 90% performance at 10% compute
+- **Research direction**: When complex fusion is actually necessary
+
+### Suitable Scenarios
+
+- You are skeptical of an "arms race" in a field
+- You have limited compute and need efficiency
+- You want critical work that sparks discussion
+- You are writing an analysis paper
+
+---
+
+## Framework 9: Stakeholder Rotation
+
+### Definition
+
+Re-examine a problem from different stakeholder perspectives (users, developers, decision makers, affected groups, etc.). Different needs and constraints can reveal neglected directions.
+
+### Operating Steps
+
+1. **Identify stakeholders**
+   - Who uses the technology?
+   - Who deploys and maintains it?
+   - Who is affected by outputs?
+   - Who pays for it?
+   - Who regulates it?
+
+2. **Role-play perspectives**
+   - Think from each stakeholder's viewpoint
+   - What do they care about most? fear most?
+   - What is their daily workflow?
+   - How does this technology fit their process?
+
+3. **Analyze demand differences**
+   - Do stakeholder needs conflict?
+   - Which needs are currently ignored?
+   - What research is needed to satisfy them?
+
+4. **Translate into research questions**
+   - Turn needs into researchable questions
+   - Prioritize high-impact, feasible items
+
+### Example
+
+- **Technology**: Automatic code generation tools
+- **Developer view**: Wants correctness and efficiency
+- **Engineering manager view**: Wants style and policy compliance
+- **Security engineer view**: Worries about vulnerabilities
+- **Beginner programmer view**: Wants learning support, not only answers
+- **Research direction**: Security guarantees in automatic code generation
+
+### Suitable Scenarios
+
+- Technologies with social impact
+- Human-computer interaction research
+- Applied-value-oriented research
+- Work involving ethics considerations
+
+---
+
+## Framework 10: Combine / Decompose
+
+### Definition
+
+Create new directions by combining or decomposing existing methods. Combination can deliver multiple strengths; decomposition helps deeply analyze and improve complex systems component-wise.
+
+### Operating Steps
+
+#### Combination Path
+
+1. **List candidate methods**
+   - Pick 2–3 methods with complementary strengths
+   - Confirm overlapping or complementary problem coverage
+
+2. **Analyze complementarity**
+   - Can strengths of A offset weaknesses of B?
+   - Can combination produce 1+1 > 2?
+   - Is integration technically feasible?
+
+3. **Design integration form**
+   - Pipeline: output of A feeds B
+   - Ensemble: run A and B jointly and fuse outputs
+   - Hybrid: embed mechanism B inside architecture A
+
+#### Decomposition Path
+
+1. **Select target system**
+   - Choose a complex end-to-end system
+
+2. **Identify components**
+   - What core components does it contain?
+   - What is each component's function?
+   - How do components interact?
+
+3. **Study component-level opportunities**
+   - Can one component be improved independently?
+   - Can one component be replaced by a better alternative?
+   - Are interactions sufficiently understood?
+
+### Example
+
+#### Combination example
+- **Method A**: Retrieval-Augmented Generation (strong external knowledge use)
+- **Method B**: Chain-of-Thought prompting (strong complex reasoning)
+- **Combination**: Retrieve relevant knowledge, then perform chained reasoning for integration
+- **Research direction**: A unified framework that dynamically decides retrieval and reasoning depth by problem complexity
+
+#### Decomposition example
+- **Target system**: In-context learning in large language models
+- **Components**: Task recognition, pattern matching, knowledge extraction, format alignment
+- **Research direction**: Mechanistic study of the task-recognition component
+
+### Suitable Scenarios
+
+- You want integrative research unifying multiple methods
+- You want deep understanding of complex system behavior
+- Two independent directions show intersection potential
+- You are writing a system paper
+
+---
+
+## Framework Selection Guide
+
+| Your current state | Recommended frameworks |
 |----------|---------------|
-| 有明確的問題但不知道怎麼解決 | Problem-First, 失敗分析 |
-| 學了新技術想找應用 | Solution-First, What Changed |
-| 感覺在同一層次打轉 | 抽象階梯, 跨領域嫁接 |
-| 對主流方法存疑 | 矛盾獵尋, 簡單性測試 |
-| 想做有社會影響的研究 | 利害關係人旋轉 |
-| 想整合或深入分析 | 組合/分解 |
-| 不確定，想廣泛探索 | 至少選 3-5 個框架輪流使用 |
+| Clear problem but unclear solution | Problem-First, Failure Analysis |
+| Learned a new method and seek applications | Solution-First, What Changed |
+| Feeling stuck at one level | Abstraction Ladder, Cross-Domain Transfer |
+| Skeptical of mainstream methods | Contradiction Hunting, Simplicity Test |
+| Want socially impactful research | Stakeholder Rotation |
+| Want integration or deeper analysis | Combine / Decompose |
+| Unsure and want broad exploration | Use at least 3–5 frameworks in rotation |
 
 ---
 
-## 使用建議
+## Usage Tips
 
-1. **不要只用一個框架**：每個框架都有盲區，使用多個框架能覆蓋更多角度
-2. **先量後質**：在使用框架時先不要批判，盡量多產出
-3. **記錄過程**：記下每個框架觸發的所有想法，即使看起來不成熟
-4. **設定時間限制**：每個框架 15-30 分鐘，避免過早深入
-5. **交替使用**：如果一個框架卡住了，換另一個框架
+1. **Do not use only one framework**: each has blind spots; combining frameworks covers more angles
+2. **Quantity before quality**: avoid criticism while generating ideas
+3. **Record everything**: keep all triggered ideas, even immature ones
+4. **Set time constraints**: 15–30 minutes per framework to prevent premature deep dives
+5. **Switch when stuck**: if one framework stalls, move to another

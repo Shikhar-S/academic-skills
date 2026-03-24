@@ -1,236 +1,236 @@
-# Baseline 選擇指南
+# Baseline Selection Guide
 
-## 概述
+## Overview
 
-Baseline（基線方法）的選擇直接影響實驗結果的可信度與說服力。本文件提供系統化的 Baseline 選擇策略，確保實驗比較的公平性與完整性。
-
----
-
-## 一、為什麼 Baseline 選擇很重要
-
-- **可信度**：與強 Baseline 比較才能證明方法的價值
-- **定位**：Baseline 幫助讀者理解你的方法在研究譜系中的位置
-- **公平性**：不當的 Baseline 選擇是審稿人最常提出的批評之一
-- **完整性**：多樣的 Baseline 展示方法在不同維度上的優劣
+Baseline selection directly affects the credibility and persuasiveness of experimental results. This document provides a systematic strategy to ensure fair and comprehensive comparisons.
 
 ---
 
-## 二、必選 Baseline 類型
+## 1. Why Baseline Selection Matters
 
-### 2.1 經典方法（Classic Methods）
+- **Credibility**: Only comparisons with strong baselines can demonstrate true value.
+- **Positioning**: Baselines help readers place your method in the research landscape.
+- **Fairness**: Poor baseline selection is one of the most common reviewer criticisms.
+- **Completeness**: Diverse baselines reveal strengths and weaknesses across dimensions.
 
-**定義**：該領域歷史上具有里程碑意義的方法。
+---
 
-**選擇標準**：
+## 2. Required Baseline Types
 
-- 被廣泛引用且普遍認可
-- 通常有成熟穩定的實現
-- 代表該領域的「傳統」解決方案
+### 2.1 Classic Methods
 
-**範例**：
+**Definition**: Historically influential methods in the field.
 
-| 領域 | 經典方法範例 |
+**Selection criteria**:
+
+- Widely cited and broadly recognized
+- Usually have mature, stable implementations
+- Represent traditional solutions in the field
+
+**Examples**:
+
+| Field | Example Classic Methods |
 |------|-------------|
-| 文本分類 | TF-IDF + SVM、TextCNN |
-| 序列標註 | BiLSTM-CRF |
-| 機器翻譯 | Transformer (Vaswani et al., 2017) |
-| 影像分類 | ResNet |
-| 物件偵測 | Faster R-CNN |
+| Text classification | TF-IDF + SVM, TextCNN |
+| Sequence labeling | BiLSTM-CRF |
+| Machine translation | Transformer (Vaswani et al., 2017) |
+| Image classification | ResNet |
+| Object detection | Faster R-CNN |
 
-**目的**：展示新方法相對於經典方法的進步幅度，提供歷史脈絡。
+**Purpose**: Show progress relative to classic methods and provide historical context.
 
-### 2.2 當前 SOTA（State-of-the-Art）
+### 2.2 Current SOTA (State of the Art)
 
-**定義**：在你的目標任務與資料集上，目前表現最佳的方法。
+**Definition**: Methods with the best current performance on your target task and datasets.
 
-**選擇標準**：
+**Selection criteria**:
 
-- 在相同資料集上有公開的結果
-- 發表時間盡可能接近你的投稿時間
-- 最好有開源的程式碼可供使用
+- Publicly reported results on the same datasets
+- Publication dates close to your submission timeline
+- Preferably open-source implementations
 
-**注意事項**：
+**Notes**:
 
-- SOTA 會隨時間變化，需在投稿前確認最新進展
-- 若 SOTA 方法使用了額外資料或更大的預訓練模型，需特別說明
-- 建議選擇 2-3 個近期的 SOTA 方法
+- SOTA changes over time; verify the latest progress before submission.
+- If SOTA uses extra data or larger pretrained models, explain this clearly.
+- Prefer including 2-3 recent SOTA methods.
 
-**目的**：展示新方法是否真正推進了該領域的技術前沿。
+**Purpose**: Show whether your method truly advances the field frontier.
 
-### 2.3 簡單 Baseline（Simple Baselines）
+### 2.3 Simple Baselines
 
-**定義**：不使用複雜模型的簡單方法，用以確立效能下界。
+**Definition**: Simple methods without complex modeling, used to establish lower-bound references.
 
-**常見類型**：
+**Common types**:
 
-| 類型 | 說明 | 範例 |
+| Type | Description | Example |
 |------|------|------|
-| 隨機基線 | 隨機預測 | 隨機分類器 |
-| 多數類別 | 總是預測最常見的類別 | Majority Class |
-| 簡單統計 | 基於簡單統計特徵 | TF-IDF + 邏輯迴歸 |
-| 直接遷移 | 不做任何調整的預訓練模型 | Zero-shot GPT |
-| 人類表現 | 人工標註的一致性 | Human Agreement |
+| Random baseline | Random predictions | Random classifier |
+| Majority class | Always predict most common class | Majority Class |
+| Simple statistics | Based on simple statistical features | TF-IDF + Logistic Regression |
+| Direct transfer | Pretrained model without adaptation | Zero-shot GPT |
+| Human performance | Annotation agreement by humans | Human Agreement |
 
-**目的**：
+**Purpose**:
 
-- 確認任務本身具有一定的複雜度（避免簡單方法就能解決的情況）
-- 為後續的改進提供參照基準
-- 有時簡單 Baseline 的表現出乎意料地好，這本身就是重要發現
-
----
-
-## 三、公平比較原則
-
-### 3.1 資料一致性
-
-所有方法必須使用：
-
-- **相同的訓練集**：相同的資料切分、相同的版本
-- **相同的驗證集**：用於超參數調整
-- **相同的測試集**：用於最終評估
-- **相同的前處理**：除非前處理本身是研究貢獻
-
-### 3.2 評估一致性
-
-- 使用相同的評估指標與計算方式
-- 使用相同的評估腳本（避免實現差異）
-- 在相同的硬體環境下測量效率指標
-
-### 3.3 資源一致性
-
-- 模型參數量應在同一量級（或明確報告差異）
-- 訓練計算量應可比較
-- 若使用預訓練模型，應使用相同版本
-
-### 3.4 調參一致性
-
-- 為 Baseline 方法進行合理的超參數調整
-- 不能只對自己的方法調參而使用 Baseline 的預設參數
-- 記錄所有方法的調參範圍與最佳超參數
-
-### 3.5 Baseline 結果的來源
-
-優先順序如下：
-
-1. **使用原作者的開源程式碼重新跑**：最可靠
-2. **引用原論文的數字**：需確保實驗條件一致
-3. **從排行榜取得數字**：需確認評估條件相同
-4. **自行重新實現**：需驗證重現結果與原論文接近
+- Confirm task complexity (avoid cases where simple methods already solve it)
+- Provide a baseline reference for later improvements
+- Sometimes strong simple baselines are themselves important findings
 
 ---
 
-## 四、Baseline 選擇的策略
+## 3. Fair Comparison Principles
 
-### 4.1 文獻調研策略
+### 3.1 Data Consistency
 
-1. 閱讀目標任務最近 2-3 年的代表性論文
-2. 整理這些論文中使用的 Baseline 列表
-3. 找出被最多論文使用的 Baseline（高頻 Baseline）
-4. 加入最新發表的方法
+All methods must use:
 
-### 4.2 Baseline 數量建議
+- **Same training set**: same splits and dataset versions
+- **Same validation set**: for hyperparameter tuning
+- **Same test set**: for final evaluation
+- **Same preprocessing**: unless preprocessing itself is a research contribution
 
-| 論文類型 | 建議數量 |
+### 3.2 Evaluation Consistency
+
+- Use the same metrics and computation definitions.
+- Use the same evaluation scripts (to avoid implementation differences).
+- Measure efficiency metrics in equivalent hardware environments.
+
+### 3.3 Resource Consistency
+
+- Parameter counts should be in the same order of magnitude (or differences clearly reported).
+- Training compute should be comparable.
+- If pretrained models are used, versions should match.
+
+### 3.4 Tuning Consistency
+
+- Perform reasonable hyperparameter tuning for baseline methods.
+- Do not tune only your method while using defaults for baselines.
+- Record tuning ranges and best hyperparameters for all methods.
+
+### 3.5 Source of Baseline Results
+
+Recommended priority:
+
+1. **Re-run original open-source code**: most reliable.
+2. **Cite numbers from original papers**: ensure equivalent conditions.
+3. **Use leaderboard numbers**: verify evaluation protocol consistency.
+4. **Self-reimplementation**: validate that reproduced results are close to original reports.
+
+---
+
+## 4. Baseline Selection Strategy
+
+### 4.1 Literature Survey Strategy
+
+1. Read representative papers from the last 2-3 years on the target task.
+2. Compile the baseline lists used in those papers.
+3. Identify high-frequency baselines used by many papers.
+4. Add the latest published methods.
+
+### 4.2 Recommended Number of Baselines
+
+| Paper Type | Recommended Count |
 |----------|----------|
-| 頂會長文 | 5-10 個 |
-| 頂會短文 | 3-5 個 |
-| Workshop | 2-4 個 |
+| Top-conference full paper | 5-10 |
+| Top-conference short paper | 3-5 |
+| Workshop paper | 2-4 |
 
-### 4.3 Baseline 分類展示
+### 4.3 Grouped Baseline Presentation
 
-在實驗結果表中，建議將 Baseline 分類展示：
+In result tables, present baselines by category:
 
 ```
-表1：XX 資料集上的實驗結果
+Table 1: Results on XX dataset
 
-方法                      | F1    | Acc
+Method                    | F1    | Acc
 --------------------------|-------|------
---- 簡單基線 ---
+--- Simple Baselines ---
 Majority Class            | 32.1  | 45.2
-TF-IDF + LR              | 65.3  | 68.7
---- 經典方法 ---
+TF-IDF + LR               | 65.3  | 68.7
+--- Classic Methods ---
 TextCNN (Kim, 2014)       | 78.2  | 80.1
 BiLSTM (Hochreiter, 1997) | 79.5  | 81.3
---- 近期 SOTA ---
+--- Recent SOTA ---
 BERT (Devlin, 2019)       | 88.3  | 89.7
 RoBERTa (Liu, 2019)       | 89.1  | 90.2
---- 我們的方法 ---
+--- Our Method ---
 Ours                      | 90.5  | 91.8
 ```
 
 ---
 
-## 五、常見錯誤與避免方式
+## 5. Common Mistakes and How to Avoid Them
 
-### 5.1 Cherry-Picking（選擇性比較）
+### 5.1 Cherry-Picking
 
-**錯誤**：只與較弱的方法比較，避開強力 Baseline。
+**Mistake**: Compare only against weaker methods and avoid strong baselines.
 
-**避免方式**：
+**How to avoid**:
 
-- 包含該領域公認的 SOTA 方法
-- 使用其他近期論文中的 Baseline 列表作為參考
-- 若方法在某些 Baseline 上沒有優勢，坦誠報告並分析原因
+- Include recognized SOTA methods.
+- Refer to baseline sets used in recent papers.
+- If your method is not better on some baselines, report honestly and analyze why.
 
-### 5.2 不公平的比較條件
+### 5.2 Unfair Comparison Conditions
 
-**錯誤**：自己的方法使用了更大的模型、更多的資料或更強的預訓練，但未說明。
+**Mistake**: Your method uses larger models, more data, or stronger pretraining without disclosure.
 
-**避免方式**：
+**How to avoid**:
 
-- 明確報告所有方法的參數量
-- 標明各方法使用的預訓練模型
-- 在相同參數量下進行對比實驗
+- Clearly report parameter counts for all methods.
+- Specify pretrained models used by each method.
+- Add comparisons under matched parameter budgets.
 
-### 5.3 過時的 Baseline
+### 5.3 Outdated Baselines
 
-**錯誤**：所有 Baseline 都是 3 年以上的舊方法。
+**Mistake**: All baselines are older than three years.
 
-**避免方式**：
+**How to avoid**:
 
-- 至少包含 1-2 個近一年內發表的方法
-- 投稿前檢查是否有新的 SOTA 出現
-- 關注 arXiv 上的最新預印本
+- Include at least 1-2 methods from the last year.
+- Check for new SOTA methods before submission.
+- Track recent arXiv preprints.
 
-### 5.4 Baseline 未充分調參
+### 5.4 Insufficient Baseline Tuning
 
-**錯誤**：Baseline 使用預設超參數，自己的方法經過精心調參。
+**Mistake**: Baselines use default hyperparameters while your method is heavily tuned.
 
-**避免方式**：
+**How to avoid**:
 
-- 為每個 Baseline 進行合理的超參數搜索
-- 使用 Baseline 原論文推薦的超參數範圍
-- 報告 Baseline 的最佳超參數
+- Perform reasonable hyperparameter search for each baseline.
+- Use baseline papers' recommended tuning ranges.
+- Report best baseline hyperparameters.
 
-### 5.5 忽略簡單 Baseline
+### 5.5 Ignoring Simple Baselines
 
-**錯誤**：只與複雜方法比較，忽略簡單方法可能就夠好的事實。
+**Mistake**: Compare only against complex methods and ignore the possibility that simple methods are already strong.
 
-**避免方式**：
+**How to avoid**:
 
-- 始終包含至少一個簡單 Baseline
-- 若簡單方法表現不錯，誠實報告並討論
+- Always include at least one simple baseline.
+- If simple baselines perform strongly, report and discuss it honestly.
 
-### 5.6 評估指標不一致
+### 5.6 Inconsistent Evaluation Metrics
 
-**錯誤**：不同方法使用不同的評估腳本或評估設定。
+**Mistake**: Different methods use different evaluation scripts or settings.
 
-**避免方式**：
+**How to avoid**:
 
-- 所有方法使用同一份評估程式碼
-- 確認 tokenization、後處理等步驟一致
-- 使用官方評估腳本（若有的話）
+- Use one shared evaluation codebase for all methods.
+- Ensure tokenization, post-processing, and related steps are consistent.
+- Use official evaluation scripts when available.
 
 ---
 
-## 六、Baseline 選擇檢查清單
+## 6. Baseline Selection Checklist
 
-- [ ] 包含至少一個簡單 Baseline
-- [ ] 包含該領域的經典方法
-- [ ] 包含最近 1-2 年的 SOTA 方法
-- [ ] 所有 Baseline 使用相同的資料切分
-- [ ] 所有 Baseline 使用相同的評估指標與腳本
-- [ ] 所有 Baseline 都經過合理的超參數調整
-- [ ] Baseline 的來源已記錄（原始程式碼 / 重新實現 / 引用數字）
-- [ ] 參數量與計算量的差異已明確報告
-- [ ] Baseline 數量足夠（符合目標會議的慣例）
+- [ ] Includes at least one simple baseline
+- [ ] Includes classic methods in the field
+- [ ] Includes recent SOTA methods from the last 1-2 years
+- [ ] All baselines use the same data splits
+- [ ] All baselines use the same metrics and evaluation scripts
+- [ ] All baselines receive reasonable hyperparameter tuning
+- [ ] Baseline result sources are recorded (original code / reimplementation / cited numbers)
+- [ ] Differences in parameter count and compute budget are clearly reported
+- [ ] Number of baselines is sufficient for the target venue's norms

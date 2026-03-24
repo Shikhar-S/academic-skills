@@ -1,224 +1,223 @@
-# 故事模板與比喻庫
+# Story Templates and Analogy Library
 
-本指南提供太奶在「步驟三：故事化解釋」時使用的敘事結構和比喻素材。
+This guide provides narrative structures and analogy material for use in "Step 3: Story-Based Explanation."
 
 ---
 
-## 三種敘事結構
+## Three Narrative Structures
 
-### 一、英雄旅程型
+### 1) Hero's Journey
 
-**適用場景**：提出全新方法的論文、開創性工作、挑戰 SOTA 的論文。
+**Best for**: papers with brand-new methods, pioneering work, or strong SOTA challenges.
 
-**結構對應**：
+**Structure mapping**:
 
-| 故事階段 | 對應論文部分 | 說什麼 |
+| Story phase | Paper component | What to say |
 |---------|------------|--------|
-| 平凡世界 | Background | 介紹目前的技術現況，「大家都在用 X 方法」 |
-| 冒險召喚 | Problem/Gap | 發現現有方法的不足，「但 X 方法有個致命弱點」 |
-| 導師指引 | Related Work | 前人的嘗試和啟發，「之前有人試過 Y，但還不夠」 |
-| 跨越門檻 | Core Idea | 提出新方法的靈感來源，「有一天他們想到……」 |
-| 試煉之路 | Method Details | 方法的設計過程和技術挑戰，「他們要克服三個難關」 |
-| 最終決戰 | Experiments | 在各種 benchmark 上較量，「在五個擂台上一一迎戰」 |
-| 凱旋歸來 | Results | 展示成果，「最終拿下了冠軍」 |
-| 帶回寶物 | Contribution | 對領域的貢獻，「他們帶回的寶物改變了整個村莊」 |
+| Ordinary world | Background | Current technical status: "everyone uses method X" |
+| Call to adventure | Problem/Gap | Existing weakness: "but X has a fatal limitation" |
+| Mentor guidance | Related Work | Prior attempts and insights: "people tried Y, but it wasn't enough" |
+| Crossing threshold | Core Idea | Spark of the new method: "one day they realized..." |
+| Trials | Method Details | Design process and technical hurdles: "they had to overcome three barriers" |
+| Final showdown | Experiments | Benchmark competition: "they fought across five arenas" |
+| Triumphant return | Results | Outcome presentation: "they won the championship" |
+| Bring back treasure | Contribution | Field-level value: "their treasure changed the village" |
 
-**範例開場**：
+**Opening example**:
 ```
-太奶跟你講一個英雄故事——
+Let Granny tell you a hero story—
 
-在深度學習的江湖裡，有一個難題像《海賊王》裡的 One Piece 一樣，
-大家都知道它在那裡，但就是沒人拿得到。
-這個難題就是：怎麼讓模型在只看過幾個例子之後就學會新技能？
+In the deep-learning world, there was a challenge like One Piece:
+everyone knew it existed, but no one could reach it.
+The challenge: how can a model learn a new skill after seeing only a few examples?
 
-無數好漢前仆後繼——Meta-Learning 門派出了 MAML 大俠，
-Metric Learning 門派出了 Prototypical Net 女俠，
-大家各顯神通，但都差了那麼一點點。
+Countless heroes tried—MAML from the Meta-Learning school,
+Prototypical Networks from the Metric Learning school.
+Everyone showed great moves, but each fell just short.
 
-然後，這篇論文的作者們出現了……
+Then the authors of this paper appeared...
 ```
 
 ---
 
-### 二、推理偵探型
+### 2) Detective Reasoning
 
-**適用場景**：分析型論文、理論型論文、找出現有方法問題的論文、interpretability 論文。
+**Best for**: analytical papers, theory papers, papers diagnosing issues in existing methods, interpretability papers.
 
-**結構對應**：
+**Structure mapping**:
 
-| 故事階段 | 對應論文部分 | 說什麼 |
+| Story phase | Paper component | What to say |
 |---------|------------|--------|
-| 案發現場 | Problem | 發現了一個不尋常的現象，「模型表現異常」 |
-| 蒐集線索 | Observation/Analysis | 做實驗觀察、收集證據 |
-| 排除嫌疑 | Related Work | 排除已知的解釋，「不是 A 的問題，也不是 B」 |
-| 關鍵證據 | Key Finding | 找到真正的原因，「啊哈！原來是這個」 |
-| 偵探推理 | Method/Theory | 從證據推出結論和解決方案 |
-| 真相大白 | Experiments | 驗證推理是否正確 |
-| 結案報告 | Conclusion | 總結發現，提出建議 |
+| Crime scene | Problem | Unusual phenomenon discovered: "model behavior is abnormal" |
+| Gather clues | Observation/Analysis | Experiments and evidence collection |
+| Eliminate suspects | Related Work | Rule out known explanations: "not A, not B" |
+| Key evidence | Key Finding | Root cause identified: "aha, this is it" |
+| Detective inference | Method/Theory | Infer conclusions and solutions from evidence |
+| Truth revealed | Experiments | Validate whether inference is correct |
+| Case report | Conclusion | Summarize findings and recommendations |
 
-**範例開場**：
+**Opening example**:
 ```
-囡仔，太奶今天要跟你講一個推理故事，精彩程度不輸《死亡筆記》。
+Kiddo, today's story is a detective case—better than Death Note.
 
-案發現場是這樣的：大家都覺得 Transformer 很厲害，對不對？
-但是有人發現了一件怪事——
-把 Transformer 用在長序列上時，它就像吃壞肚子一樣，表現突然變很差。
+Here's the scene: everyone says Transformers are powerful, right?
+But then a strange thing appears—
+when used on long sequences, performance suddenly collapses.
 
-這是 bug 嗎？是資料的問題嗎？還是 Transformer 本身有設計缺陷？
+Is it a bug? Data issue? Or a design flaw in Transformers?
 
-這篇論文的作者就像柯南一樣，戴上了蝴蝶結領結，
-開始了他們的調查……
+The authors put on their detective hats and started the investigation...
 ```
 
 ---
 
-### 三、料理比賽型
+### 3) Cooking Competition
 
-**適用場景**：有大量比較實驗的論文、benchmark 論文、survey 的實驗部分。
+**Best for**: papers with many comparative experiments, benchmark-heavy papers, experimental parts of surveys.
 
-**結構對應**：
+**Structure mapping**:
 
-| 故事階段 | 對應論文部分 | 說什麼 |
+| Story phase | Paper component | What to say |
 |---------|------------|--------|
-| 比賽規則 | Task Definition | 介紹任務和評估標準 |
-| 選手介紹 | Baselines | 介紹各個參賽方法 |
-| 秘密食材 | Novel Component | 本文方法的獨特之處 |
-| 料理過程 | Method | 怎麼把各種技術組合在一起 |
-| 評審試菜 | Evaluation | 各項指標的結果 |
-| 分項評分 | Ablation | 每個食材/步驟的重要性 |
-| 冠軍揭曉 | Main Results | 最終排名和結論 |
-| 評審講評 | Analysis | 為什麼贏？還能怎麼改進？ |
+| Competition rules | Task Definition | Task and evaluation criteria |
+| Contestant intro | Baselines | Competing methods |
+| Secret ingredient | Novel Component | Distinctive part of proposed method |
+| Cooking process | Method | How techniques are combined |
+| Judges tasting | Evaluation | Metric outcomes |
+| Component scoring | Ablation | Importance of each ingredient/step |
+| Winner announced | Main Results | Final ranking and conclusion |
+| Judges' comments | Analysis | Why it won, and how to improve |
 
-**範例開場**：
+**Opening example**:
 ```
-太奶今天帶你看一場料理比賽，比《食戟之靈》還精彩！
+Today Granny brings you a cooking competition, even more intense than Food Wars.
 
-比賽題目是：用有限的食材（少量訓練資料），
-做出一道讓評審（benchmark）滿意的菜（高準確率）。
+Challenge: with limited ingredients (small training data),
+make a dish (high accuracy) that satisfies judges (benchmarks).
 
-參賽選手有——
-一號選手：MAML 師傅，擅長快速調味（快速適應新任務）
-二號選手：ProtoNet 師傅，擅長食材分類（原型比較）
-三號選手：就是本文的方法，一個帶著神秘醬料的新人！
+Contestants:
+No.1: Chef MAML, expert in rapid seasoning (fast adaptation)
+No.2: Chef ProtoNet, expert in ingredient grouping (prototype comparison)
+No.3: this paper's method, a newcomer with a mysterious sauce!
 
-比賽開始——
+Let the match begin—
 ```
 
 ---
 
-## 選擇敘事結構的判斷標準
+## Choosing the Narrative Structure
 
-| 論文特徵 | 推薦結構 | 原因 |
+| Paper characteristic | Recommended structure | Reason |
 |---------|---------|------|
-| 提出全新架構/方法 | 英雄旅程型 | 有明確的「從無到有」的故事線 |
-| 改進現有方法 | 英雄旅程型或料理比賽型 | 看改進幅度大小決定 |
-| 分析/診斷型研究 | 推理偵探型 | 有「發現問題→找原因→解決」的推理線 |
-| 大量比較實驗 | 料理比賽型 | 重點在比較和排名 |
-| 理論證明型 | 推理偵探型 | 有邏輯推導的故事線 |
-| Survey / Review | 不用故事，改用「旅遊導覽」的口吻 | 帶讀者逛一圈 |
+| Proposes a brand-new architecture/method | Hero's Journey | Clear "from nothing to something" story arc |
+| Improves existing methods | Hero's Journey or Cooking Competition | Choose based on scale of improvement |
+| Analysis/diagnosis research | Detective Reasoning | Natural "find issue → find cause → solve" logic |
+| Heavy comparative experiments | Cooking Competition | Emphasis is on comparison and ranking |
+| Theoretical proof papers | Detective Reasoning | Strong logical-inference story line |
+| Survey / Review | Skip story; use a guided-tour tone | Reader needs structured overview |
 
 ---
 
-## 比喻庫：常見 ML 概念的生活化比喻
+## Analogy Library: Everyday Mappings for Common ML Concepts
 
-### 模型與架構
+### Models and Architectures
 
-| 概念 | 比喻 | 出處 |
+| Concept | Analogy | Source |
 |------|------|------|
-| Neural Network | 一群互相連接的工人，每個人做一點點加工，合起來就能完成複雜的任務 | 生活 |
-| CNN | 一個拿著放大鏡的偵探，一小塊一小塊檢查圖片 | 生活 |
-| RNN | 一個有記憶力的說書人，講到後面還記得前面說了什麼 | 生活 |
-| Transformer | 一個全知全能的會議主持人，同時聽所有人說話，決定誰的意見最重要 | 生活 |
-| GAN | 兩個人在鬥智——一個畫假鈔（Generator），一個驗鈔（Discriminator） | 生活 |
-| VAE | 一個先把東西壓縮進小箱子、再從小箱子還原出來的魔術師 | 生活 |
-| Diffusion Model | 一個先把畫弄髒、再學會怎麼把髒畫恢復原狀的修復師 | 生活 |
-| Autoencoder | 用傳真機傳照片——先壓縮再解壓縮，看能還原多少 | 生活 |
+| Neural Network | A team of connected workers, each doing a small part of processing | Everyday |
+| CNN | A detective with a magnifying glass scanning image patches | Everyday |
+| RNN | A storyteller with memory who remembers earlier parts | Everyday |
+| Transformer | An all-seeing moderator who listens to everyone and decides who matters most | Everyday |
+| GAN | Counterfeit artist vs. inspector duel (generator vs discriminator) | Everyday |
+| VAE | Magician that compresses into a tiny box and reconstructs from it | Everyday |
+| Diffusion Model | Restorer who first dirties a painting, then learns to recover it | Everyday |
+| Autoencoder | Fax machine process: compress then decompress and see how much is preserved | Everyday |
 
-### 訓練概念
+### Training Concepts
 
-| 概念 | 比喻 | 出處 |
+| Concept | Analogy | Source |
 |------|------|------|
-| Training | 修煉、練功 | 《火影忍者》 |
-| Overfitting | 考古題背太熟，換一份新考卷就不會了 | 生活 |
-| Underfitting | 連課本都沒讀完就去考試 | 生活 |
-| Regularization | 太奶規定你每天最多只能吃三顆糖，免得蛀牙 | 生活 |
-| Dropout | 修煉時隨機封住幾條經脈，逼你用其他經脈練功，這樣每條經脈都能變強 | 《火影忍者》 |
-| Batch Normalization | 每煮完一批菜就重新校準調味，確保每一批的味道都差不多 | 生活 |
-| Learning Rate | 下山的步伐大小 | 生活 |
-| Epoch | 把整本課本從頭到尾讀一遍 | 生活 |
-| Batch Size | 一次給老師改幾份考卷 | 生活 |
-| Gradient | 山坡的陡度，告訴你往哪個方向走能最快下山 | 生活 |
-| Backpropagation | 老師從最終成績開始，一層層往回追究每個步驟哪裡做錯了 | 生活 |
-| Convergence | 不管從哪個方向開始練，最後都會練到同一個境界 | 生活 |
+| Training | Skill cultivation / practice | Naruto |
+| Overfitting | Memorizing past exam papers and failing a new one | Everyday |
+| Underfitting | Taking the exam before studying enough | Everyday |
+| Regularization | Limiting sweets per day to prevent cavities | Everyday |
+| Dropout | Randomly sealing pathways during practice to strengthen remaining ones | Naruto |
+| Batch Normalization | Re-calibrating seasoning after each batch to keep flavor stable | Everyday |
+| Learning Rate | Step size while descending a mountain | Everyday |
+| Epoch | One full pass through the textbook | Everyday |
+| Batch Size | Number of exams graded at one time | Everyday |
+| Gradient | Mountain slope indicating fastest descent direction | Everyday |
+| Backpropagation | Teacher tracing mistakes backward from final score step by step | Everyday |
+| Convergence | Different starts reaching the same skill level eventually | Everyday |
 
-### 資料相關
+### Data Concepts
 
-| 概念 | 比喻 | 出處 |
+| Concept | Analogy | Source |
 |------|------|------|
-| Dataset | 食材庫 | 生活 |
-| Data Augmentation | 把同一份食材切成不同形狀、用不同方式料理，變出更多菜色 | 生活 |
-| Label | 食材上的標籤——這是蘋果、那是橘子 | 生活 |
-| Feature | 一個人的特徵——身高、體重、髮色——讓你能認出這個人 | 生活 |
-| Embedding | 把一個複雜的東西（像一個人）變成一串數字來描述 | 生活 |
-| Tokenization | 把一句話拆成一個個詞，就像太奶把珍珠項鍊拆成一顆顆珍珠 | 生活 |
+| Dataset | Ingredient pantry | Everyday |
+| Data Augmentation | Re-cut and recook same ingredients to create more dishes | Everyday |
+| Label | Tags on ingredients: this is apple, that is orange | Everyday |
+| Feature | Attributes used to recognize a person | Everyday |
+| Embedding | Representing something complex as a numeric vector | Everyday |
+| Tokenization | Splitting a sentence into pieces like beads from a necklace | Everyday |
 
-### 評估相關
+### Evaluation Concepts
 
-| 概念 | 比喻 | 出處 |
+| Concept | Analogy | Source |
 |------|------|------|
-| Accuracy | 百發百中的命中率 | 生活 |
-| Precision | 你說「那是壞人」的時候，有多少次是真的壞人 | 生活 |
-| Recall | 所有壞人裡面，你抓到了幾個 | 生活 |
-| F1 Score | Precision 和 Recall 的折衷分數，像是武功的攻守平衡 | 生活 |
-| Benchmark | 武林大會的擂台 | 《火影忍者》 |
-| SOTA | 當前的擂台冠軍 | 生活 |
-| Ablation Study | 拿掉一個零件看車還能不能跑，測試每個零件有多重要 | 生活 |
+| Accuracy | Hit rate of correct shots | Everyday |
+| Precision | Of those you flagged as bad, how many were truly bad | Everyday |
+| Recall | Of all truly bad cases, how many you caught | Everyday |
+| F1 Score | Balance score between precision and recall | Everyday |
+| Benchmark | Martial-arts tournament arena | Naruto |
+| SOTA | Current arena champion | Everyday |
+| Ablation Study | Remove one car part to test its necessity | Everyday |
 
-### 進階概念
+### Advanced Concepts
 
-| 概念 | 比喻 | 出處 |
+| Concept | Analogy | Source |
 |------|------|------|
-| Transfer Learning | 學過鋼琴的人學吉他比較快，因為音樂的底子可以轉移 | 生活 |
-| Fine-tuning | 一個會做菜的大廚，學做新菜時只需要微調，不用從頭學起 | 生活 |
-| Pre-training | 先學九陽神功打底，之後學什麼武功都特別快 | 《倚天屠龍記》 |
-| Self-supervised Learning | 自己出題自己練——把課文挖掉幾個字，練習填回去 | 生活 |
-| Contrastive Learning | 學會分辨「什麼跟什麼像、什麼跟什麼不像」 | 生活 |
-| Few-shot Learning | 看幾張照片就學會認新動物，不用看幾百張 | 生活 |
-| Reinforcement Learning | 訓練小狗——做對了給餅乾，做錯了不給，慢慢學會正確行為 | 生活 |
-| Prompt Engineering | 跟一個很聰明但需要明確指示的助手溝通——你怎麼問，決定他怎麼答 | 生活 |
-| Hallucination | 模型一本正經地說胡話，就像《JOJO》裡被替身攻擊產生幻覺 | 《JOJO》 |
-| Scaling Law | 模型越大、資料越多就越強，像《龍珠》的戰鬥力隨修煉持續暴漲 | 《龍珠》 |
-| Emergent Ability | 修煉到一定程度突然覺醒新能力，像悟空突然變超級賽亞人 | 《龍珠》 |
-| Knowledge Distillation | 大師傅把畢生絕學濃縮教給小徒弟，徒弟雖然小但學到了精髓 | 生活 |
-| Ensemble | 集合眾人的力量——三個臭皮匠勝過一個諸葛亮 | 生活 |
-| Latent Space | 一個看不見的平行世界，所有東西在那裡都有一個「真實身份」 | 生活 |
-| Attention Mechanism | 在一群人裡面，你的目光會自動被最重要的人吸引 | 生活 |
+| Transfer Learning | A pianist learns guitar faster due to transferable fundamentals | Everyday |
+| Fine-tuning | A master chef adapting quickly to a new dish | Everyday |
+| Pre-training | Build inner skill first, then learn any style faster | Wuxia literature |
+| Self-supervised Learning | Create blanks in your own text and practice filling them | Everyday |
+| Contrastive Learning | Learn what is similar and what is not | Everyday |
+| Few-shot Learning | Recognize a new animal after seeing only a few photos | Everyday |
+| Reinforcement Learning | Training a puppy with rewards for correct behavior | Everyday |
+| Prompt Engineering | Giving precise instructions to a smart assistant | Everyday |
+| Hallucination | Model speaks nonsense with confidence | Everyday |
+| Scaling Law | Bigger models + more data usually means stronger performance | Dragon Ball |
+| Emergent Ability | New capability suddenly appears after sufficient scale | Dragon Ball |
+| Knowledge Distillation | Master condenses expertise to teach an apprentice | Everyday |
+| Ensemble | Combined strength of multiple contributors | Everyday |
+| Latent Space | Hidden parallel world where everything has a compact identity | Everyday |
+| Attention Mechanism | Your eyes naturally locking onto the most important person in a crowd | Everyday |
 
 ---
 
-## 比喻使用原則
+## Principles for Using Analogies
 
-1. **準確優先** — 比喻必須準確反映技術概念，不能為了趣味犧牲正確性
-2. **直覺優先** — 選擇最容易理解的比喻，不一定要用動漫梗
-3. **適量使用** — 每個步驟 2-3 個比喻就夠了，太多會讓人分心
-4. **前後一致** — 如果一個概念用了某個比喻，後面再提到時保持同一個比喻
-5. **讀者優先** — 如果讀者表示不看動漫，就多用生活比喻
-6. **新鮮感** — 同一篇論文裡不要重複使用太相似的比喻
+1. **Accuracy first** — analogies must preserve technical correctness
+2. **Intuition first** — choose easiest-to-understand analogies; anime is optional
+3. **Use in moderation** — 2–3 analogies per step are usually enough
+4. **Stay consistent** — keep the same analogy for the same concept within one explanation
+5. **Reader first** — if reader does not watch anime, use more everyday analogies
+6. **Keep it fresh** — avoid repetitive near-identical analogies in one paper
 
 ---
 
-## 故事結尾模板
+## Story Ending Template
 
-每個故事講完後，太奶會做一個小結：
+After each story, provide a mapping back to technical content:
 
 ```
-好啦，故事講完了。
-讓太奶幫你把故事跟論文對應一下——
-- 故事裡的「___」就是論文裡的「___」
-- 故事裡的「___」就是論文裡的「___」
-- 故事裡的「___」就是論文裡的「___」
+Alright, story time is over.
+Let Granny map the story back to the paper:
+- "___" in the story corresponds to "___" in the paper
+- "___" in the story corresponds to "___" in the paper
+- "___" in the story corresponds to "___" in the paper
 
-這樣有沒有比較清楚？有問題再問太奶喔。
+Clearer now? Ask Granny if you want another walkthrough.
 ```
 
-這個對應表很重要，確保讀者不會只記得故事而忘了技術內容。
+This mapping is essential so readers retain technical meaning, not just narrative flavor.

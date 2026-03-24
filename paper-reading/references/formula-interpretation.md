@@ -1,212 +1,212 @@
-# 公式與圖表解讀指南
+# Formula and Figure Interpretation Guide
 
-本指南提供太奶在「步驟四：公式圖表解讀」時使用的解說策略和模板。
+This guide provides explanation strategies and templates used in "Step 4: Formula and Figure Interpretation."
 
 ---
 
-## 公式解釋三步驟模板
+## Three-Step Template for Formula Explanation
 
-每個公式都按照以下三步驟解釋：
+Explain each formula using the following three steps:
 
-### 第一步：先說直覺
+### Step 1: Intuition First
 
-用一句白話文告訴讀者這個公式「在幹嘛」。不用任何數學符號，就像在跟完全不懂數學的人聊天。
+Use one plain-language sentence to tell readers what the formula is doing. Avoid symbols; explain as if talking with someone new to math.
 
-**模板**：
-> 這個公式在做的事情就是「___」。
+**Template**:
+> This formula is doing: "___".
 
-**範例**：
-- Loss function：「這個公式在衡量模型的預測跟正確答案差了多遠，差越多分數越高，模型就要更努力改進。」
-- Attention：「這個公式在計算每個字應該要多注意其他哪些字，就像你在讀句子時，眼睛會自動盯著重要的詞看。」
-- Softmax：「這個公式把一堆數字壓縮成機率，讓它們加起來等於 1，這樣就能當成『信心分數』來用。」
+**Examples**:
+- Loss function: "This formula measures how far the model's prediction is from the correct answer; larger error gives a higher score, so the model must improve."
+- Attention: "This formula decides which other words each word should pay more attention to, like your eyes naturally focusing on key words while reading."
+- Softmax: "This formula converts a bunch of numbers into probabilities that sum to 1, so they can be used as confidence scores."
 
-### 第二步：再拆符號
+### Step 2: Break Down Symbols
 
-把公式中的每個符號都列出來解釋。用表格或列表呈現，讓讀者可以對照著看。
+List and explain every symbol in the formula using a table or list for side-by-side reading.
 
-**模板**：
+**Template**:
 
-| 符號 | 唸法 | 意思 | 太奶的比喻 |
+| Symbol | Pronunciation | Meaning | Granny's Analogy |
 |------|------|------|-----------|
-| x | x | 輸入資料 | 食材 |
-| θ | theta | 模型參數 | 食譜上的調味比例 |
-| L | L | 損失值 | 顧客的不滿意度 |
+| x | x | input data | ingredients |
+| θ | theta | model parameters | seasoning ratios in a recipe |
+| L | L | loss value | customer dissatisfaction score |
 
-**注意事項**：
-- 不要跳過任何符號，包括下標和上標
-- 如果符號在前文已定義過，簡單提一下在哪裡定義的即可
-- 希臘字母要附上英文唸法
+**Notes**:
+- Do not skip any symbol, including subscripts and superscripts
+- If a symbol was defined earlier, briefly point to where
+- For Greek letters, include pronunciation
 
-### 第三步：最後講意義
+### Step 3: Explain Significance
 
-回答三個問題：
-1. 這個公式為什麼重要？
-2. 如果沒有這個公式（或改成別的），會怎樣？
-3. 這個公式有什麼限制或假設？
+Answer three questions:
+1. Why is this formula important?
+2. What happens if this formula is removed (or replaced)?
+3. What assumptions or limitations does this formula have?
 
 ---
 
-## 常見公式類型的解說策略
+## Explanation Strategies by Common Formula Type
 
-### Loss Function（損失函數）
+### Loss Function
 
-**核心直覺**：衡量「模型有多差」的分數，目標是讓它越小越好。
+**Core intuition**: A score of "how wrong the model is"; objective is to minimize it.
 
-**解說重點**：
-- 為什麼選這個 loss 而不是別的？
-- 這個 loss 鼓勵模型學到什麼行為？
-- 有沒有正則化項？正則化在做什麼？
+**What to explain**:
+- Why this loss instead of alternatives?
+- What behavior does this loss encourage?
+- Is there a regularization term, and what does it do?
 
-**太奶常用比喻**：
-- 「Loss 就像你考試的扣分，答錯越多扣越多，你的目標就是少扣一點」
-- 「Cross-entropy loss 就像老師在看你的答案分佈跟標準答案的分佈差多少」
-- 「L2 regularization 就像太奶規定你每道菜的調味料不能加太多，免得太重口味」
+**Common analogies**:
+- "Loss is like exam point deductions—the more mistakes, the more points you lose"
+- "Cross-entropy compares your answer distribution with the correct distribution"
+- "L2 regularization is like limiting seasoning so the dish doesn't become too heavy"
 
-**常見 loss 的速查表**：
+**Quick reference of common losses**:
 
-| Loss 名稱 | 直覺 | 用途 |
+| Loss Name | Intuition | Use Case |
 |-----------|------|------|
-| MSE (Mean Squared Error) | 預測值和真實值的距離平方平均 | 迴歸任務 |
-| Cross-Entropy | 兩個機率分佈的差異 | 分類任務 |
-| Binary Cross-Entropy | Cross-Entropy 的二分類版 | 二分類/多標籤 |
-| Contrastive Loss | 讓相似的靠近、不同的遠離 | 對比學習 |
-| Triplet Loss | 讓 anchor 更靠近正樣本、遠離負樣本 | 度量學習 |
-| KL Divergence | 兩個分佈的不對稱差異 | VAE / 知識蒸餾 |
-| Hinge Loss | 分類邊界的間隔大小 | SVM / ranking |
+| MSE (Mean Squared Error) | Average squared distance between prediction and truth | Regression |
+| Cross-Entropy | Difference between two probability distributions | Classification |
+| Binary Cross-Entropy | Binary-version cross-entropy | Binary/multi-label |
+| Contrastive Loss | Pull similar items together, push dissimilar apart | Contrastive learning |
+| Triplet Loss | Pull anchor to positive, push away from negative | Metric learning |
+| KL Divergence | Asymmetric distribution difference | VAE / distillation |
+| Hinge Loss | Margin size at decision boundary | SVM / ranking |
 
 ---
 
-### Attention Mechanism（注意力機制）
+### Attention Mechanism
 
-**核心直覺**：讓模型「決定要看哪裡」。
+**Core intuition**: The model decides where to look.
 
-**解說重點**：
-- Query, Key, Value 分別代表什麼？
-- Attention score 怎麼算出來的？
-- Multi-head attention 的多個 head 各自在看什麼？
+**What to explain**:
+- What do Query, Key, and Value represent?
+- How is the attention score computed?
+- What different heads in multi-head attention focus on?
 
-**太奶常用比喻**：
-- 「Attention 就像太奶在菜市場買菜，眼睛會自動盯著新鮮的蔬菜看（高 attention），爛掉的就忽略（低 attention）」
-- 「Query 是你的問題，Key 是每個候選答案的標籤，Value 是答案的內容。你拿問題去跟每個標籤比對，最像的答案就拿出來用」
-- 「Multi-head 就像你同時派 8 個偵探去調查，每個人從不同角度找線索，最後彙整報告」
+**Common analogies**:
+- "Attention is like shopping in a market: your eyes naturally focus on fresh vegetables and ignore rotten ones"
+- "Query is your question, Key is each candidate label, Value is actual content—match question to labels, then retrieve best content"
+- "Multi-head is like sending 8 detectives to investigate from different angles and then combining reports"
 
-**標準公式拆解**：
+**Standard formula breakdown**:
 
 ```
 Attention(Q, K, V) = softmax(QK^T / √d_k) V
 ```
 
-| 符號 | 意思 | 比喻 |
+| Symbol | Meaning | Analogy |
 |------|------|------|
-| Q | Query 矩陣 | 你想問的問題 |
-| K | Key 矩陣 | 每個候選者的名牌 |
-| V | Value 矩陣 | 每個候選者實際攜帶的資訊 |
-| d_k | Key 的維度 | 名牌上的字數（用來正規化） |
-| QK^T | Query 和 Key 的相似度 | 問題和名牌的匹配程度 |
-| softmax | 轉換成機率 | 把匹配分數變成「要分配多少注意力」 |
-| √d_k | 縮放因子 | 防止分數太大導致 softmax 太極端 |
+| Q | Query matrix | the question you ask |
+| K | Key matrix | name tags of candidates |
+| V | Value matrix | information carried by each candidate |
+| d_k | key dimension | number of words on each name tag (for normalization) |
+| QK^T | query-key similarity | question-tag match score |
+| softmax | convert to probabilities | convert match scores to attention allocation |
+| √d_k | scaling factor | prevent scores from becoming too extreme |
 
 ---
 
-### Optimization（優化相關）
+### Optimization
 
-**核心直覺**：怎麼一步步調整模型，讓它越來越好。
+**Core intuition**: How to update the model step by step so it gets better.
 
-**解說重點**：
-- 用的是哪種優化器？（SGD、Adam、AdamW……）
-- Learning rate 怎麼設定？有沒有 schedule？
-- 有沒有特殊的訓練策略？（warmup、gradient clipping……）
+**What to explain**:
+- Which optimizer is used? (SGD, Adam, AdamW...)
+- How is learning rate set? Any schedule?
+- Any special training tricks? (warmup, gradient clipping...)
 
-**太奶常用比喻**：
-- 「Gradient descent 就像下山，你站在山上往最陡的方向走，一步步走到山谷」
-- 「Learning rate 就像你的步伐大小，太大會跨過山谷、太小會走到天荒地老」
-- 「Adam 就像一個聰明的登山者，他會記住之前走過的路，自動調整步伐」
-- 「Warmup 就像運動前的熱身，一開始慢慢走，熱開了再加速」
-
----
-
-### Probability & Statistics（機率統計相關）
-
-**核心直覺**：用數學語言描述「不確定性」。
-
-**解說重點**：
-- 條件機率 P(A|B) 的直覺
-- 貝氏定理在論文中扮演的角色
-- Expectation、Variance 的意義
-
-**太奶常用比喻**：
-- 「P(下雨|烏雲) 就是『看到烏雲時，下雨的機會有多大』」
-- 「期望值就像你考很多次試的平均成績」
-- 「變異數就像你的成績穩不穩定——有時 100 有時 30 的孩子，變異數很大」
+**Common analogies**:
+- "Gradient descent is like descending a mountain by following the steepest downward direction"
+- "Learning rate is your step size—too large overshoots the valley; too small takes forever"
+- "Adam is a smart hiker that remembers previous path patterns and adapts stride"
+- "Warmup is pre-exercise: start slow, then speed up"
 
 ---
 
-## 圖表解讀方法
+### Probability & Statistics
 
-### 通用三步驟
+**Core intuition**: Mathematical language for uncertainty.
 
-#### 1. 看趨勢（Trend）
-- 整體走勢是上升、下降、還是持平？
-- 有沒有明顯的轉折點？
-- 太奶的問法：「這張圖大致在告訴你什麼方向？」
+**What to explain**:
+- Intuition of conditional probability P(A|B)
+- Role of Bayes' theorem in this paper
+- Meaning of expectation and variance
 
-#### 2. 找異常（Anomaly）
-- 有沒有特別突出或凹下去的點？
-- 有沒有跟其他線差異很大的地方？
-- 太奶的問法：「有沒有哪裡看起來怪怪的？」
-
-#### 3. 連結文字（Context）
-- 圖表呈現的結果跟文字描述一致嗎？
-- 有沒有圖表顯示了但文字沒提到的現象？
-- 太奶的問法：「作者有沒有老實地報告所有結果？」
+**Common analogies**:
+- "P(rain | dark clouds) means: given dark clouds, how likely is rain?"
+- "Expectation is like your average score across many exams"
+- "Variance is score stability—alternating between 100 and 30 means high variance"
 
 ---
 
-### 常見圖表類型解讀
+## Figure Interpretation Method
 
-#### 訓練曲線（Training Curve）
-- **X 軸**：通常是 epoch 或 step
-- **Y 軸**：通常是 loss 或 accuracy
-- **要注意**：
-  - 有沒有收斂？收斂速度如何？
-  - 有沒有 overfitting 的跡象？（training loss 下降但 validation loss 上升）
-  - 不同方法的收斂速度比較
+### General Three Steps
 
-#### 柱狀圖（Bar Chart）
-- 通常用來比較不同方法在不同指標上的表現
-- **要注意**：
-  - Y 軸有沒有從 0 開始？（有些論文會截斷 Y 軸來放大差異）
-  - 有沒有 error bar？（沒有的話結果可信度較低）
-  - 差異在統計上是否顯著？
+#### 1. Read Trend
+- Is overall trajectory increasing, decreasing, or flat?
+- Any clear turning points?
+- Core question: "What overall direction does this figure show?"
 
-#### 表格（Table）
-- 主要實驗結果的載體
-- **要注意**：
-  - 粗體通常標記最佳結果
-  - 底線通常標記次佳結果
-  - 注意看 table caption，常常有重要資訊
+#### 2. Find Anomalies
+- Any unusually high/low points?
+- Any region with large divergence from other lines?
+- Core question: "Does anything look unusual?"
 
-#### 注意力視覺化（Attention Visualization）
-- 展示模型「在看哪裡」
-- **要注意**：
-  - 注意力分佈是否合理？（看的地方跟人類直覺一致嗎？）
-  - 不同 head 的注意力有沒有差異？
-  - 太奶會說：「你看，模型真的有在看重要的地方，不是亂猜的」
-
-#### t-SNE / UMAP 圖
-- 把高維特徵投影到 2D 來看分群效果
-- **要注意**：
-  - 同類別的點有沒有聚在一起？
-  - 不同類別之間有沒有清楚的邊界？
-  - 太奶會說：「你看，同一類的都黏在一起，不同類的離得遠遠的，表示模型學到了好的特徵」
+#### 3. Link Context
+- Is figure evidence consistent with textual claims?
+- Does the figure reveal phenomena not discussed in text?
+- Core question: "Did authors report results transparently?"
 
 ---
 
-## 太奶的公式教學原則
+### Interpretation by Common Figure Type
 
-1. **先講結論再講過程** — 不要一上來就拆公式，先告訴讀者「這個公式算出來的東西是什麼」
-2. **用類比打底** — 每個公式至少一個生活比喻
-3. **符號表要完整** — 不能有任何一個符號被漏掉
-4. **不怕重複** — 如果某個概念前面講過，再簡短提一次也沒關係
-5. **承認不確定** — 如果公式的某個設計選擇太奶也不確定為什麼，就誠實說
-6. **連結前後文** — 告訴讀者這個公式跟前面/後面的公式是什麼關係
+#### Training Curves
+- **X-axis**: usually epoch or step
+- **Y-axis**: usually loss or accuracy
+- **Check**:
+  - Convergence behavior and speed
+  - Overfitting signs (training loss down, validation loss up)
+  - Relative convergence speed across methods
+
+#### Bar Charts
+- Often compare methods on metrics
+- **Check**:
+  - Does Y-axis start at 0? (truncated axes can exaggerate gaps)
+  - Are error bars present? (absence lowers confidence)
+  - Are differences statistically significant?
+
+#### Tables
+- Main carrier of experimental results
+- **Check**:
+  - Bold often marks best results
+  - Underline often marks second-best
+  - Captions often contain critical details
+
+#### Attention Visualizations
+- Show where model "looks"
+- **Check**:
+  - Is attention distribution reasonable?
+  - Do different heads show different focus patterns?
+  - Useful conclusion: model is focusing on meaningful regions, not guessing randomly
+
+#### t-SNE / UMAP Plots
+- 2D projection of high-dimensional features
+- **Check**:
+  - Are same-class points clustered?
+  - Are class boundaries separated?
+  - Useful conclusion: better clustering suggests better learned features
+
+---
+
+## Granny's Formula Teaching Principles
+
+1. **Conclusion before derivation** — First tell readers what the formula computes, then unpack it
+2. **Ground with analogy** — Provide at least one everyday analogy per core formula
+3. **Complete symbol table** — No symbol should be omitted
+4. **Do not fear repetition** — Brief recap is okay when concepts reappear
+5. **Admit uncertainty** — If a design choice is unclear, say so honestly
+6. **Connect context** — Explain how this formula relates to previous/next formulas

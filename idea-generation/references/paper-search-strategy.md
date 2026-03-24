@@ -1,287 +1,287 @@
-# 文獻搜索策略
+# Literature Search Strategy
 
-本文件說明如何系統化地搜索文獻，以驗證研究 idea 的新穎性並建立相關工作的知識基礎。
+This document explains how to search literature systematically to validate idea novelty and build a knowledge foundation of related work.
 
 ---
 
-## 一、關鍵字設計
+## I. Keyword Design
 
-關鍵字的品質直接決定搜索的效率與覆蓋率。好的關鍵字組合能幫助你快速定位最相關的文獻。
+Keyword quality directly determines search efficiency and coverage. Strong keyword sets help you quickly locate highly relevant literature.
 
-### 1.1 核心關鍵字提取
+### 1.1 Extract Core Keywords
 
-從你的研究 idea 中提取以下類型的關鍵字：
+Extract these keyword types from your research idea:
 
-| 類型 | 說明 | 範例 |
+| Type | Description | Examples |
 |------|------|------|
-| 方法關鍵字 | 使用的技術或演算法 | transformer, diffusion model, contrastive learning |
-| 問題關鍵字 | 要解決的問題或任務 | text summarization, object detection, drug discovery |
-| 領域關鍵字 | 研究的學科領域 | NLP, computer vision, bioinformatics |
-| 資料關鍵字 | 使用的資料類型或資料集 | clinical notes, satellite images, ImageNet |
+| Method keywords | Techniques or algorithms used | transformer, diffusion model, contrastive learning |
+| Problem keywords | Task/problem being solved | text summarization, object detection, drug discovery |
+| Domain keywords | Academic field | NLP, computer vision, bioinformatics |
+| Data keywords | Data type or dataset | clinical notes, satellite images, ImageNet |
 
-### 1.2 同義詞與相關詞擴展
+### 1.2 Expand with Synonyms and Related Terms
 
-為每個核心關鍵字列出同義詞、上位詞與下位詞：
+For each core keyword, list synonyms, hypernyms, and hyponyms:
 
 ```
-核心關鍵字：text summarization
-├── 同義詞：document summarization, automatic summarization
-├── 上位詞：text generation, natural language generation
-├── 下位詞：extractive summarization, abstractive summarization,
-│           multi-document summarization
-└── 相關詞：information compression, key point extraction
+Core keyword: text summarization
+├── Synonyms: document summarization, automatic summarization
+├── Hypernyms: text generation, natural language generation
+├── Hyponyms: extractive summarization, abstractive summarization,
+│            multi-document summarization
+└── Related: information compression, key point extraction
 ```
 
-### 1.3 關鍵字組合策略
+### 1.3 Keyword Combination Strategy
 
-使用布林運算子組合關鍵字：
+Use Boolean operators:
 
-- **AND**：縮小範圍，如 `"diffusion model" AND "text generation"`
-- **OR**：擴大範圍，如 `"summarization" OR "compression"`
-- **NOT**：排除不相關，如 `"transformer" NOT "electrical"`
-- **引號**：精確匹配，如 `"chain of thought"`
+- **AND**: narrow scope, e.g. `"diffusion model" AND "text generation"`
+- **OR**: broaden scope, e.g. `"summarization" OR "compression"`
+- **NOT**: exclude irrelevant results, e.g. `"transformer" NOT "electrical"`
+- **Quotes**: exact phrase matching, e.g. `"chain of thought"`
 
-### 1.4 迭代式關鍵字調整
+### 1.4 Iterative Keyword Refinement
 
-搜索是一個迭代過程：
+Search is iterative:
 
-1. 用初始關鍵字搜索
-2. 從找到的論文中學習新的術語
-3. 用新術語更新關鍵字
-4. 重複直到不再發現新的相關文獻
+1. Search with initial keywords
+2. Learn new terms from found papers
+3. Update keyword sets with new terms
+4. Repeat until no new relevant literature appears
 
 ---
 
-## 二、搜索工具推薦
+## II. Recommended Search Tools
 
 ### 2.1 Semantic Scholar
 
-- **網址**：https://www.semanticscholar.org
-- **特色**：
-  - 語義搜索，能理解查詢意圖
-  - 提供論文影響力指標（Highly Influential Citations）
-  - API 支援，可程式化搜索
-  - TLDR 功能，快速了解論文重點
-- **適用場景**：探索性搜索、尋找高影響力論文
-- **使用技巧**：
-  - 使用自然語言查詢，不需要布林運算子
-  - 利用 "Fields of Study" 篩選領域
-  - 關注 "Highly Influential" 引用，而非總引用數
-  - 使用 Research Feed 追蹤特定主題
+- **URL**: https://www.semanticscholar.org
+- **Features**:
+  - Semantic search that captures intent
+  - Influence indicators (Highly Influential Citations)
+  - API support for programmatic search
+  - TLDR feature for quick paper summaries
+- **Best for**: exploratory search, high-impact paper discovery
+- **Tips**:
+  - Use natural-language queries; Boolean operators often unnecessary
+  - Filter by "Fields of Study"
+  - Prioritize "Highly Influential" citations over raw citation counts
+  - Use Research Feed to track topics
 
 ### 2.2 Google Scholar
 
-- **網址**：https://scholar.google.com
-- **特色**：
-  - 覆蓋面最廣，包含各種來源
-  - 引用追蹤功能完善
-  - "Cited by" 與 "Related articles" 功能
-  - 可設定提醒（Alert）
-- **適用場景**：確認性搜索、引用追蹤
-- **使用技巧**：
-  - 使用 `allintitle:` 搜索標題中包含特定詞的論文
-  - 使用 `author:` 搜索特定作者
-  - 使用 "Since [year]" 篩選近期論文
-  - 建立 Google Scholar Profile 追蹤領域動態
-  - 使用 Google Scholar Alerts 追蹤特定關鍵字
+- **URL**: https://scholar.google.com
+- **Features**:
+  - Broadest coverage across sources
+  - Strong citation tracing
+  - "Cited by" and "Related articles"
+  - Alert subscriptions
+- **Best for**: confirmatory search, citation tracing
+- **Tips**:
+  - Use `allintitle:` to target title terms
+  - Use `author:` for author-specific search
+  - Use "Since [year]" for recent work
+  - Create a Scholar profile to track field dynamics
+  - Set Scholar alerts for key terms
 
 ### 2.3 arXiv
 
-- **網址**：https://arxiv.org
-- **特色**：
-  - 預印本平台，論文最先出現的地方
-  - 完全開放存取
-  - 每日更新
-  - 可按領域瀏覽（cs.CL, cs.CV, cs.LG 等）
-- **適用場景**：追蹤最新研究、尋找尚未正式發表的工作
-- **使用技巧**：
-  - 使用 arXiv Sanity（或類似工具）進行語義搜索
-  - 訂閱相關分類的每日郵件通知
-  - 使用 Papers With Code 找到對應的程式碼
-  - 注意：arXiv 論文未經同行審查，品質參差不齊
+- **URL**: https://arxiv.org
+- **Features**:
+  - Preprint platform, often earliest release point
+  - Fully open access
+  - Daily updates
+  - Category browsing (cs.CL, cs.CV, cs.LG, etc.)
+- **Best for**: latest frontier tracking, unpublished-yet work
+- **Tips**:
+  - Use arXiv Sanity (or similar) for semantic discovery
+  - Subscribe to daily category digests
+  - Use Papers With Code for linked implementations
+  - Note: arXiv papers are not peer-reviewed and quality varies
 
 ### 2.4 DBLP
 
-- **網址**：https://dblp.org
-- **特色**：
-  - 電腦科學領域最完整的書目索引
-  - 可按作者、會議、期刊瀏覽
-  - 資料結構化，適合批量分析
-- **適用場景**：確認論文的正式發表版本、查找某作者的完整發表記錄
-- **使用技巧**：
-  - 在 DBLP 上確認論文是否已被頂會/頂刊接收
-  - 瀏覽特定會議的歷年論文列表
+- **URL**: https://dblp.org
+- **Features**:
+  - Comprehensive CS bibliography index
+  - Browse by author, conference, or journal
+  - Structured data suitable for batch analysis
+- **Best for**: checking formal publication versions, full author records
+- **Tips**:
+  - Verify whether a paper was accepted by top venues
+  - Browse historical proceedings for target conferences
 
 ### 2.5 ACL Anthology
 
-- **網址**：https://aclanthology.org
-- **特色**：
-  - 自然語言處理領域的專用資料庫
-  - 所有 ACL 系列會議的論文
-  - 完全開放存取
-- **適用場景**：NLP 領域的深入文獻搜索
+- **URL**: https://aclanthology.org
+- **Features**:
+  - Dedicated NLP repository
+  - Full ACL-family venue coverage
+  - Fully open access
+- **Best for**: deep NLP literature search
 
-### 2.6 其他工具
+### 2.6 Other Tools
 
-| 工具 | 用途 |
+| Tool | Use |
 |------|------|
-| Connected Papers | 視覺化論文之間的關聯 |
-| Research Rabbit | 探索相關論文，類似推薦系統 |
-| Elicit | 使用 AI 從論文中提取資訊 |
-| Litmaps | 建立視覺化的文獻地圖 |
-| Papers With Code | 查找論文對應的程式碼與排行榜 |
+| Connected Papers | Visualize paper relationships |
+| Research Rabbit | Explore related papers via recommendation-style discovery |
+| Elicit | Use AI to extract information from papers |
+| Litmaps | Build visual literature maps |
+| Papers With Code | Find code and leaderboards linked to papers |
 
 ---
 
-## 三、滾雪球法（Snowballing）
+## III. Snowballing
 
-滾雪球法是一種從已知論文出發，逐步擴展文獻搜索範圍的方法。
+Snowballing starts from known papers and progressively expands literature coverage.
 
-### 3.1 前向滾雪球（Forward Snowballing）
+### 3.1 Forward Snowballing
 
-從一篇已知的重要論文出發，查看引用了它的後續論文。
+Start from an important known paper and inspect later papers that cite it.
 
-**操作方式**：
-1. 找到一篇你的 idea 的核心相關論文（稱為「種子論文」）
-2. 在 Google Scholar 或 Semantic Scholar 上查看 "Cited by"
-3. 瀏覽引用列表，挑選標題看起來相關的論文
-4. 按時間排序，重點看最近的引用
-5. 對新找到的相關論文重複此步驟
+**Procedure**:
+1. Find a core related paper for your idea (seed paper)
+2. Use "Cited by" in Google Scholar/Semantic Scholar
+3. Scan cited-by list and pick likely relevant titles
+4. Sort by time; prioritize recent citations
+5. Repeat for newly found relevant papers
 
-**目的**：
-- 找到種子論文之後的發展方向
-- 確認你的 idea 是否已被後續工作實現
-- 了解這個方向的最新進展
+**Purpose**:
+- Trace post-seed development directions
+- Check whether your idea was already realized later
+- Understand latest progress
 
-### 3.2 後向滾雪球（Backward Snowballing）
+### 3.2 Backward Snowballing
 
-從一篇論文的參考文獻列表出發，追溯它引用的工作。
+Start from a paper's references to trace prior foundations.
 
-**操作方式**：
-1. 閱讀種子論文的 Related Work 段落
-2. 瀏覽參考文獻列表
-3. 挑選被重複引用或被強調的論文
-4. 對新找到的論文重複此步驟
+**Procedure**:
+1. Read the seed paper's Related Work section
+2. Scan its references
+3. Pick repeatedly cited or emphasized papers
+4. Repeat for newly found papers
 
-**目的**：
-- 找到這個研究方向的基礎工作
-- 理解問題的歷史演進
-- 發現可能被忽略的早期工作
+**Purpose**:
+- Find foundational work in the direction
+- Understand historical evolution
+- Discover overlooked earlier work
 
-### 3.3 作者追蹤（Author Tracking）
+### 3.3 Author Tracking
 
-追蹤關鍵論文的作者及其研究團隊。
+Track key authors and their groups.
 
-**操作方式**：
-1. 找到核心論文的第一作者和通訊作者
-2. 查看他們的 Google Scholar Profile 或個人網頁
-3. 瀏覽他們的其他論文
-4. 關注他們的最新工作
+**Procedure**:
+1. Identify first and corresponding authors of core papers
+2. Visit their Scholar profiles or personal pages
+3. Review their other publications
+4. Track their latest output
 
-**目的**：
-- 了解這個方向的主要研究團隊
-- 預判他們可能的下一步研究方向
-- 避免與活躍的團隊正面競爭（或尋求合作）
+**Purpose**:
+- Identify major research teams
+- Anticipate likely next moves
+- Avoid direct collisions with highly active groups (or pursue collaboration)
 
-### 3.4 滾雪球法的終止條件
+### 3.4 Stopping Criteria for Snowballing
 
-當以下情況出現時，可以停止滾雪球：
+You can stop when:
 
-- 新找到的論文不再與你的 idea 直接相關
-- 同一批論文被反覆出現（搜索飽和）
-- 已經覆蓋了該方向的主要研究團隊
-- 建立了一個涵蓋 15-30 篇核心論文的文獻表
+- Newly found papers are no longer directly relevant
+- The same set of papers keeps recurring (saturation)
+- Major groups in the direction are covered
+- You have a literature table with ~15–30 core papers
 
 ---
 
-## 四、如何判斷一篇論文的重要性
+## IV. How to Judge Paper Importance
 
-在搜索到大量論文後，需要快速判斷哪些是重要的。以下提供幾個評估維度。
+After finding many papers, quickly identify the important ones using these dimensions.
 
-### 4.1 發表場所
+### 4.1 Publication Venue
 
-論文發表的場所是品質的一個重要指標（但不是唯一指標）。
+Venue is an important quality signal (not the only one).
 
-**頂級會議/期刊的參考**：
-- **機器學習**：NeurIPS, ICML, ICLR
-- **自然語言處理**：ACL, EMNLP, NAACL
-- **電腦視覺**：CVPR, ICCV, ECCV
-- **人工智慧**：AAAI, IJCAI
-- **資料探勘**：KDD, WWW, SIGIR
-- **期刊**：JMLR, TPAMI, TACL, Nature Machine Intelligence
+**Top-venue references**:
+- **Machine Learning**: NeurIPS, ICML, ICLR
+- **NLP**: ACL, EMNLP, NAACL
+- **Computer Vision**: CVPR, ICCV, ECCV
+- **AI**: AAAI, IJCAI
+- **Data Mining / IR**: KDD, WWW, SIGIR
+- **Journals**: JMLR, TPAMI, TACL, Nature Machine Intelligence
 
-**注意**：
-- arXiv 預印本可能品質極高，也可能品質極低
-- Workshop papers 通常是初步工作，但可能包含新穎想法
-- 被拒的論文不代表沒有價值
+**Notes**:
+- arXiv preprints can be excellent or weak
+- Workshop papers are often early-stage but may contain novel ideas
+- Rejection does not imply no value
 
-### 4.2 引用數量與品質
+### 4.2 Citation Quantity and Quality
 
-- **引用數量**：高引用通常表示高影響力，但需考慮論文的年齡
-- **引用速度**：短時間內快速累積引用的論文值得關注
-- **引用品質**：被頂會論文引用 vs 被低品質論文引用
-- **Semantic Scholar 的 "Highly Influential Citations"**：特別有參考價值
+- **Citation count**: high count often indicates influence, but consider paper age
+- **Citation velocity**: rapid citation growth in short time is noteworthy
+- **Citation quality**: citations from top venues vs. low-quality venues
+- **Semantic Scholar "Highly Influential Citations"**: especially informative
 
-### 4.3 快速閱讀策略
+### 4.3 Fast Reading Strategy
 
-對於搜索到的大量論文，使用以下策略快速判斷重要性：
+For large result sets, use this triage:
 
-1. **讀標題**（5 秒）：是否直接相關？
-2. **讀摘要**（30 秒）：問題、方法、結果是否與你的 idea 相關？
-3. **看圖表**（1 分鐘）：主要結果是什麼？架構是什麼？
-4. **讀結論**（1 分鐘）：主要貢獻與限制是什麼？
-5. **讀 Introduction 最後一段**（1 分鐘）：作者自述的貢獻列表
+1. **Title** (5 sec): directly relevant?
+2. **Abstract** (30 sec): does problem/method/result match your idea?
+3. **Figures/Tables** (1 min): core results and architecture
+4. **Conclusion** (1 min): main contributions and limits
+5. **Last intro paragraph** (1 min): authors' contribution summary
 
-如果通過以上五步仍覺得相關，再花時間詳細閱讀。
+If still relevant after these five steps, proceed to deeper reading.
 
-### 4.4 論文分類
+### 4.4 Paper Categorization
 
-將找到的論文按照與你 idea 的關係進行分類：
+Classify papers by relation to your idea:
 
-| 分類 | 說明 | 行動 |
+| Category | Description | Action |
 |------|------|------|
-| 直接相關 | 做的事情與你的 idea 高度重疊 | 仔細閱讀，評估差異 |
-| 方法相關 | 使用類似的方法但解決不同問題 | 學習方法細節 |
-| 問題相關 | 解決類似的問題但使用不同方法 | 作為 baseline 參考 |
-| 間接相關 | 提供背景知識或理論基礎 | 選擇性閱讀 |
-| 不相關 | 主題不相關 | 排除 |
+| Directly related | High overlap with your idea | Read carefully; assess differences |
+| Method-related | Similar methods for different problems | Learn method details |
+| Problem-related | Similar problem with different methods | Use as baseline references |
+| Indirectly related | Background or theoretical support | Read selectively |
+| Irrelevant | Off-topic | Exclude |
 
 ---
 
-## 五、搜索流程總結
+## V. Search Process Summary
 
-### 完整搜索流程檢查清單
+### Full Search Checklist
 
-- [ ] 從 idea 中提取核心關鍵字（方法、問題、領域、資料）
-- [ ] 為每個核心關鍵字列出同義詞與相關詞
-- [ ] 設計 3-5 組關鍵字組合
-- [ ] 在 Semantic Scholar 上進行探索性搜索
-- [ ] 在 Google Scholar 上進行確認性搜索
-- [ ] 在 arXiv 上搜索最新預印本
-- [ ] 選擇 2-3 篇種子論文進行滾雪球
-- [ ] 執行前向滾雪球（查看被引用）
-- [ ] 執行後向滾雪球（查看參考文獻）
-- [ ] 追蹤關鍵作者的其他工作
-- [ ] 對找到的論文進行分類與重要性評估
-- [ ] 確認搜索飽和（不再發現新的相關論文）
-- [ ] 更新 idea 的新穎性判定
-- [ ] 建立結構化的文獻表
+- [ ] Extract core keywords from idea (method/problem/domain/data)
+- [ ] Expand synonyms and related terms for each core keyword
+- [ ] Build 3–5 keyword combinations
+- [ ] Run exploratory search on Semantic Scholar
+- [ ] Run confirmatory search on Google Scholar
+- [ ] Search latest preprints on arXiv
+- [ ] Select 2–3 seed papers for snowballing
+- [ ] Perform forward snowballing (cited-by)
+- [ ] Perform backward snowballing (references)
+- [ ] Track other work by key authors
+- [ ] Classify papers and assess importance
+- [ ] Confirm saturation (no new relevant papers)
+- [ ] Update novelty judgment for the idea
+- [ ] Build structured literature table
 
-### 搜索時間建議
+### Suggested Time per Idea
 
-| 步驟 | 建議時間 |
+| Step | Suggested Time |
 |------|----------|
-| 關鍵字設計 | 15-30 分鐘 |
-| 多平台搜索 | 1-2 小時 |
-| 滾雪球法 | 1-2 小時 |
-| 論文分類與評估 | 1-2 小時 |
-| **每個 idea 合計** | **3-6 小時** |
+| Keyword design | 15–30 min |
+| Multi-platform search | 1–2 h |
+| Snowballing | 1–2 h |
+| Classification and assessment | 1–2 h |
+| **Total per idea** | **3–6 h** |
 
-### 常見錯誤
+### Common Mistakes
 
-1. **關鍵字過於狹窄**：只搜索自己熟悉的術語，遺漏其他社群的工作
-2. **只看最新論文**：忽略了經典的早期工作
-3. **只搜索英文文獻**：某些領域有重要的非英文文獻
-4. **確認偏誤搜索**：只搜索支持自己 idea 的文獻，忽略反面證據
-5. **過早停止**：找到幾篇相關論文就停止，未達搜索飽和
-6. **過度搜索**：無止境地搜索導致遲遲無法進入下一階段
+1. **Keywords too narrow**: only searching familiar terms and missing work from other communities
+2. **Only reading recent papers**: missing foundational classics
+3. **Only searching English papers**: some fields have important non-English literature
+4. **Confirmation-search bias**: seeking only supporting evidence
+5. **Stopping too early**: stopping after a few related papers before saturation
+6. **Over-searching**: endless search that blocks progression to next stage

@@ -1,114 +1,114 @@
-# 可重現性清單
+# Reproducibility Checklist
 
-## 概述
+## Overview
 
-本文件提供一份完整的可重現性清單，參考 NeurIPS Reproducibility Checklist 並加以擴充，確保實驗結果能被其他研究者精確重現。可重現性是科學研究的基石，也是頂級會議審稿的重要評估標準。
-
----
-
-## 一、硬體環境
-
-### 必要揭露項目
-
-- [ ] GPU 型號（例如：NVIDIA A100 80GB）
-- [ ] GPU 數量
-- [ ] CPU 型號與核心數
-- [ ] 系統記憶體大小
-- [ ] 儲存類型（SSD / HDD）
-
-### 建議揭露項目
-
-- [ ] GPU 驅動版本
-- [ ] CUDA 版本
-- [ ] cuDNN 版本
-- [ ] 是否使用多節點分散式訓練
-- [ ] 節點間的網路連接方式（若為分散式）
-
-### 範例格式
-
-```
-硬體環境：
-- GPU：4 × NVIDIA A100 (80GB)
-- CPU：AMD EPYC 7763 64-Core
-- 記憶體：512 GB DDR4
-- 儲存：NVMe SSD
-- CUDA：12.1
-- cuDNN：8.9.0
-- 驅動版本：535.86.10
-```
+This document provides a comprehensive reproducibility checklist, adapted and extended from the NeurIPS Reproducibility Checklist, to ensure experimental results can be accurately reproduced by other researchers. Reproducibility is a foundation of scientific research and a key criterion in top-tier peer review.
 
 ---
 
-## 二、軟體環境
+## 1. Hardware Environment
 
-### 必要揭露項目
+### Required Disclosures
 
-- [ ] 作業系統與版本
-- [ ] 程式語言版本（例如：Python 3.10.12）
-- [ ] 深度學習框架與版本（例如：PyTorch 2.1.0）
-- [ ] 關鍵套件版本列表
+- [ ] GPU model (e.g., NVIDIA A100 80GB)
+- [ ] Number of GPUs
+- [ ] CPU model and core count
+- [ ] System memory size
+- [ ] Storage type (SSD / HDD)
 
-### 建議揭露項目
+### Recommended Disclosures
 
-- [ ] 完整的 `requirements.txt` 或 `environment.yml`
-- [ ] Docker image（若有提供）
-- [ ] 套件安裝指令
+- [ ] GPU driver version
+- [ ] CUDA version
+- [ ] cuDNN version
+- [ ] Whether multi-node distributed training is used
+- [ ] Inter-node network setup (if distributed)
 
-### 關鍵套件版本清單
+### Example Format
 
-以下套件的版本應明確記錄：
+```
+Hardware Environment:
+- GPU: 4 × NVIDIA A100 (80GB)
+- CPU: AMD EPYC 7763 64-Core
+- Memory: 512 GB DDR4
+- Storage: NVMe SSD
+- CUDA: 12.1
+- cuDNN: 8.9.0
+- Driver Version: 535.86.10
+```
 
-| 類別 | 常見套件 |
+---
+
+## 2. Software Environment
+
+### Required Disclosures
+
+- [ ] Operating system and version
+- [ ] Programming language version (e.g., Python 3.10.12)
+- [ ] Deep learning framework and version (e.g., PyTorch 2.1.0)
+- [ ] Version list of key packages
+
+### Recommended Disclosures
+
+- [ ] Full `requirements.txt` or `environment.yml`
+- [ ] Docker image (if provided)
+- [ ] Package installation commands
+
+### Key Package Version Checklist
+
+Versions of the following package categories should be explicitly recorded:
+
+| Category | Common Packages |
 |------|---------|
-| 深度學習框架 | PyTorch / TensorFlow / JAX |
-| NLP 工具 | Transformers / spaCy / NLTK |
-| 數據處理 | NumPy / Pandas / scikit-learn |
-| 評估工具 | SacreBLEU / seqeval / pycocotools |
-| 分散式訓練 | DeepSpeed / FSDP / Horovod |
-| 實驗管理 | Weights & Biases / MLflow / TensorBoard |
+| Deep learning frameworks | PyTorch / TensorFlow / JAX |
+| NLP tools | Transformers / spaCy / NLTK |
+| Data processing | NumPy / Pandas / scikit-learn |
+| Evaluation tools | SacreBLEU / seqeval / pycocotools |
+| Distributed training | DeepSpeed / FSDP / Horovod |
+| Experiment tracking | Weights & Biases / MLflow / TensorBoard |
 
-### 範例格式
+### Example Format
 
 ```
-軟體環境：
-- OS：Ubuntu 22.04 LTS
-- Python：3.10.12
-- PyTorch：2.1.0
-- Transformers：4.35.0
-- NumPy：1.24.3
-- CUDA Toolkit：12.1
+Software Environment:
+- OS: Ubuntu 22.04 LTS
+- Python: 3.10.12
+- PyTorch: 2.1.0
+- Transformers: 4.35.0
+- NumPy: 1.24.3
+- CUDA Toolkit: 12.1
 ```
 
 ---
 
-## 三、隨機種子與確定性
+## 3. Random Seeds and Determinism
 
-### 必要揭露項目
+### Required Disclosures
 
-- [ ] 是否設定了隨機種子
-- [ ] 隨機種子的具體值
-- [ ] 使用了幾個不同的隨機種子
+- [ ] Whether random seeds were set
+- [ ] Exact random seed values
+- [ ] Number of different seeds used
 
-### 建議揭露項目
+### Recommended Disclosures
 
-- [ ] 所有隨機性來源的種子設定方式
-- [ ] 是否啟用確定性模式（deterministic mode）
-- [ ] 已知的非確定性來源及其影響
+- [ ] How each randomness source is seeded
+- [ ] Whether deterministic mode is enabled
+- [ ] Known non-deterministic sources and their impact
 
-### 隨機性來源清單
+### Randomness Source Checklist
 
-需要控制的隨機性來源包括：
+Randomness sources that should be controlled include:
 
-1. **Python 內建隨機數**：`random.seed()`
-2. **NumPy 隨機數**：`np.random.seed()`
-3. **PyTorch CPU 隨機數**：`torch.manual_seed()`
-4. **PyTorch GPU 隨機數**：`torch.cuda.manual_seed_all()`
-5. **cuDNN 確定性**：`torch.backends.cudnn.deterministic = True`
-6. **cuDNN 基準測試**：`torch.backends.cudnn.benchmark = False`
-7. **資料載入器**：DataLoader 的 `worker_init_fn` 和 `generator`
-8. **環境變數**：`PYTHONHASHSEED`
+1. **Python built-in RNG**: `random.seed()`
+2. **NumPy RNG**: `np.random.seed()`
+3. **PyTorch CPU RNG**: `torch.manual_seed()`
+4. **PyTorch GPU RNG**: `torch.cuda.manual_seed_all()`
+5. **cuDNN determinism**: `torch.backends.cudnn.deterministic = True`
+6. **cuDNN benchmark mode**: `torch.backends.cudnn.benchmark = False`
+7. **Data loader randomness**: DataLoader `worker_init_fn` and `generator`
+8. **Environment variable**: `PYTHONHASHSEED`
 
-### 範例程式碼
+### Example Code
 
 ```python
 import random
@@ -124,15 +124,15 @@ def set_seed(seed: int):
     torch.backends.cudnn.benchmark = False
     os.environ['PYTHONHASHSEED'] = str(seed)
 
-# 使用的種子列表：42, 123, 456, 789, 1024
+# Seed list used: 42, 123, 456, 789, 1024
 ```
 
-### 多次實驗報告格式
+### Multi-Run Reporting Format
 
 ```
-表：多次隨機種子實驗結果
+Table: Results Across Random Seeds
 
-種子   | F1     | Acc
+Seed   | F1     | Acc
 -------|--------|------
 42     | 88.3   | 89.7
 123    | 88.1   | 89.5
@@ -140,171 +140,171 @@ def set_seed(seed: int):
 789    | 87.9   | 89.3
 1024   | 88.4   | 89.8
 -------|--------|------
-平均   | 88.24  | 89.64
-標準差 | ±0.23  | ±0.23
+Mean   | 88.24  | 89.64
+Std    | ±0.23  | ±0.23
 ```
 
 ---
 
-## 四、訓練細節
+## 4. Training Details
 
-### 必要揭露項目
+### Required Disclosures
 
-- [ ] 優化器類型與參數（學習率、動量、權重衰減等）
-- [ ] 學習率排程策略與參數
-- [ ] 批次大小（per GPU 和 total）
-- [ ] 訓練總步數或總輪數
-- [ ] 早停策略與耐心值
-- [ ] 梯度裁剪閾值
-- [ ] Warmup 步數或比例
+- [ ] Optimizer type and parameters (learning rate, momentum, weight decay, etc.)
+- [ ] Learning-rate schedule strategy and parameters
+- [ ] Batch size (per GPU and total)
+- [ ] Total training steps or epochs
+- [ ] Early stopping strategy and patience
+- [ ] Gradient clipping threshold
+- [ ] Warmup steps or ratio
 
-### 建議揭露項目
+### Recommended Disclosures
 
-- [ ] 混合精度訓練設定（FP16 / BF16）
-- [ ] 梯度累積步數
-- [ ] 權重初始化方式
-- [ ] Dropout 率
-- [ ] 標籤平滑係數
-- [ ] 損失函數的完整定義
-- [ ] 正則化方法與參數
+- [ ] Mixed-precision settings (FP16 / BF16)
+- [ ] Gradient accumulation steps
+- [ ] Weight initialization method
+- [ ] Dropout rate
+- [ ] Label smoothing coefficient
+- [ ] Full loss function definition
+- [ ] Regularization methods and parameters
 
-### 訓練超參數範例
-
-```
-訓練設定：
-- 優化器：AdamW (β1=0.9, β2=0.999, ε=1e-8)
-- 學習率：2e-5
-- 學習率排程：Linear decay with warmup
-- Warmup 步數：總步數的 10%
-- 權重衰減：0.01
-- 批次大小：32 (per GPU) × 4 (GPU) = 128 (total)
-- 訓練輪數：10
-- 早停：驗證集 F1 連續 3 輪未提升
-- 梯度裁剪：max_norm = 1.0
-- Dropout：0.1
-- 混合精度：BF16
-- 梯度累積：2 步
-```
-
----
-
-## 五、資料前處理
-
-### 必要揭露項目
-
-- [ ] 資料集名稱、版本與來源連結
-- [ ] 訓練 / 驗證 / 測試集的大小
-- [ ] 資料切分方式（是否使用官方切分）
-- [ ] 文本前處理步驟（分詞、清理、正規化等）
-- [ ] 最大序列長度與截斷策略
-- [ ] 特殊標記（special tokens）的使用
-
-### 建議揭露項目
-
-- [ ] 資料篩選或過濾的準則
-- [ ] 資料增強策略
-- [ ] 處理類別不均衡的方法
-- [ ] 詞彙表大小與建構方式
-- [ ] 缺失值或異常值的處理
-- [ ] 資料的授權條款
-
-### 資料前處理範例
+### Example Training Hyperparameters
 
 ```
-資料前處理：
-- 資料集：SQuAD 2.0 (官方版本 v2.0)
-- 切分：官方 train / dev 切分
-- 訓練集：130,319 問答對
-- 驗證集：11,873 問答對
-- 分詞器：BPE (來自 bert-base-uncased)
-- 詞彙表大小：30,522
-- 最大序列長度：384
-- 文件步幅（doc stride）：128
-- 截斷策略：截斷文件，保留完整問題
-- 小寫處理：是
+Training Setup:
+- Optimizer: AdamW (β1=0.9, β2=0.999, ε=1e-8)
+- Learning Rate: 2e-5
+- LR Scheduler: Linear decay with warmup
+- Warmup Steps: 10% of total steps
+- Weight Decay: 0.01
+- Batch Size: 32 (per GPU) × 4 (GPU) = 128 (total)
+- Epochs: 10
+- Early Stopping: Validation F1 not improved for 3 consecutive epochs
+- Gradient Clipping: max_norm = 1.0
+- Dropout: 0.1
+- Mixed Precision: BF16
+- Gradient Accumulation: 2 steps
 ```
 
 ---
 
-## 六、評估協定
+## 5. Data Preprocessing
 
-### 必要揭露項目
+### Required Disclosures
 
-- [ ] 評估指標的精確定義
-- [ ] 評估腳本的來源（官方腳本 / 自行實現）
-- [ ] 模型選擇準則（選擇哪個 checkpoint 進行最終評估）
-- [ ] 評估時的解碼策略
+- [ ] Dataset name, version, and source link
+- [ ] Sizes of train / validation / test sets
+- [ ] Data splitting protocol (whether official split is used)
+- [ ] Text preprocessing steps (tokenization, cleaning, normalization, etc.)
+- [ ] Maximum sequence length and truncation strategy
+- [ ] Usage of special tokens
 
-### 建議揭露項目
+### Recommended Disclosures
 
-- [ ] 評估頻率（每隔幾步或幾輪評估一次）
-- [ ] 後處理步驟（例如：答案的正規化、去重複）
-- [ ] 信賴區間或統計顯著性檢驗的方法
-- [ ] 人工評估的設計（若有）
+- [ ] Criteria for data filtering/selection
+- [ ] Data augmentation strategy
+- [ ] Method for class imbalance handling
+- [ ] Vocabulary size and construction method
+- [ ] Handling of missing values/outliers
+- [ ] Dataset license terms
 
-### 評估協定範例
+### Example Data Preprocessing Description
 
 ```
-評估協定：
-- 評估指標：Exact Match (EM), F1
-- 評估腳本：官方 SQuAD 2.0 評估腳本
-- 模型選擇：驗證集 F1 最高的 checkpoint
-- 評估頻率：每 1000 步
-- 答案後處理：移除冠詞、標點、多餘空格
-- 統計方法：5 次隨機種子的平均值 ± 標準差
-- 顯著性檢驗：Paired bootstrap test (p < 0.05)
+Data Preprocessing:
+- Dataset: SQuAD 2.0 (official v2.0)
+- Split: Official train/dev split
+- Training set: 130,319 QA pairs
+- Validation set: 11,873 QA pairs
+- Tokenizer: BPE (from bert-base-uncased)
+- Vocabulary size: 30,522
+- Max sequence length: 384
+- Doc stride: 128
+- Truncation strategy: truncate context, keep full question
+- Lowercasing: enabled
 ```
 
 ---
 
-## 七、程式碼與資料的開放
+## 6. Evaluation Protocol
 
-### 強烈建議
+### Required Disclosures
 
-- [ ] 開源完整的訓練與評估程式碼
-- [ ] 提供預訓練模型權重下載連結
-- [ ] 提供資料前處理腳本
-- [ ] 撰寫清楚的 README 說明如何重現結果
+- [ ] Exact definition of evaluation metrics
+- [ ] Source of evaluation scripts (official or custom implementation)
+- [ ] Model selection criterion (which checkpoint is used for final evaluation)
+- [ ] Decoding strategy during evaluation
 
-### 建議
+### Recommended Disclosures
 
-- [ ] 提供一鍵執行的重現腳本
-- [ ] 提供 Docker 環境
-- [ ] 在 GitHub 上持續維護程式碼
-- [ ] 包含預期的輸出結果以供驗證
+- [ ] Evaluation frequency (every N steps or epochs)
+- [ ] Post-processing steps (e.g., answer normalization, deduplication)
+- [ ] Method for confidence intervals or statistical significance testing
+- [ ] Human evaluation design (if applicable)
 
----
+### Example Evaluation Protocol
 
-## 八、完整可重現性檢查流程
-
-在提交論文前，按以下流程進行最終檢查：
-
-### 第一輪：文件檢查
-
-1. 論文中是否包含所有必要的實驗細節？
-2. 附錄中是否有完整的超參數表？
-3. 是否提供了程式碼連結？
-
-### 第二輪：獨立重現測試
-
-1. 請一位未參與研究的同事嘗試依照論文描述重現結果
-2. 記錄重現過程中遇到的問題
-3. 根據回饋補充缺漏的細節
-
-### 第三輪：程式碼檢查
-
-1. 程式碼能否在乾淨的環境中從零開始執行？
-2. README 的指令是否完整且正確？
-3. 隨機種子設定是否生效？
+```
+Evaluation Protocol:
+- Metrics: Exact Match (EM), F1
+- Evaluation script: Official SQuAD 2.0 script
+- Model selection: Checkpoint with best validation F1
+- Evaluation frequency: Every 1000 steps
+- Answer post-processing: Remove articles, punctuation, extra spaces
+- Statistics: Mean ± std over 5 random seeds
+- Significance test: Paired bootstrap test (p < 0.05)
+```
 
 ---
 
-## 九、常見可重現性問題與解決方案
+## 7. Code and Data Release
 
-| 問題 | 原因 | 解決方案 |
+### Strongly Recommended
+
+- [ ] Release full training and evaluation code
+- [ ] Provide pretrained model weight download links
+- [ ] Provide preprocessing scripts
+- [ ] Write a clear README for reproducing results
+
+### Recommended
+
+- [ ] Provide one-command reproducibility script
+- [ ] Provide Docker environment
+- [ ] Maintain code on GitHub
+- [ ] Include expected outputs for verification
+
+---
+
+## 8. Full Reproducibility Verification Workflow
+
+Before paper submission, run this final check workflow:
+
+### Round 1: Documentation Check
+
+1. Does the paper include all required experimental details?
+2. Does the appendix include complete hyperparameter tables?
+3. Is the code link provided?
+
+### Round 2: Independent Reproduction Test
+
+1. Ask a colleague not involved in the project to reproduce results from the paper description.
+2. Record all issues encountered during reproduction.
+3. Fill missing details based on feedback.
+
+### Round 3: Code Check
+
+1. Can the code run from scratch in a clean environment?
+2. Are README commands complete and correct?
+3. Is random seed control working as intended?
+
+---
+
+## 9. Common Reproducibility Issues and Solutions
+
+| Issue | Cause | Solution |
 |------|------|----------|
-| 結果每次不同 | 隨機性未完全控制 | 檢查所有隨機性來源的種子設定 |
-| 無法安裝套件 | 版本衝突 | 提供完整的 requirements.txt 或 Docker |
-| 結果與論文差異大 | 訓練細節遺漏 | 逐一比對所有超參數與設定 |
-| GPU 不同導致結果不同 | 浮點運算差異 | 記錄硬體資訊，接受小幅差異 |
-| 資料集版本不同 | 資料集更新 | 明確記錄資料集版本與下載連結 |
+| Results vary run to run | Randomness not fully controlled | Verify seed setup for all randomness sources |
+| Package install fails | Version conflicts | Provide full requirements.txt or Docker |
+| Large discrepancy from paper results | Missing training details | Compare all hyperparameters/settings one by one |
+| Different GPUs produce different results | Floating-point computation differences | Record hardware details and accept minor variance |
+| Dataset version mismatch | Dataset updated | Clearly record dataset version and download link |
