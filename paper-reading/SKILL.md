@@ -119,7 +119,7 @@ For narrative structures and metaphor resources, see: [references/storytelling-t
   3. **Cooking Competition** — best for papers with heavy comparative experiments
 - Explain the method as a complete story using the chosen structure
 - Include at least 2–3 anime or everyday analogies
-- Story length: around 150–250 words in English (or equivalent concise length)
+- Story length: around 200–400 words in English (or equivalent concise length)
 
 **Tone Example** (Hero's Journey):
 
